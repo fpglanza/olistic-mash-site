@@ -12,13 +12,29 @@
       <header class="site-header">
         <div class="container nav">
           <a href="index.html" class="nav__logo">Logo</a>
-          <nav class="nav__links">
-            <a class="nav__link" href="#hero">Home</a>
-            <a class="nav__link" href="chi-sono.html">Chi sono</a>
-            <a class="nav__link" href="consulenze-unity.html">Consulenze</a>
-            <a class="nav__link" href="eventi-gruppi.html">Eventi & Gruppi</a>
-            <a class="nav__link" href="percorsi-reiki.html">Percorsi & Reiki</a>
-            <a class="nav__link" href="contatti.html">Contatti</a>
+
+          <button
+            class="nav__toggle"
+            type="button"
+            aria-label="Apri il menu di navigazione"
+            aria-expanded="false"
+          >
+            <span class="nav__toggle-lines">
+              <span class="nav__toggle-line"></span>
+              <span class="nav__toggle-line"></span>
+              <span class="nav__toggle-line"></span>
+            </span>
+          </button>
+
+          <nav aria-label="Navigazione principale">
+            <ul class="nav__links">
+              <li><a class="nav__link" href="index.html#hero">Home</a></li>
+              <li><a class="nav__link" href="chi-sono.html">Chi sono</a></li>
+              <li><a class="nav__link" href="consulenze-unity.html">Consulenze</a></li>
+              <li><a class="nav__link" href="eventi-gruppi.html">Eventi & Gruppi</a></li>
+              <li><a class="nav__link" href="percorsi-reiki.html">Percorsi & Reiki</a></li>
+              <li><a class="nav__link" href="contatti.html">Contatti</a></li>
+            </ul>
           </nav>
         </div>
       </header>
@@ -45,12 +61,6 @@
                     class="btn btn-primary"
                     data-wa-key="home_general"
                   >
-                    <!-- opzionale icona WhatsApp -->
-                    <!--
-                    <span class="btn__icon">
-                      <img src="assets/img/whatsapp.svg" alt="" aria-hidden="true" />
-                    </span>
-                    -->
                     <span>Prenota la tua consulenza</span>
                   </a>
 
@@ -66,9 +76,7 @@
               <!-- Colonna immagine -->
               <div class="hero__media">
                 <div class="card hero__image-card">
-                  <div class="hero__photo-placeholder">
-                    <!-- qui andrà la foto della coach -->
-                  </div>
+                  <div class="hero__photo-placeholder" aria-hidden="true"></div>
                   <p class="small hero__badge">
                     +120 percorsi accompagnati negli ultimi anni
                   </p>
@@ -91,9 +99,7 @@
             <div class="grid grid--3">
               <!-- Card 1 -->
               <article class="card service-card">
-                <div class="service-card__icon">
-                  <!-- placeholder icona -->
-                </div>
+                <div class="service-card__icon" aria-hidden="true"></div>
                 <h3>Consulenze individuali</h3>
                 <p>
                   Spazi 1:1 dedicati a te, per ascoltare ciò che stai vivendo e
@@ -110,9 +116,7 @@
 
               <!-- Card 2 -->
               <article class="card service-card">
-                <div class="service-card__icon">
-                  <!-- placeholder icona -->
-                </div>
+                <div class="service-card__icon" aria-hidden="true"></div>
                 <h3>Armonizzazioni di gruppo</h3>
                 <p>
                   Cerchi e incontri guidati per lavorare su energia, presenza e
@@ -128,9 +132,7 @@
 
               <!-- Card 3 -->
               <article class="card service-card">
-                <div class="service-card__icon">
-                  <!-- placeholder icona -->
-                </div>
+                <div class="service-card__icon" aria-hidden="true"></div>
                 <h3>Percorsi energetici & Reiki</h3>
                 <p>
                   Trattamenti e percorsi strutturati per armonizzare mente, corpo
@@ -154,9 +156,7 @@
               <!-- Immagine / visual -->
               <div class="unity-visual">
                 <div class="card">
-                  <div class="hero__photo-placeholder">
-                    <!-- immagine dedicata al percorso Unity Connection -->
-                  </div>
+                  <div class="hero__photo-placeholder" aria-hidden="true"></div>
                   <p class="small" style="margin-top: var(--space-16);">
                     Sessioni online e in presenza, pensate per riportarti al tuo centro.
                   </p>
@@ -230,7 +230,7 @@
               <!-- Evento 1 -->
               <article class="card event-card">
                 <div class="event-card__header">
-                  <div class="event-card__date">
+                  <div class="event-card__date" aria-hidden="true">
                     <span class="event-card__day">12</span>
                     <span class="event-card__month">APR</span>
                   </div>
@@ -259,7 +259,7 @@
               <!-- Evento 2 -->
               <article class="card event-card">
                 <div class="event-card__header">
-                  <div class="event-card__date">
+                  <div class="event-card__date" aria-hidden="true">
                     <span class="event-card__day">27</span>
                     <span class="event-card__month">MAG</span>
                   </div>
@@ -285,7 +285,7 @@
               <!-- Evento 3 -->
               <article class="card event-card">
                 <div class="event-card__header">
-                  <div class="event-card__date">
+                  <div class="event-card__date" aria-hidden="true">
                     <span class="event-card__day">09</span>
                     <span class="event-card__month">GIU</span>
                   </div>
@@ -332,10 +332,7 @@
               <!-- Card video -->
               <article class="card card--video">
                 <div class="video-placeholder">
-                  <!-- immagine/preview video -->
-                  <div class="video-placeholder__thumb">
-                    <!-- background soft, poi immagine -->
-                  </div>
+                  <div class="video-placeholder__thumb" aria-hidden="true"></div>
                   <button
                     type="button"
                     class="video-placeholder__play"
@@ -357,7 +354,7 @@
                     sentivo il corpo più leggero e la mente più chiara.”
                   </p>
                   <div class="author">
-                    <div class="author__avatar"></div>
+                    <div class="author__avatar" aria-hidden="true"></div>
                     <div class="author__meta">
                       <p class="small" style="margin-bottom: 0;"><strong>Elena</strong></p>
                       <p class="small">Percorso Unity Connection</p>
@@ -371,7 +368,7 @@
                     presenza e a non sentirmi più sola nel mio processo.”
                   </p>
                   <div class="author">
-                    <div class="author__avatar"></div>
+                    <div class="author__avatar" aria-hidden="true"></div>
                     <div class="author__meta">
                       <p class="small" style="margin-bottom: 0;"><strong>Sara</strong></p>
                       <p class="small">Cerchi & armonizzazioni</p>
@@ -385,7 +382,7 @@
                     iniziato a fidarmi di più delle mie sensazioni.”
                   </p>
                   <div class="author">
-                    <div class="author__avatar"></div>
+                    <div class="author__avatar" aria-hidden="true"></div>
                     <div class="author__meta">
                       <p class="small" style="margin-bottom: 0;"><strong>Chiara</strong></p>
                       <p class="small">Percorsi energetici & Reiki</p>
@@ -414,9 +411,7 @@
               <!-- Foto -->
               <div class="about-mini__photo">
                 <div class="card">
-                  <div class="hero__photo-placeholder">
-                    <!-- foto coach / ritratto morbido -->
-                  </div>
+                  <div class="hero__photo-placeholder" aria-hidden="true"></div>
                 </div>
               </div>
 

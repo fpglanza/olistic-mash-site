@@ -2,7 +2,7 @@
 <html lang="it">
   <head>
     <meta charset="utf-8" />
-    <title>Eventi & Gruppi – Coach Olistica</title>
+    <title>Eventi & gruppi – Coach Olistica</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="assets/css/base.css" />
   </head>
@@ -11,43 +11,66 @@
       <header class="site-header">
         <div class="container nav">
           <a href="index.html" class="nav__logo">Logo</a>
-          <nav class="nav__links">
-            <a class="nav__link" href="chi-sono.html">Chi sono</a>
-            <a class="nav__link" href="consulenze-unity.html">Consulenze</a>
-            <a class="nav__link" href="eventi-gruppi.html">Eventi & Gruppi</a>
-            <a class="nav__link" href="percorsi-reiki.html">Percorsi & Reiki</a>
-            <a class="nav__link" href="contatti.html">Contatti</a>
+
+          <button
+            class="nav__toggle"
+            type="button"
+            aria-label="Apri il menu di navigazione"
+            aria-expanded="false"
+          >
+            <span class="nav__toggle-lines">
+              <span class="nav__toggle-line"></span>
+              <span class="nav__toggle-line"></span>
+              <span class="nav__toggle-line"></span>
+            </span>
+          </button>
+
+          <nav aria-label="Navigazione principale">
+            <ul class="nav__links">
+              <li><a class="nav__link" href="index.html#hero">Home</a></li>
+              <li><a class="nav__link" href="chi-sono.html">Chi sono</a></li>
+              <li><a class="nav__link" href="consulenze-unity.html">Consulenze</a></li>
+              <li><a class="nav__link" href="eventi-gruppi.html">Eventi & Gruppi</a></li>
+              <li><a class="nav__link" href="percorsi-reiki.html">Percorsi & Reiki</a></li>
+              <li><a class="nav__link" href="contatti.html">Contatti</a></li>
+            </ul>
           </nav>
         </div>
       </header>
 
       <main class="site-main">
         <!-- HERO -->
-        <section class="section hero">
+        <section class="section section--hero hero" id="eventi-hero">
           <div class="container">
-            <h1 class="hero__title">Eventi, cerchi e armonizzazioni</h1>
-            <p class="section__subtitle">
-              Esperienze condivise di energia, presenza e connessione.
+            <h1 class="hero__title">Eventi, cerchi e armonizzazioni di gruppo</h1>
+            <p class="lead">
+              Spazi condivisi per lavorare su energia, presenza e connessione in
+              un contesto di gruppo.
             </p>
           </div>
         </section>
 
         <!-- ARMONIZZAZIONI DI GRUPPO -->
-        <section class="section">
+        <section class="section" id="armonizzazioni-gruppo">
           <div class="container">
             <h2 class="section__title">Armonizzazioni di gruppo</h2>
-            <p>Testo breve su cos’è e come funziona (placeholder).</p>
+            <p>
+              Testo breve su cos’è e come funziona: come si svolgono, cosa si fa,
+              cosa si porta a casa da ogni incontro.
+            </p>
           </div>
         </section>
 
-        <!-- CALENDARIO EVENTI (data-driven) -->
-        <section class="section">
+        <!-- CALENDARIO EVENTI -->
+        <section class="section" id="calendario-eventi">
           <div class="container">
             <h2 class="section__title">Calendario eventi</h2>
 
-            <!-- Placeholder per filtri futuri -->
-            <div class="section__filters">
-              <p>Filtri (tipo evento, città, data) – placeholder.</p>
+            <div class="card" style="margin-bottom: var(--space-24);">
+              <p class="small">
+                Filtri (tipo evento, città, data) – placeholder per fase 2
+                (verranno gestiti via JS/JSON).
+              </p>
             </div>
 
             <div id="events-list" class="grid grid--3">
@@ -57,20 +80,35 @@
         </section>
 
         <!-- METODOLOGIA EVENTI -->
-        <section class="section">
+        <section class="section" id="metodologia-eventi">
           <div class="container">
             <h2 class="section__title">Cosa facciamo durante gli eventi</h2>
-            <p>Testo placeholder su metodologia, cosa si sente e cosa si porta a casa.</p>
+            <p>
+              Testo placeholder sulla metodologia: come si apre il cerchio, come
+              si lavora sull’energia, cosa succede a livello pratico ed emotivo.
+            </p>
           </div>
         </section>
 
         <!-- CTA FINALE -->
-        <section class="section">
+        <section class="section section--cta-final" id="eventi-cta-finale">
           <div class="container">
-            <h2 class="section__title">Unisciti al prossimo cerchio</h2>
-            <a class="btn" data-wa-key="eventi_generic">
-              Unisciti al prossimo cerchio → WhatsApp
-            </a>
+            <div class="card cta-final__card">
+              <div class="cta-final__content text-center">
+                <h2 class="section__title">Unisciti al prossimo cerchio</h2>
+                <p class="section__subtitle">
+                  Scrivimi su WhatsApp per sapere quali sono i prossimi eventi in
+                  programma e quale può fare al caso tuo.
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-primary"
+                  data-wa-key="eventi_generic"
+                >
+                  Unisciti al prossimo cerchio → WhatsApp
+                </a>
+              </div>
+            </div>
           </div>
         </section>
       </main>

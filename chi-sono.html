@@ -11,93 +11,157 @@
       <header class="site-header">
         <div class="container nav">
           <a href="index.html" class="nav__logo">Logo</a>
-          <nav class="nav__links">
-            <a class="nav__link" href="chi-sono.html">Chi sono</a>
-            <a class="nav__link" href="consulenze-unity.html">Consulenze</a>
-            <a class="nav__link" href="eventi-gruppi.html">Eventi & Gruppi</a>
-            <a class="nav__link" href="percorsi-reiki.html">Percorsi & Reiki</a>
-            <a class="nav__link" href="contatti.html">Contatti</a>
+
+          <button
+            class="nav__toggle"
+            type="button"
+            aria-label="Apri il menu di navigazione"
+            aria-expanded="false"
+          >
+            <span class="nav__toggle-lines">
+              <span class="nav__toggle-line"></span>
+              <span class="nav__toggle-line"></span>
+              <span class="nav__toggle-line"></span>
+            </span>
+          </button>
+
+          <nav aria-label="Navigazione principale">
+            <ul class="nav__links">
+              <li><a class="nav__link" href="index.html#hero">Home</a></li>
+              <li><a class="nav__link" href="chi-sono.html">Chi sono</a></li>
+              <li><a class="nav__link" href="consulenze-unity.html">Consulenze</a></li>
+              <li><a class="nav__link" href="eventi-gruppi.html">Eventi & Gruppi</a></li>
+              <li><a class="nav__link" href="percorsi-reiki.html">Percorsi & Reiki</a></li>
+              <li><a class="nav__link" href="contatti.html">Contatti</a></li>
+            </ul>
           </nav>
         </div>
       </header>
 
+
       <main class="site-main">
         <!-- HERO -->
-        <section class="section hero">
-          <div class="container hero__layout hero__layout--2cols">
-            <div class="card">
-              <p>Foto coach (placeholder)</p>
-            </div>
-            <div>
-              <h1 class="hero__title">
-                Ciao, sono [Nome]. Ti accompagno a riconnetterti con te stessa.
-              </h1>
+        <section class="section section--hero hero" id="chi-sono-hero">
+          <div class="container">
+            <div class="hero__layout hero__layout--2cols">
+              <div class="hero__media">
+                <div class="card hero__image-card">
+                  <div class="hero__photo-placeholder" aria-hidden="true"></div>
+                  <p class="small hero__badge">
+                    Coach olistica · Reiki · Percorsi energetici
+                  </p>
+                </div>
+              </div>
+
+              <div class="hero__content">
+                <h1 class="hero__title">
+                  Ciao, sono [Nome]. Ti accompagno a riconnetterti con te stessa.
+                </h1>
+                <p class="lead">
+                  Creo spazi sicuri in cui puoi ascoltarti, lasciare andare ciò che
+                  non ti appartiene più e tornare a sentire il tuo centro.
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-primary"
+                  data-wa-key="chi_sono_generic"
+                >
+                  Scrivimi su WhatsApp
+                </a>
+              </div>
             </div>
           </div>
         </section>
 
         <!-- LA MIA STORIA -->
-        <section class="section">
+        <section class="section" id="la-mia-storia">
           <div class="container">
             <h2 class="section__title">La mia storia</h2>
             <div class="grid grid--3">
               <article class="card">
-                <h3>Punto di rottura</h3>
-                <p>Testo placeholder.</p>
+                <h3>Il punto di rottura</h3>
+                <p>
+                  Testo placeholder: il momento in cui hai capito che qualcosa non
+                  era più sostenibile e hai iniziato a cercare altro.
+                </p>
               </article>
               <article class="card">
-                <h3>Percorso di trasformazione</h3>
-                <p>Testo placeholder.</p>
+                <h3>Il percorso di trasformazione</h3>
+                <p>
+                  Testo placeholder: le tappe principali del tuo processo di
+                  cambiamento, studi, percorsi personali, incontri importanti.
+                </p>
               </article>
               <article class="card">
                 <h3>Perché oggi accompagno altre persone</h3>
-                <p>Testo placeholder.</p>
+                <p>
+                  Testo placeholder: cosa ti muove oggi nell’accompagnare altre
+                  persone nel loro cammino.
+                </p>
               </article>
             </div>
           </div>
         </section>
 
         <!-- LA MIA MISSIONE -->
-        <section class="section">
+        <section class="section" id="missione">
           <div class="container">
             <h2 class="section__title">La mia missione</h2>
-            <p>Testo placeholder su centratura, presenza, energia, integrità.</p>
+            <p>
+              Testo placeholder su centratura, presenza, energia, integrità: cosa
+              desideri che le persone portino a casa da un percorso con te.
+            </p>
           </div>
         </section>
 
         <!-- APPROCCIO OLISTICO -->
-        <section class="section">
+        <section class="section" id="approccio-olistico">
           <div class="container">
             <h2 class="section__title">Il mio approccio olistico</h2>
-            <div class="grid grid--3">
-              <article class="card"><h3>Pilastro 1</h3><p>Placeholder.</p></article>
-              <article class="card"><h3>Pilastro 2</h3><p>Placeholder.</p></article>
-              <article class="card"><h3>Pilastro 3</h3><p>Placeholder.</p></article>
+            <div class="grid grid--4">
+              <article class="card">
+                <h3>Corpo</h3>
+                <p>Come lavori con le sensazioni fisiche e il radicamento.</p>
+              </article>
+              <article class="card">
+                <h3>Emozioni</h3>
+                <p>Come accogli e accompagni le emozioni che emergono.</p>
+              </article>
+              <article class="card">
+                <h3>Energia</h3>
+                <p>Come integri il lavoro energetico nel percorso.</p>
+              </article>
+              <article class="card">
+                <h3>Consapevolezza</h3>
+                <p>Come supporti l’integrazione nella vita quotidiana.</p>
+              </article>
             </div>
           </div>
         </section>
 
         <!-- CERTIFICAZIONI & FORMAZIONE -->
-        <section class="section">
+        <section class="section" id="certificazioni">
           <div class="container">
-            <h2 class="section__title">Certificazioni & Formazione</h2>
+            <h2 class="section__title">Certificazioni & formazione</h2>
             <div class="grid grid--3">
               <article class="card">
                 <h3>Reiki</h3>
                 <ul>
-                  <li>Formazione Reiki livello 1 (placeholder)</li>
+                  <li>Reiki 1° livello – [Scuola / anno]</li>
+                  <li>Reiki 2° livello – [Scuola / anno]</li>
                 </ul>
               </article>
               <article class="card">
                 <h3>Counseling</h3>
                 <ul>
-                  <li>Percorso counseling (placeholder)</li>
+                  <li>Percorso di counseling – [Istituto / anno]</li>
                 </ul>
               </article>
               <article class="card">
                 <h3>Formazioni spirituali</h3>
                 <ul>
-                  <li>Formazione 1 (placeholder)</li>
+                  <li>Formazione X – [Scuola / anno]</li>
+                  <li>Workshop & master – [Dettagli sintetici]</li>
                 </ul>
               </article>
             </div>
@@ -105,38 +169,42 @@
         </section>
 
         <!-- COME POSSO AIUTARTI -->
-        <section class="section">
+        <section class="section" id="come-posso-aiutarti">
           <div class="container">
-            <h2 class="section__title">Come posso aiutarti</h2>
+            <h2 class="section__title">Come posso aiutarti oggi</h2>
             <div class="grid grid--3">
               <article class="card">
                 <h3>Unity Connection</h3>
-                <p>Mini preview.</p>
+                <p>Percorso individuale per ritrovare presenza e centratura.</p>
+                <a href="consulenze-unity.html" class="btn btn-ghost mt-24">
+                  Scopri il percorso
+                </a>
               </article>
               <article class="card">
-                <h3>Eventi</h3>
-                <p>Mini preview.</p>
+                <h3>Eventi & cerchi</h3>
+                <p>Spazi di gruppo per lavorare insieme su energia e presenza.</p>
+                <a href="eventi-gruppi.html" class="btn btn-ghost mt-24">
+                  Vedi gli eventi
+                </a>
               </article>
               <article class="card">
-                <h3>Reiki</h3>
-                <p>Mini preview.</p>
+                <h3>Percorsi energetici & Reiki</h3>
+                <p>Trattamenti e percorsi per armonizzare i tuoi livelli energetici.</p>
+                <a href="percorsi-reiki.html" class="btn btn-ghost mt-24">
+                  Scopri di più
+                </a>
               </article>
             </div>
-            <div style="margin-top: 1.5rem;">
-              <a class="btn" data-wa-key="chi_sono_generic">
+
+            <div class="mt-32">
+              <a
+                href="#"
+                class="btn btn-primary"
+                data-wa-key="chi_sono_generic"
+              >
                 Scrivimi su WhatsApp
               </a>
             </div>
-          </div>
-        </section>
-
-        <!-- CTA FINALE -->
-        <section class="section">
-          <div class="container">
-            <h2 class="section__title">Pronta a fare il prossimo passo?</h2>
-            <a class="btn" data-wa-key="chi_sono_generic">
-              Scrivimi su WhatsApp
-            </a>
           </div>
         </section>
       </main>

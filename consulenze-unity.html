@@ -11,137 +11,220 @@
       <header class="site-header">
         <div class="container nav">
           <a href="index.html" class="nav__logo">Logo</a>
-          <nav class="nav__links">
-            <a class="nav__link" href="chi-sono.html">Chi sono</a>
-            <a class="nav__link" href="consulenze-unity.html">Consulenze</a>
-            <a class="nav__link" href="eventi-gruppi.html">Eventi & Gruppi</a>
-            <a class="nav__link" href="percorsi-reiki.html">Percorsi & Reiki</a>
-            <a class="nav__link" href="contatti.html">Contatti</a>
+
+          <button
+            class="nav__toggle"
+            type="button"
+            aria-label="Apri il menu di navigazione"
+            aria-expanded="false"
+          >
+            <span class="nav__toggle-lines">
+              <span class="nav__toggle-line"></span>
+              <span class="nav__toggle-line"></span>
+              <span class="nav__toggle-line"></span>
+            </span>
+          </button>
+
+          <nav aria-label="Navigazione principale">
+            <ul class="nav__links">
+              <li><a class="nav__link" href="index.html#hero">Home</a></li>
+              <li><a class="nav__link" href="chi-sono.html">Chi sono</a></li>
+              <li><a class="nav__link" href="consulenze-unity.html">Consulenze</a></li>
+              <li><a class="nav__link" href="eventi-gruppi.html">Eventi & Gruppi</a></li>
+              <li><a class="nav__link" href="percorsi-reiki.html">Percorsi & Reiki</a></li>
+              <li><a class="nav__link" href="contatti.html">Contatti</a></li>
+            </ul>
           </nav>
         </div>
       </header>
 
       <main class="site-main">
-
         <!-- HERO -->
-        <section class="section hero">
+        <section class="section section--hero hero" id="unity-hero">
           <div class="container">
-            <h1 class="hero__title">Unity Connection</h1>
-            <p class="section__subtitle">
-              La consulenza 1:1 per ritrovare presenza e allineamento profondo.
-            </p>
-            <a class="btn" data-wa-key="unity_info">
-              Ciao! Vorrei informazioni su Unity Connection.
-            </a>
+            <div class="hero__layout hero__layout--2cols">
+              <div class="hero__content">
+                <h1 class="hero__title">Unity Connection</h1>
+                <p class="lead">
+                  La consulenza 1:1 per ritrovare presenza, allineamento profondo
+                  e una relazione più autentica con te stessa.
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-primary"
+                  data-wa-key="unity_info"
+                >
+                  Ciao! Vorrei informazioni su Unity Connection
+                </a>
+              </div>
+
+              <div class="hero__media">
+                <div class="card hero__image-card">
+                  <div
+                    class="hero__photo-placeholder"
+                    aria-hidden="true"
+                  ></div>
+                  <p class="small hero__badge">
+                    Percorso individuale · Online e in presenza
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
         <!-- PER CHI È -->
-        <section class="section">
+        <section class="section" id="per-chi-e">
           <div class="container">
-            <h2 class="section__title">Per chi è</h2>
+            <h2 class="section__title">Per chi è Unity Connection</h2>
             <ul>
-              <li>Bullet 1 (placeholder)</li>
-              <li>Bullet 2 (placeholder)</li>
-              <li>Bullet 3 (placeholder)</li>
-              <li>Bullet 4 (placeholder)</li>
-              <li>Bullet 5 (placeholder)</li>
+              <li>Ti senti disconnessa dal tuo corpo e dalle tue emozioni.</li>
+              <li>Hai la sensazione di essere sempre “in testa” e mai davvero presente.</li>
+              <li>Stai attraversando un momento di cambiamento e senti il bisogno di supporto.</li>
+              <li>Vuoi integrare il lavoro energetico con strumenti pratici.</li>
+              <li>Senti che è il momento di rimettere te al centro.</li>
             </ul>
           </div>
         </section>
 
         <!-- COSA FAREMO INSIEME -->
-        <section class="section">
+        <section class="section" id="cosa-faremo">
           <div class="container">
             <h2 class="section__title">Cosa faremo insieme</h2>
             <ol>
-              <li>Ascolto</li>
-              <li>Connessione energetica</li>
-              <li>Armonizzazione</li>
-              <li>Integrazione</li>
+              <li>Ascolto di ciò che stai vivendo e del tuo bisogno del momento.</li>
+              <li>Connessione energetica e lavoro sul campo sottile.</li>
+              <li>Armonizzazione di ciò che emerge.</li>
+              <li>Integrazione con indicazioni e strumenti per il quotidiano.</li>
             </ol>
           </div>
         </section>
 
         <!-- COSA OTTIENI -->
-        <section class="section">
+        <section class="section" id="cosa-ottieni">
           <div class="container">
-            <h2 class="section__title">Cosa ottieni</h2>
+            <h2 class="section__title">Cosa puoi ottenere dal percorso</h2>
             <ul>
-              <li>Risultato 1 (placeholder)</li>
-              <li>Risultato 2 (placeholder)</li>
-              <li>Risultato 3 (placeholder)</li>
-              <li>Risultato 4 (placeholder)</li>
+              <li>Maggior presenza nel corpo e nelle sensazioni.</li>
+              <li>Più chiarezza rispetto a dinamiche e scelte che stai affrontando.</li>
+              <li>Un senso di radicamento e centratura più stabile.</li>
+              <li>Strumenti concreti per continuare il lavoro anche dopo la sessione.</li>
             </ul>
           </div>
         </section>
 
         <!-- COME FUNZIONA -->
-        <section class="section">
+        <section class="section" id="come-funziona">
           <div class="container">
-            <h2 class="section__title">Come funziona</h2>
-            <ul>
-              <li>Durata: placeholder</li>
-              <li>Online / in presenza: placeholder</li>
-              <li>Frequenza: placeholder</li>
-              <li>Materiali inclusi: placeholder</li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- TESTIMONIANZE SPECIFICHE -->
-        <section class="section">
-          <div class="container">
-            <h2 class="section__title">Testimonianze</h2>
+            <h2 class="section__title">Come funziona in pratica</h2>
             <div class="grid grid--2">
               <div class="card">
-                <p>Video testimonianza (placeholder)</p>
+                <h3>Dettagli della sessione</h3>
+                <ul>
+                  <li>Durata: [es. 60 / 90 minuti].</li>
+                  <li>Modalità: online (Zoom) e/o in presenza.</li>
+                  <li>Frequenza: da definire insieme in base al momento.</li>
+                </ul>
               </div>
               <div class="card">
+                <h3>Cosa è incluso</h3>
                 <ul>
-                  <li>Testimonianza 1 (placeholder)</li>
-                  <li>Testimonianza 2 (placeholder)</li>
+                  <li>Spazio di ascolto dedicato.</li>
+                  <li>Lavoro energetico guidato.</li>
+                  <li>Indicazioni per l’integrazione nel quotidiano.</li>
+                  <li>Eventuale follow-up breve via messaggio.</li>
                 </ul>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- FAQ -->
-        <section class="section">
+        <!-- TESTIMONIANZE SPECIFICHE -->
+        <section class="section section--testimonials" id="unity-testimonianze">
           <div class="container">
-            <h2 class="section__title">FAQ</h2>
+            <h2 class="section__title">Cosa dicono di Unity Connection</h2>
+            <div class="grid grid--2">
+              <article class="card card--video">
+                <div class="video-placeholder">
+                  <div class="video-placeholder__thumb"></div>
+                  <button
+                    type="button"
+                    class="video-placeholder__play"
+                    aria-label="Guarda la video testimonianza"
+                  >
+                    ▶
+                  </button>
+                </div>
+                <p class="small" style="margin-top: var(--space-12);">
+                  Video testimonianza – percorso di 4 sessioni.
+                </p>
+              </article>
+
+              <div class="testimonial-list">
+                <article class="card card--testimonial">
+                  <p class="quote">
+                    “Ogni sessione mi ha aiutata a sciogliere un pezzo e a
+                    sentirmi più presente nella mia vita di tutti i giorni.”
+                  </p>
+                  <div class="author">
+                    <div class="author__avatar"></div>
+                    <div class="author__meta">
+                      <p class="small" style="margin-bottom: 0;"><strong>Laura</strong></p>
+                      <p class="small">Percorso Unity Connection</p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section" id="faq">
+          <div class="container">
+            <h2 class="section__title">Domande frequenti</h2>
             <div class="grid grid--2">
               <article class="card">
-                <h3>Domanda 1</h3>
-                <p>Risposta placeholder.</p>
+                <h3>Quante sessioni servono?</h3>
+                <p>Placeholder: risposta sintetica.</p>
               </article>
               <article class="card">
-                <h3>Domanda 2</h3>
-                <p>Risposta placeholder.</p>
+                <h3>Posso iniziare anche se non ho mai fatto lavoro energetico?</h3>
+                <p>Placeholder: risposta sintetica.</p>
               </article>
               <article class="card">
-                <h3>Domanda 3</h3>
-                <p>Risposta placeholder.</p>
+                <h3>Cosa succede dopo il primo incontro?</h3>
+                <p>Placeholder: risposta sintetica.</p>
               </article>
               <article class="card">
-                <h3>Domanda 4</h3>
-                <p>Risposta placeholder.</p>
+                <h3>Come avviene il pagamento?</h3>
+                <p>Placeholder: risposta sintetica.</p>
               </article>
             </div>
           </div>
         </section>
 
         <!-- CTA FINALE -->
-        <section class="section">
+        <section class="section section--cta-final" id="unity-cta-finale">
           <div class="container">
-            <h2 class="section__title">Prenota la tua sessione</h2>
-            <a class="btn" data-wa-key="unity_booking">
-              Prenota la tua sessione su WhatsApp
-            </a>
+            <div class="card cta-final__card">
+              <div class="cta-final__content text-center">
+                <h2 class="section__title">Pronta a iniziare Unity Connection?</h2>
+                <p class="section__subtitle">
+                  Scrivimi su WhatsApp per raccontarmi cosa stai vivendo e capire
+                  insieme se questo percorso è il passo giusto per te.
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-primary"
+                  data-wa-key="unity_booking"
+                >
+                  Prenota la tua sessione su WhatsApp
+                </a>
+              </div>
+            </div>
           </div>
         </section>
-
       </main>
 
       <footer class="site-footer">

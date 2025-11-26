@@ -8,26 +8,45 @@
   </head>
   <body>
     <div class="site">
+      <!-- HEADER -->
       <header class="site-header">
         <div class="container nav">
           <a href="index.html" class="nav__logo">Logo</a>
-          <nav class="nav__links">
-            <a class="nav__link" href="chi-sono.html">Chi sono</a>
-            <a class="nav__link" href="consulenze-unity.html">Consulenze</a>
-            <a class="nav__link" href="eventi-gruppi.html">Eventi & Gruppi</a>
-            <a class="nav__link" href="percorsi-reiki.html">Percorsi & Reiki</a>
-            <a class="nav__link" href="contatti.html">Contatti</a>
+
+          <button
+            class="nav__toggle"
+            type="button"
+            aria-label="Apri il menu di navigazione"
+            aria-expanded="false"
+          >
+            <span class="nav__toggle-lines">
+              <span class="nav__toggle-line"></span>
+              <span class="nav__toggle-line"></span>
+              <span class="nav__toggle-line"></span>
+            </span>
+          </button>
+
+          <nav aria-label="Navigazione principale">
+            <ul class="nav__links">
+              <li><a class="nav__link" href="index.html#hero">Home</a></li>
+              <li><a class="nav__link" href="chi-sono.html">Chi sono</a></li>
+              <li><a class="nav__link" href="consulenze-unity.html">Consulenze</a></li>
+              <li><a class="nav__link" href="eventi-gruppi.html">Eventi & Gruppi</a></li>
+              <li><a class="nav__link" href="percorsi-reiki.html">Percorsi & Reiki</a></li>
+              <li><a class="nav__link" href="contatti.html">Contatti</a></li>
+            </ul>
           </nav>
         </div>
       </header>
 
       <main class="site-main">
         <!-- HERO -->
-        <section class="section hero">
+        <section class="section section--hero hero">
           <div class="container">
             <h1 class="hero__title">Contattami</h1>
-            <p class="section__subtitle">
-              Sono qui per accompagnarti nel tuo percorso.
+            <p class="lead">
+              Sono qui per accompagnarti nel tuo percorso. Scrivimi e raccontami
+              cosa stai vivendo: insieme capiremo se e come posso esserti di aiuto.
             </p>
           </div>
         </section>
@@ -36,22 +55,31 @@
         <section class="section">
           <div class="container">
             <h2 class="section__title">Contatti diretti</h2>
+
             <div class="card">
+              <p><strong>WhatsApp</strong></p>
               <p>
-                <strong>WhatsApp:</strong>
-              </p>
-              <p>
-                <a class="btn" data-wa-key="contatti_generic">
+                <a
+                  href="#"
+                  class="btn btn-primary"
+                  data-wa-key="contatti_generic"
+                >
                   Scrivimi su WhatsApp
                 </a>
               </p>
+
+              <p style="margin-top: var(--space-20);"><strong>Email</strong></p>
               <p>
-                <strong>Email:</strong>
-                <a href="mailto:email@esempio.com">email@esempio.com</a>
+                <a href="mailto:email@esempio.com">
+                  email@esempio.com
+                </a>
               </p>
+
+              <p style="margin-top: var(--space-20);"><strong>Social</strong></p>
               <p>
-                <strong>Social:</strong>
-                Link ai social (placeholder)
+                <!-- placeholder social -->
+                <a href="#" aria-label="Profilo Instagram (placeholder)">Instagram</a> ·
+                <a href="#" aria-label="Profilo Facebook (placeholder)">Facebook</a>
               </p>
             </div>
           </div>
@@ -64,35 +92,66 @@
             <div class="grid grid--2">
               <article class="card">
                 <h3>Che tipi di sessione offri?</h3>
-                <p>Risposta placeholder.</p>
+                <p>
+                  Lavoro sia in sessioni individuali (Unity Connection) che in
+                  percorsi energetici e armonizzazioni di gruppo, online e in presenza.
+                </p>
               </article>
+
               <article class="card">
                 <h3>Quali sono i costi indicativi?</h3>
-                <p>Risposta placeholder.</p>
+                <p>
+                  I costi variano in base al tipo di percorso e alla durata.
+                  Scrivimi su WhatsApp e ti mando tutte le informazioni aggiornate.
+                </p>
               </article>
+
               <article class="card">
                 <h3>Quali sono le tue disponibilità?</h3>
-                <p>Risposta placeholder.</p>
+                <p>
+                  Le sessioni individuali si svolgono in giorni e fasce orarie
+                  specifiche. Possiamo trovare insieme l’orario più sostenibile per te.
+                </p>
               </article>
+
               <article class="card">
                 <h3>Come avviene il pagamento?</h3>
-                <p>Risposta placeholder.</p>
+                <p>
+                  Il pagamento può avvenire tramite bonifico o altri metodi
+                  concordati insieme prima dell’inizio del percorso.
+                </p>
               </article>
             </div>
           </div>
         </section>
 
         <!-- CTA FINALE -->
-        <section class="section">
+        <section class="section section--cta-final">
           <div class="container">
-            <h2 class="section__title">Scrivimi ora su WhatsApp</h2>
-            <a class="btn" data-wa-key="contatti_generic">
-              Scrivimi ora su WhatsApp
-            </a>
+            <div class="card cta-final__card">
+              <div class="cta-final__content text-center">
+                <h2 class="section__title">Scrivimi ora su WhatsApp</h2>
+                <p class="section__subtitle">
+                  Nessun impegno: il primo contatto è uno spazio per conoscerci,
+                  fare domande e capire se siamo in risonanza.
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-primary"
+                  data-wa-key="contatti_generic"
+                >
+                  Scrivimi ora su WhatsApp
+                </a>
+                <p class="small" style="margin-top: var(--space-12); color: var(--color-gray-500);">
+                  Risposta entro 24 ore, dal lunedì al venerdì.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
       </main>
 
+      <!-- FOOTER -->
       <footer class="site-footer">
         <div class="container">
           <p>© 2025 Coach Olistica – Tutti i diritti riservati.</p>

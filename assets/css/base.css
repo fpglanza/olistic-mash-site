@@ -43,21 +43,21 @@
   --space-64: 64px;
   --space-80: 80px;
 
-  /* ALTRI TOKEN */
+  /* RADIUS & SHADOWS */
   --radius-xs: 8px;
   --radius-sm: 12px;
   --radius-md: 16px;
   --radius-lg: 20px;
   --radius-pill: 999px;
 
-  --shadow-soft: 0 8px 24px rgba(26, 26, 26, 0.06);
+  --shadow-soft: 0 8px 24px rgba(26, 26, 26, 0.08);
   --shadow-subtle: 0 4px 12px rgba(26, 26, 26, 0.04);
 
   --container-max-width: 1120px;
 }
 
 /* =========================
-   RESET LEGGERO / GLOBALI
+   RESET / GLOBALI
    ========================= */
 
 *,
@@ -77,6 +77,7 @@ body {
   line-height: 1.6;
   color: var(--color-black);
   background-color: var(--color-gray-100);
+  overflow-x: hidden;
 }
 
 img {
@@ -165,13 +166,16 @@ p {
   flex-direction: column;
 }
 
+.site-main {
+  flex: 1;
+}
+
 .site-header {
   background-color: var(--color-white);
   border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-}
-
-.site-main {
-  flex: 1;
+  position: sticky;
+  top: 0;
+  z-index: 20;
 }
 
 .site-footer {
@@ -203,6 +207,14 @@ p {
   padding: var(--space-64) 0 var(--space-48);
 }
 
+.section--testimonials {
+  background-color: var(--color-gray-100);
+}
+
+.section--cta-final {
+  background-color: var(--color-primary-light);
+}
+
 @media (min-width: 768px) {
   .section {
     padding: var(--space-80) 0;
@@ -224,12 +236,18 @@ p {
    NAVBAR / HEADER
    ========================= */
 
+.site-header {
+  background-color: var(--color-white);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-16);
   padding: var(--space-16) 0;
+  position: relative;
 }
 
 .nav__logo {
@@ -238,17 +256,86 @@ p {
   font-size: 20px;
 }
 
-.nav__links {
-  display: flex;
+/* Toggle (hamburger) – mobile */
+.nav__toggle {
+  display: inline-flex;
   align-items: center;
-  gap: var(--space-12);
-  flex-wrap: wrap;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-gray-300);
+  background-color: var(--color-white);
+  cursor: pointer;
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.nav__toggle:hover {
+  background-color: var(--color-gray-100);
+  box-shadow: var(--shadow-subtle);
+}
+
+.nav__toggle-line {
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background-color: var(--color-black);
+  display: block;
+  transition:
+    transform 0.18s ease,
+    opacity 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.nav__toggle-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Stato aperto – animazione icona */
+.nav.nav--open .nav__toggle-line:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.nav.nav--open .nav__toggle-line:nth-child(2) {
+  opacity: 0;
+}
+.nav.nav--open .nav__toggle-line:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Menu link – mobile */
+.nav__links {
+  list-style: none;
+  margin: 0;
+  padding: var(--space-12) var(--space-16) var(--space-16);
+  display: none;
+  flex-direction: column;
+  gap: var(--space-8);
+  position: absolute;
+  top: 100%;
+  right: var(--space-16);
+  left: var(--space-16);
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  z-index: 20;
+}
+
+.nav.nav--open .nav__links {
+  display: flex;
 }
 
 .nav__link {
-  font-size: 14px;
+  display: block;
+  font-size: 15px;
   color: var(--color-gray-700);
-  padding: 6px 10px;
+  padding: 8px 10px;
   border-radius: var(--radius-pill);
   transition: background-color 0.18s ease, color 0.18s ease;
 }
@@ -258,8 +345,51 @@ p {
   color: var(--color-primary-dark);
 }
 
+/* Desktop */
+@media (min-width: 768px) {
+  .nav__toggle {
+    display: none;
+  }
+
+  .nav {
+    align-items: center;
+  }
+
+  .nav__links {
+    position: static;
+    display: flex !important;
+    flex-direction: row;
+    gap: var(--space-12);
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+  }
+
+  .nav__link {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+}
+
+/* MOBILE header compaction */
+@media (max-width: 767px) {
+  .nav {
+    justify-content: flex-start;
+    gap: var(--space-12); /* Logo and hamburger closer together */
+  }
+
+  .nav__logo {
+    margin-left: var(--space-8); /* small breathing space from viewport edge */
+  }
+
+  nav[aria-label="Navigazione principale"] {
+    margin-left: auto; /* menu container still aligns right */
+  }
+}
+
 /* =========================
-   HERO LAYOUT
+   HERO
    ========================= */
 
 .hero {
@@ -279,6 +409,7 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-12);
+  margin-top: var(--space-20);
 }
 
 .hero__photo-placeholder {
@@ -288,7 +419,7 @@ p {
   background: linear-gradient(
     135deg,
     var(--color-primary-light),
-    rgba(255, 255, 255, 0.85)
+    rgba(255, 255, 255, 0.9)
   );
 }
 
@@ -296,6 +427,10 @@ p {
   margin-top: var(--space-12);
   font-size: 14px;
   color: var(--color-gray-700);
+}
+
+.hero__image-card {
+  box-shadow: var(--shadow-soft);
 }
 
 @media (min-width: 768px) {
@@ -312,6 +447,10 @@ p {
 .grid {
   display: grid;
   gap: var(--space-20);
+}
+
+.grid--1 {
+  grid-template-columns: 1fr;
 }
 
 .grid--2 {
@@ -338,7 +477,6 @@ p {
   }
 }
 
-/* Utilities minime */
 .text-center {
   text-align: center;
 }
@@ -374,7 +512,6 @@ p {
   text-decoration: none;
 }
 
-/* Bottone primario WhatsApp */
 .btn-primary {
   background-color: var(--color-primary);
   color: var(--color-white);
@@ -398,17 +535,6 @@ p {
   outline-offset: 2px;
 }
 
-/* Icona WhatsApp nel bottone (mantiene il verde) */
-.btn__icon {
-  width: 18px;
-  height: 18px;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Bottone secondario */
 .btn-secondary {
   background-color: var(--color-white);
   color: var(--color-primary);
@@ -424,12 +550,22 @@ p {
   transform: scale(0.98);
 }
 
-/* Variante ghost/link */
 .btn-ghost {
   background-color: transparent;
   border-color: transparent;
   color: var(--color-primary-dark);
   box-shadow: none;
+  padding-left: 0;
+}
+
+/* Icona WhatsApp nel bottone */
+.btn__icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* =========================
@@ -449,13 +585,8 @@ p {
 }
 
 /* Card testimonial */
-.card--testimonial {
-  position: relative;
-  padding-top: var(--space-24);
-}
-
 .card--testimonial .quote {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.5;
   color: var(--color-black);
   margin-bottom: var(--space-20);
@@ -467,44 +598,158 @@ p {
   gap: var(--space-12);
 }
 
-.card--testimonial .author__avatar {
+.author__avatar {
   width: 40px;
   height: 40px;
   border-radius: 999px;
   background-color: var(--color-gray-300);
 }
 
+/* Card video */
+.card--video {
+  display: flex;
+  flex-direction: column;
+}
+
+.video-placeholder {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.video-placeholder__thumb {
+  width: 100%;
+  padding-top: 56%;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-light),
+    rgba(0, 0, 0, 0.03)
+  );
+}
+
+.video-placeholder__play {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: var(--color-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
 /* =========================
-   ESEMPI COMPONENTI
+   BADGES
    ========================= */
-/*
-Esempio HTML bottone primario WhatsApp:
 
-<a class="btn btn-primary" data-wa-key="home_general">
-  <span class="btn__icon">
-    <!-- icona WhatsApp SVG o img -->
-  </span>
-  Prenota ora su WhatsApp
-</a>
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 500;
+}
 
-Esempio HTML bottone secondario:
+.badge--primary-soft {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+}
 
-<a class="btn btn-secondary" href="#home-services">
-  Scopri i servizi
-</a>
+.badge--warning-soft {
+  background-color: rgba(245, 166, 35, 0.12);
+  color: var(--color-warning);
+}
 
-Esempio HTML card generica:
+/* =========================
+   SERVICE CARDS / SEZIONI
+   ========================= */
 
-<article class="card">
-  <h3>Connessione</h3>
-  <p>Micro-copy sulla connessione.</p>
-</article>
+.service-card__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background-color: var(--color-primary-light);
+  margin-bottom: var(--space-16);
+}
 
-Esempio container sezione:
+/* Unity Connection list */
+.unity-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-20) 0 0;
+}
 
-<section class="section section--hero">
-  <div class="container">
-    <!-- contenuto -->
-  </div>
-</section>
-*/
+.unity-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-8);
+  margin-bottom: var(--space-8);
+}
+
+.unity-list__icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 4px;
+  border-radius: 999px;
+  border: 2px solid var(--color-primary);
+}
+
+/* Event cards */
+.event-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-12);
+}
+
+.event-card__date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  padding: 6px 0;
+  border-radius: var(--radius-md);
+  background-color: var(--color-gray-100);
+  font-family: var(--font-heading);
+}
+
+.event-card__day {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.event-card__month {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--color-gray-500);
+}
+
+.event-card__meta {
+  color: var(--color-gray-500);
+}
+
+/* Testimonials layout */
+.testimonial-list {
+  display: grid;
+  gap: var(--space-20);
+}
+
+/* About mini */
+.about-mini__photo .hero__photo-placeholder {
+  min-height: 200px;
+  border-radius: 999px;
+}
+
+/* CTA finale */
+.cta-final__card {
+  background-color: var(--color-white);
+  border-radius: 24px;
+}

@@ -29,7 +29,7 @@ function initWhatsAppCTAs() {
     const customText = btn.getAttribute("data-wa-text");
     const baseMessage = whatsappMessages[key] || "";
     const message = customText ? `${baseMessage} ${customText}`.trim() : baseMessage;
-    const encodedMessage = encodeURIComponent(message);
+    const encodedMessage = encodeURIComponent(message || "Ciao!");
 
     const href = `https://wa.me/${WHATSAPP_PHONE}?text=${encodedMessage}`;
 
@@ -55,14 +55,19 @@ function renderHomeEventsPreview() {
 
   preview.forEach((event) => {
     const card = document.createElement("article");
-    card.className = "card";
+    card.className = "card event-card";
 
     card.innerHTML = `
+      <div class="event-card__header">
+        <div class="event-card__date">
+          <span class="event-card__day">${event.date.slice(8, 10)}</span>
+          <span class="event-card__month">${event.date.slice(5, 7)}</span>
+        </div>
+      </div>
       <h3>${event.title}</h3>
-      <p><strong>Data:</strong> ${event.date}</p>
-      <p><strong>Luogo:</strong> ${event.city} – ${event.location}</p>
       <p>${event.shortDescription}</p>
-      <a class="btn js-whatsapp-cta" data-wa-key="${event.whatsappKey}" data-wa-text="Mi interessa l'evento: ${event.title} del ${event.date}.">
+      <p class="small event-card__meta">${event.city} · ${event.location}</p>
+      <a class="btn btn-secondary mt-24" data-wa-key="${event.whatsappKey}" data-wa-text="Mi interessa l'evento: ${event.title} del ${event.date}.">
         Prenota su WhatsApp
       </a>
     `;
@@ -80,14 +85,19 @@ function renderEventsPage() {
 
   eventsData.forEach((event) => {
     const card = document.createElement("article");
-    card.className = "card";
+    card.className = "card event-card";
 
     card.innerHTML = `
+      <div class="event-card__header">
+        <div class="event-card__date">
+          <span class="event-card__day">${event.date.slice(8, 10)}</span>
+          <span class="event-card__month">${event.date.slice(5, 7)}</span>
+        </div>
+      </div>
       <h3>${event.title}</h3>
-      <p><strong>Data:</strong> ${event.date}</p>
-      <p><strong>Luogo:</strong> ${event.city} – ${event.location}</p>
       <p>${event.shortDescription}</p>
-      <a class="btn js-whatsapp-cta" data-wa-key="${event.whatsappKey}" data-wa-text="Mi interessa l'evento: ${event.title} del ${event.date}.">
+      <p class="small event-card__meta">${event.city} · ${event.location}</p>
+      <a class="btn btn-secondary mt-24" data-wa-key="${event.whatsappKey}" data-wa-text="Mi interessa l'evento: ${event.title} del ${event.date}.">
         Prenota su WhatsApp
       </a>
     `;
@@ -96,13 +106,37 @@ function renderEventsPage() {
   });
 }
 
+// NAVBAR MOBILE – hamburger menu
+function initMobileNav() {
+  const navs = document.querySelectorAll(".nav");
+
+  navs.forEach((nav) => {
+    const toggle = nav.querySelector(".nav__toggle");
+    const links = nav.querySelectorAll(".nav__link");
+
+    if (!toggle) return;
+
+    // Apertura/chiusura menu
+    toggle.addEventListener("click", () => {
+      const isOpen = nav.classList.toggle("nav--open");
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    // Chiudi il menu quando clicco un link (solo mobile)
+    links.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (nav.classList.contains("nav--open")) {
+          nav.classList.remove("nav--open");
+          toggle.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Home preview
   renderHomeEventsPreview();
-
-  // Pagina Eventi & Gruppi
   renderEventsPage();
-
-  // CTA WhatsApp
   initWhatsAppCTAs();
+  initMobileNav(); // 👈 aggiungi questa riga
 });

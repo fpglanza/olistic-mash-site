@@ -8,54 +8,104 @@
   </head>
   <body>
     <div class="site">
+      <!-- HEADER -->
       <header class="site-header">
         <div class="container nav">
           <a href="index.html" class="nav__logo">Logo</a>
-          <nav class="nav__links">
-            <a class="nav__link" href="chi-sono.html">Chi sono</a>
-            <a class="nav__link" href="consulenze-unity.html">Consulenze</a>
-            <a class="nav__link" href="eventi-gruppi.html">Eventi & Gruppi</a>
-            <a class="nav__link" href="percorsi-reiki.html">Percorsi & Reiki</a>
-            <a class="nav__link" href="contatti.html">Contatti</a>
+
+          <button
+            class="nav__toggle"
+            type="button"
+            aria-label="Apri il menu di navigazione"
+            aria-expanded="false"
+          >
+            <span class="nav__toggle-lines">
+              <span class="nav__toggle-line"></span>
+              <span class="nav__toggle-line"></span>
+              <span class="nav__toggle-line"></span>
+            </span>
+          </button>
+
+          <nav aria-label="Navigazione principale">
+            <ul class="nav__links">
+              <li><a class="nav__link" href="index.html#hero">Home</a></li>
+              <li><a class="nav__link" href="chi-sono.html">Chi sono</a></li>
+              <li><a class="nav__link" href="consulenze-unity.html">Consulenze</a></li>
+              <li><a class="nav__link" href="eventi-gruppi.html">Eventi & Gruppi</a></li>
+              <li><a class="nav__link" href="percorsi-reiki.html">Percorsi & Reiki</a></li>
+              <li><a class="nav__link" href="contatti.html">Contatti</a></li>
+            </ul>
           </nav>
         </div>
       </header>
 
       <main class="site-main">
         <!-- HERO -->
-        <section class="section hero">
+        <section class="section section--hero hero">
           <div class="container">
             <h1 class="hero__title">Percorsi energetici e Reiki</h1>
-            <p class="section__subtitle">
-              Benessere, allineamento e crescita spirituale.
+            <p class="lead">
+              Trattamenti e percorsi pensati per armonizzare energia, emozioni
+              e corpo, accompagnandoti in un processo di radicamento e consapevolezza.
             </p>
           </div>
         </section>
 
         <!-- PERCORSI ENERGETICI -->
-        <section class="section">
+        <section class="section" id="percorsi-energetici">
           <div class="container">
             <h2 class="section__title">Percorsi energetici</h2>
+            <p class="section__subtitle">
+              Percorsi strutturati che uniscono lavoro energetico, consapevolezza
+              e integrazione pratica nella tua quotidianità.
+            </p>
+
             <div class="grid grid--3">
               <article class="card">
-                <h3>Percorso 1</h3>
-                <p>Descrizione breve (placeholder).</p>
-                <a class="btn btn--secondary" data-wa-key="percorsi_guide">
-                  Scrivi su WhatsApp
+                <h3>Percorso Presenza & Radicamento</h3>
+                <p>
+                  Per ritrovare il contatto con il corpo, sciogliere tensioni e
+                  tornare a sentirti stabile nelle tue scelte.
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-secondary mt-24"
+                  data-wa-key="percorsi_guide"
+                  data-wa-text="Vorrei informazioni sul Percorso Presenza & Radicamento."
+                >
+                  Scrivimi su WhatsApp
                 </a>
               </article>
+
               <article class="card">
-                <h3>Percorso 2</h3>
-                <p>Descrizione breve (placeholder).</p>
-                <a class="btn btn--secondary" data-wa-key="percorsi_guide">
-                  Scrivi su WhatsApp
+                <h3>Percorso Emozioni & Confini</h3>
+                <p>
+                  Uno spazio per ascoltare le tue emozioni, imparare a regolarle
+                  e definire confini più sani nelle relazioni.
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-secondary mt-24"
+                  data-wa-key="percorsi_guide"
+                  data-wa-text="Vorrei informazioni sul Percorso Emozioni & Confini."
+                >
+                  Scrivimi su WhatsApp
                 </a>
               </article>
+
               <article class="card">
-                <h3>Percorso 3</h3>
-                <p>Descrizione breve (placeholder).</p>
-                <a class="btn btn--secondary" data-wa-key="percorsi_guide">
-                  Scrivi su WhatsApp
+                <h3>Percorso Cicli & Rinascita</h3>
+                <p>
+                  Pensato per momenti di passaggio, chiusura e nuovo inizio, per
+                  accompagnarti a integrare ciò che sta cambiando.
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-secondary mt-24"
+                  data-wa-key="percorsi_guide"
+                  data-wa-text="Vorrei informazioni sul Percorso Cicli & Rinascita."
+                >
+                  Scrivimi su WhatsApp
                 </a>
               </article>
             </div>
@@ -63,28 +113,59 @@
         </section>
 
         <!-- REIKI -->
-        <section class="section">
+        <section class="section" id="reiki">
           <div class="container">
             <h2 class="section__title">Reiki</h2>
+            <p class="section__subtitle">
+              Trattamenti e percorsi formativi per lavorare con l’energia Reiki,
+              a sostegno del tuo benessere e del tuo cammino spirituale.
+            </p>
+
             <div class="grid grid--3">
               <article class="card">
                 <h3>Reiki 1° livello</h3>
-                <p>Cos’è, benefici, a chi è rivolto, come si svolge (placeholder).</p>
-                <a class="btn btn--secondary" data-wa-key="reiki_info">
+                <p>
+                  Introduzione al Reiki e alle prime pratiche di auto-trattamento,
+                  per imparare a portare energia nelle tue giornate.
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-secondary mt-24"
+                  data-wa-key="reiki_info"
+                  data-wa-text="Vorrei informazioni sul Reiki 1° livello."
+                >
                   WhatsApp – 1° livello
                 </a>
               </article>
+
               <article class="card">
                 <h3>Reiki 2° livello</h3>
-                <p>Cos’è, benefici, a chi è rivolto, come si svolge (placeholder).</p>
-                <a class="btn btn--secondary" data-wa-key="reiki_info">
+                <p>
+                  Per approfondire il lavoro energetico, usare i simboli Reiki e
+                  lavorare anche a distanza, con maggiore intensità.
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-secondary mt-24"
+                  data-wa-key="reiki_info"
+                  data-wa-text="Vorrei informazioni sul Reiki 2° livello."
+                >
                   WhatsApp – 2° livello
                 </a>
               </article>
+
               <article class="card">
-                <h3>Trattamenti Reiki</h3>
-                <p>Cos’è, benefici, a chi è rivolto, come si svolge (placeholder).</p>
-                <a class="btn btn--secondary" data-wa-key="reiki_info">
+                <h3>Trattamenti Reiki individuali</h3>
+                <p>
+                  Sessioni dedicate per ricevere Reiki, rilassare il sistema
+                  nervoso e sostenere processi di guarigione interiore.
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-secondary mt-24"
+                  data-wa-key="reiki_info"
+                  data-wa-text="Vorrei informazioni sui trattamenti Reiki individuali."
+                >
                   WhatsApp – Trattamenti
                 </a>
               </article>
@@ -93,28 +174,59 @@
         </section>
 
         <!-- SEMINARI & FORMAZIONE -->
-        <section class="section">
+        <section class="section" id="seminari">
           <div class="container">
             <h2 class="section__title">Seminari & formazione</h2>
+            <p class="section__subtitle">
+              Incontri tematici e giornate intensive per approfondire aspetti
+              specifici del lavoro energetico e della crescita interiore.
+            </p>
+
             <div class="grid grid--3">
               <article class="card">
-                <h3>Seminario 1</h3>
-                <p>Descrizione breve (placeholder).</p>
-                <a class="btn btn--secondary" data-wa-key="percorsi_guide">
+                <h3>Seminario Energia & Radicamento</h3>
+                <p>
+                  Una giornata per lavorare su radici, stabilità e presenza nel
+                  corpo, con pratiche guidate e momenti di integrazione.
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-secondary mt-24"
+                  data-wa-key="percorsi_guide"
+                  data-wa-text="Vorrei informazioni sul Seminario Energia & Radicamento."
+                >
                   Info su WhatsApp
                 </a>
               </article>
+
               <article class="card">
-                <h3>Seminario 2</h3>
-                <p>Descrizione breve (placeholder).</p>
-                <a class="btn btn--secondary" data-wa-key="percorsi_guide">
+                <h3>Seminario Emozioni & Cicli</h3>
+                <p>
+                  Per comprendere meglio i tuoi cicli interiori, le emozioni che
+                  li accompagnano e come attraversarli con più gentilezza.
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-secondary mt-24"
+                  data-wa-key="percorsi_guide"
+                  data-wa-text="Vorrei informazioni sul Seminario Emozioni & Cicli."
+                >
                   Info su WhatsApp
                 </a>
               </article>
+
               <article class="card">
-                <h3>Seminario 3</h3>
-                <p>Descrizione breve (placeholder).</p>
-                <a class="btn btn--secondary" data-wa-key="percorsi_guide">
+                <h3>Seminario Reiki & Presenza</h3>
+                <p>
+                  Un approfondimento pratico per chi ha già iniziato un percorso
+                  Reiki e desidera consolidare la propria pratica.
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-secondary mt-24"
+                  data-wa-key="percorsi_guide"
+                  data-wa-text="Vorrei informazioni sul Seminario Reiki & Presenza."
+                >
                   Info su WhatsApp
                 </a>
               </article>
@@ -123,16 +235,31 @@
         </section>
 
         <!-- CTA FINALE -->
-        <section class="section">
+        <section class="section section--cta-final">
           <div class="container">
-            <h2 class="section__title">Vuoi ricevere una guida sul percorso più adatto a te?</h2>
-            <a class="btn" data-wa-key="percorsi_guide">
-              Scrivimi su WhatsApp
-            </a>
+            <div class="card cta-final__card">
+              <div class="cta-final__content text-center">
+                <h2 class="section__title">
+                  Vuoi una guida sul percorso più adatto a te?
+                </h2>
+                <p class="section__subtitle">
+                  Raccontami in che fase ti trovi e cosa senti di volere cambiare:
+                  ti aiuterò a capire da dove iniziare.
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-primary"
+                  data-wa-key="percorsi_guide"
+                >
+                  Scrivimi su WhatsApp
+                </a>
+              </div>
+            </div>
           </div>
         </section>
       </main>
 
+      <!-- FOOTER -->
       <footer class="site-footer">
         <div class="container">
           <p>© 2025 Coach Olistica – Tutti i diritti riservati.</p>
