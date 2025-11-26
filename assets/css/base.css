@@ -1,0 +1,159 @@
+/* assets/css/base.css */
+
+/* RESET MOLTO LEGGERO */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+/* LAYOUT GENERICO */
+
+.site {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-header,
+.site-footer {
+  padding: 1rem 0;
+}
+
+.site-main {
+  flex: 1;
+}
+
+/* CONTAINER E SEZIONI */
+
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section {
+  padding: 3rem 0;
+}
+
+.section__title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.section__subtitle {
+  margin-bottom: 2rem;
+}
+
+/* GRIGLIE BASE */
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.grid--2 {
+  grid-template-columns: 1fr;
+}
+
+.grid--3 {
+  grid-template-columns: 1fr;
+}
+
+/* CARDS */
+
+.card {
+  border: 1px solid #e5e5e5;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+/* CTA / BUTTON BASE */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid #000;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn--secondary {
+  background: transparent;
+  color: #000;
+}
+
+/* LAYOUT HEADER / FOOTER SEMPLICE */
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.nav__links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav__link {
+  font-size: 0.9rem;
+}
+
+/* HERO GENERICO */
+
+.hero {
+  padding: 4rem 0 3rem;
+}
+
+.hero__layout {
+  display: grid;
+  gap: 2rem;
+}
+
+.hero__title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* RESPONSIVE */
+
+@media (min-width: 768px) {
+  .grid--2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .grid--3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .hero__layout--2cols {
+    grid-template-columns: 3fr 2fr;
+    align-items: center;
+  }
+}
