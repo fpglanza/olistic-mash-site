@@ -8,10 +8,12 @@
   </head>
   <body>
     <div class="site">
+      <!-- HEADER -->
       <header class="site-header">
         <div class="container nav">
           <a href="index.html" class="nav__logo">Logo</a>
           <nav class="nav__links">
+            <a class="nav__link" href="#hero">Home</a>
             <a class="nav__link" href="chi-sono.html">Chi sono</a>
             <a class="nav__link" href="consulenze-unity.html">Consulenze</a>
             <a class="nav__link" href="eventi-gruppi.html">Eventi & Gruppi</a>
@@ -22,233 +24,452 @@
       </header>
 
       <main class="site-main">
-        <!-- HERO / SEZIONE 1 -->
-        <section class="section hero" id="home-hero">
-          <div class="container hero__layout hero__layout--2cols">
-            <div>
-              <h1 class="hero__title">
-                Ritrova connessione, centratura e presenza nella tua vita.
-              </h1>
-              <p class="section__subtitle">
-                Percorsi olistici, consulenze individuali ed esperienze energetiche per riportarti al tuo centro.
-              </p>
-
-              <div class="hero__ctas">
-                <a
-                  class="btn"
-                  data-wa-key="home_general"
-                >
-                  Prenota ora su WhatsApp
-                </a>
-                <a class="btn btn--secondary" href="#home-services">
-                  Scopri i servizi
-                </a>
-              </div>
-            </div>
-
-            <div>
-              <!-- Placeholder foto coach + badge -->
-              <div class="card">
-                <div class="hero__photo-placeholder">
-                  Foto coach (placeholder)
-                </div>
-                <p class="hero__badge">
-                  +X persone accompagnate
+        <!-- 1. HERO -->
+        <section class="section section--hero hero" id="hero">
+          <div class="container">
+            <div class="hero__layout hero__layout--2cols">
+              <!-- Colonna testo -->
+              <div class="hero__content">
+                <h1 class="hero__title">
+                  Ritrova il tuo equilibrio.<br />
+                  Connessione, presenza e trasformazione olistica.
+                </h1>
+                <p class="lead">
+                  Percorsi individuali e di gruppo per ritrovare chiarezza interiore,
+                  armonia emotiva e centratura energetica.
                 </p>
+
+                <div class="hero__ctas">
+                  <a
+                    href="#"
+                    class="btn btn-primary"
+                    data-wa-key="home_general"
+                  >
+                    <!-- opzionale icona WhatsApp -->
+                    <!--
+                    <span class="btn__icon">
+                      <img src="assets/img/whatsapp.svg" alt="" aria-hidden="true" />
+                    </span>
+                    -->
+                    <span>Prenota la tua consulenza</span>
+                  </a>
+
+                  <a
+                    href="chi-sono.html"
+                    class="btn btn-secondary"
+                  >
+                    Scopri come lavoro
+                  </a>
+                </div>
+              </div>
+
+              <!-- Colonna immagine -->
+              <div class="hero__media">
+                <div class="card hero__image-card">
+                  <div class="hero__photo-placeholder">
+                    <!-- qui andrà la foto della coach -->
+                  </div>
+                  <p class="small hero__badge">
+                    +120 percorsi accompagnati negli ultimi anni
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- SEZIONE 2 — PER CHI È -->
-        <section class="section" id="home-per-chi">
+        <!-- 2. SEZIONE – COSA POSSO FARE PER TE -->
+        <section class="section" id="cosa-posso-fare-per-te">
           <div class="container">
-            <h2 class="section__title">Per chi è questo percorso</h2>
-            <div class="grid grid--3">
-              <article class="card">
-                <p>Ti senti disconnessa da te stessa…</p>
-              </article>
-              <article class="card">
-                <p>Hai bisogno di recuperare energia, presenza e ordine interiore…</p>
-              </article>
-              <article class="card">
-                <p>Cerchi un percorso che integri corpo, emozioni e consapevolezza…</p>
-              </article>
-            </div>
-
-            <div class="section__footer" style="margin-top: 1.5rem;">
-              <a class="btn btn--secondary" data-wa-key="home_micro_fit">
-                Vuoi capire se è il percorso giusto per te? Scrivimi su WhatsApp.
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <!-- SEZIONE 3 — METODO / APPROCCIO -->
-        <section class="section" id="home-metodo">
-          <div class="container">
-            <h2 class="section__title">Il mio approccio olistico</h2>
-            <p class="section__subtitle">
-              Breve introduzione sul metodo olistico e su come lavoriamo insieme su corpo, energia ed emozioni.
-            </p>
+            <header class="section__header text-center">
+              <h2 class="section__title">Cosa posso fare per te</h2>
+              <p class="section__subtitle">
+                Tre modi per accompagnarti a ritrovare equilibrio, presenza e radicamento.
+              </p>
+            </header>
 
             <div class="grid grid--3">
-              <article class="card">
-                <h3>Connessione</h3>
-                <p>Micro-copy placeholder sulla connessione.</p>
-              </article>
-              <article class="card">
-                <h3>Energia</h3>
-                <p>Micro-copy placeholder sull'energia.</p>
-              </article>
-              <article class="card">
-                <h3>Consapevolezza</h3>
-                <p>Micro-copy placeholder sulla consapevolezza.</p>
-              </article>
-            </div>
-
-            <div class="section__footer" style="margin-top: 1.5rem;">
-              <a class="btn btn--secondary" href="consulenze-unity.html">
-                Scopri Unity Connection →
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <!-- SEZIONE 4 — SERVIZI PRINCIPALI -->
-        <section class="section" id="home-services">
-          <div class="container">
-            <h2 class="section__title">Servizi principali</h2>
-            <div class="grid grid--2">
-              <article class="card">
-                <h3>Unity Connection (1:1)</h3>
-                <p>Servizio principale – consulenza individuale.</p>
-                <a
-                  class="btn"
+              <!-- Card 1 -->
+              <article class="card service-card">
+                <div class="service-card__icon">
+                  <!-- placeholder icona -->
+                </div>
+                <h3>Consulenze individuali</h3>
+                <p>
+                  Spazi 1:1 dedicati a te, per ascoltare ciò che stai vivendo e
+                  sciogliere ciò che non è più allineato.
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-ghost mt-24"
                   data-wa-key="home_unity"
                 >
-                  Prenota una consulenza
-                </a>
+                  Scrivimi su WhatsApp
+                </button>
               </article>
-              <article class="card">
+
+              <!-- Card 2 -->
+              <article class="card service-card">
+                <div class="service-card__icon">
+                  <!-- placeholder icona -->
+                </div>
                 <h3>Armonizzazioni di gruppo</h3>
-                <p>Esperienze energetiche in gruppo.</p>
+                <p>
+                  Cerchi e incontri guidati per lavorare su energia, presenza e
+                  connessione in uno spazio condiviso.
+                </p>
                 <a
-                  class="btn btn--secondary"
-                  data-wa-key="eventi_generic"
+                  href="eventi-gruppi.html"
+                  class="btn btn-ghost mt-24"
                 >
-                  Scrivi su WhatsApp
+                  Scopri di più
                 </a>
               </article>
-              <article class="card">
-                <h3>Eventi & cerchi</h3>
-                <p>Eventi, cerchi e incontri dal vivo o online.</p>
+
+              <!-- Card 3 -->
+              <article class="card service-card">
+                <div class="service-card__icon">
+                  <!-- placeholder icona -->
+                </div>
+                <h3>Percorsi energetici & Reiki</h3>
+                <p>
+                  Trattamenti e percorsi strutturati per armonizzare mente, corpo
+                  ed emozioni in profondità.
+                </p>
                 <a
-                  class="btn btn--secondary"
-                  data-wa-key="eventi_generic"
+                  href="percorsi-reiki.html"
+                  class="btn btn-ghost mt-24"
                 >
-                  Scrivi su WhatsApp
-                </a>
-              </article>
-              <article class="card">
-                <h3>Reiki & percorsi energetici</h3>
-                <p>Percorsi di Reiki e trattamenti energetici.</p>
-                <a
-                  class="btn btn--secondary"
-                  data-wa-key="reiki_info"
-                >
-                  Scrivi su WhatsApp
+                  Scopri di più
                 </a>
               </article>
             </div>
           </div>
         </section>
 
-        <!-- SEZIONE 5 — TESTIMONIANZE -->
-        <section class="section" id="home-testimonianze">
-          <div class="container">
-            <h2 class="section__title">Le parole di chi ha già iniziato il percorso</h2>
-
-            <div class="grid grid--2">
-              <!-- Placeholder video carousel -->
-              <div class="card">
-                <p>Area video testimonianze (carousel placeholder).</p>
-              </div>
-
-              <!-- Recensioni testuali -->
-              <div class="card">
-                <ul>
-                  <li>Testimonianza testuale 1 (placeholder).</li>
-                  <li>Testimonianza testuale 2 (placeholder).</li>
-                  <li>Testimonianza testuale 3 (placeholder).</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="section__footer" style="margin-top: 1.5rem;">
-              <a class="btn" data-wa-key="home_testimonials">
-                Voglio iniziare anch’io → WhatsApp
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <!-- SEZIONE 6 — MINI CHI SONO -->
-        <section class="section" id="home-mini-chi-sono">
+        <!-- 3. SEZIONE – UNITY CONNECTION (SERVIZIO PRINCIPALE) -->
+        <section class="section" id="unity-connection">
           <div class="container">
             <div class="grid grid--2">
-              <div class="card">
-                <p>Foto coach (placeholder).</p>
+              <!-- Immagine / visual -->
+              <div class="unity-visual">
+                <div class="card">
+                  <div class="hero__photo-placeholder">
+                    <!-- immagine dedicata al percorso Unity Connection -->
+                  </div>
+                  <p class="small" style="margin-top: var(--space-16);">
+                    Sessioni online e in presenza, pensate per riportarti al tuo centro.
+                  </p>
+                </div>
               </div>
-              <div>
-                <h2 class="section__title">Chi sono</h2>
-                <p>Breve presentazione della coach (placeholder).</p>
-                <ul>
-                  <li>Certificazione 1 (placeholder)</li>
-                  <li>Certificazione 2 (placeholder)</li>
-                  <li>Esperienza rilevante (placeholder)</li>
+
+              <!-- Contenuto -->
+              <div class="unity-content">
+                <span class="badge badge--primary-soft small">
+                  Servizio principale
+                </span>
+
+                <h2 class="section__title" style="margin-top: var(--space-16);">
+                  Unity Connection – Percorso individuale
+                </h2>
+
+                <p>
+                  Uno spazio dedicato in cui poter rallentare, ascoltarti e
+                  riconnetterti alla parte più autentica di te.
+                </p>
+                <p>
+                  Attraverso ascolto, lavoro energetico e integrazione pratica,
+                  ti accompagno a ritrovare presenza, chiarezza e radicamento.
+                </p>
+
+                <ul class="unity-list">
+                  <li>
+                    <span class="unity-list__icon"></span>
+                    Maggiore chiarezza rispetto a ciò che stai vivendo.
+                  </li>
+                  <li>
+                    <span class="unity-list__icon"></span>
+                    Più presenza nel corpo e nelle emozioni, meno confusione mentale.
+                  </li>
+                  <li>
+                    <span class="unity-list__icon"></span>
+                    Strumenti pratici per portare il lavoro energetico nella tua quotidianità.
+                  </li>
+                  <li>
+                    <span class="unity-list__icon"></span>
+                    Uno spazio sicuro in cui sentirti accolta, ascoltata e non giudicata.
+                  </li>
                 </ul>
-                <a class="btn btn--secondary" href="chi-sono.html">
-                  Conosci la mia storia →
-                </a>
+
+                <div class="mt-24">
+                  <a
+                    href="#"
+                    class="btn btn-primary"
+                    data-wa-key="unity_booking"
+                  >
+                    Prenota la tua sessione su WhatsApp
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- SEZIONE 7 — PROSSIMI EVENTI (preview da JSON) -->
-        <section class="section" id="home-eventi">
+        <!-- 4. SEZIONE – EVENTI & ARMONIZZAZIONI DI GRUPPO -->
+        <section class="section" id="eventi">
           <div class="container">
-            <h2 class="section__title">Prossimi eventi</h2>
-            <div id="home-events-list" class="grid grid--3">
-              <!-- Popolato via JS da eventsData -->
+            <header class="section__header">
+              <h2 class="section__title">Eventi & armonizzazioni di gruppo</h2>
+              <p class="section__subtitle">
+                Cerchi, incontri e serate dedicate alla connessione condivisa e
+                al lavoro energetico in gruppo.
+              </p>
+            </header>
+
+            <div class="grid grid--3">
+              <!-- Evento 1 -->
+              <article class="card event-card">
+                <div class="event-card__header">
+                  <div class="event-card__date">
+                    <span class="event-card__day">12</span>
+                    <span class="event-card__month">APR</span>
+                  </div>
+                  <span class="badge badge--warning-soft small">
+                    Posti limitati
+                  </span>
+                </div>
+                <h3>Cerchio di Luna Nuova</h3>
+                <p>
+                  Un cerchio di ascolto, intenzione e rilascio per aprirti al
+                  nuovo ciclo con maggiore presenza.
+                </p>
+                <p class="small event-card__meta">
+                  Milano · Spazio Olistico XYZ
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-secondary mt-24"
+                  data-wa-key="event_generic"
+                  data-wa-text="Mi interessa il Cerchio di Luna Nuova del 12/04."
+                >
+                  Chiedi info su WhatsApp
+                </a>
+              </article>
+
+              <!-- Evento 2 -->
+              <article class="card event-card">
+                <div class="event-card__header">
+                  <div class="event-card__date">
+                    <span class="event-card__day">27</span>
+                    <span class="event-card__month">MAG</span>
+                  </div>
+                </div>
+                <h3>Armonizzazione di gruppo – Presenza e radicamento</h3>
+                <p>
+                  Una serata per riportare il respiro nel corpo, sciogliere
+                  tensioni e ritrovare centratura.
+                </p>
+                <p class="small event-card__meta">
+                  Online · Zoom
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-secondary mt-24"
+                  data-wa-key="event_generic"
+                  data-wa-text="Mi interessa l'armonizzazione di gruppo del 27/05."
+                >
+                  Chiedi info su WhatsApp
+                </a>
+              </article>
+
+              <!-- Evento 3 -->
+              <article class="card event-card">
+                <div class="event-card__header">
+                  <div class="event-card__date">
+                    <span class="event-card__day">09</span>
+                    <span class="event-card__month">GIU</span>
+                  </div>
+                </div>
+                <h3>Cerchio Reiki & meditazione</h3>
+                <p>
+                  Un incontro per ricevere Reiki in gruppo, meditare e integrare
+                  ciò che emerge in uno spazio accogliente.
+                </p>
+                <p class="small event-card__meta">
+                  Torino · Centro Olistico ABC
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-secondary mt-24"
+                  data-wa-key="event_generic"
+                  data-wa-text="Mi interessa il Cerchio Reiki & meditazione del 09/06."
+                >
+                  Chiedi info su WhatsApp
+                </a>
+              </article>
             </div>
-            <div class="section__footer" style="margin-top: 1.5rem;">
-              <a class="btn btn--secondary" href="eventi-gruppi.html">
+
+            <div class="mt-32 text-center">
+              <a href="eventi-gruppi.html" class="btn btn-ghost">
                 Vedi tutti gli eventi
               </a>
             </div>
           </div>
         </section>
 
-        <!-- SEZIONE 8 — CTA FINALE -->
-        <section class="section" id="home-cta-finale">
+        <!-- 5. SEZIONE – TESTIMONIANZE -->
+        <section class="section section--testimonials" id="testimonianze">
           <div class="container">
-            <h2 class="section__title">
-              Il tuo percorso verso la presenza può iniziare oggi.
-            </h2>
-            <a class="btn" data-wa-key="home_final">
-              Scrivimi su WhatsApp
-            </a>
-            <ul style="margin-top: 1rem;">
-              <li>Nessun impegno</li>
-              <li>Risposta entro X ore</li>
-              <li>Primo contatto gratuito</li>
-            </ul>
+            <header class="section__header text-center">
+              <h2 class="section__title">Le parole di chi ha già iniziato il percorso</h2>
+              <p class="section__subtitle">
+                Alcune delle esperienze di chi ha scelto di lavorare su presenza,
+                energia e consapevolezza.
+              </p>
+            </header>
+
+            <div class="grid grid--2">
+              <!-- Card video -->
+              <article class="card card--video">
+                <div class="video-placeholder">
+                  <!-- immagine/preview video -->
+                  <div class="video-placeholder__thumb">
+                    <!-- background soft, poi immagine -->
+                  </div>
+                  <button
+                    type="button"
+                    class="video-placeholder__play"
+                    aria-label="Guarda la video testimonianza"
+                  >
+                    ▶
+                  </button>
+                </div>
+                <p class="small" style="margin-top: var(--space-12);">
+                  Video testimonianza – percorso Unity Connection.
+                </p>
+              </article>
+
+              <!-- Testimonial testuali -->
+              <div class="testimonial-list grid grid--1">
+                <article class="card card--testimonial">
+                  <p class="quote">
+                    “Mi sono sentita vista, accolta e guidata. Dopo ogni sessione
+                    sentivo il corpo più leggero e la mente più chiara.”
+                  </p>
+                  <div class="author">
+                    <div class="author__avatar"></div>
+                    <div class="author__meta">
+                      <p class="small" style="margin-bottom: 0;"><strong>Elena</strong></p>
+                      <p class="small">Percorso Unity Connection</p>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="card card--testimonial">
+                  <p class="quote">
+                    “Le armonizzazioni di gruppo mi hanno aiutata a ritrovare
+                    presenza e a non sentirmi più sola nel mio processo.”
+                  </p>
+                  <div class="author">
+                    <div class="author__avatar"></div>
+                    <div class="author__meta">
+                      <p class="small" style="margin-bottom: 0;"><strong>Sara</strong></p>
+                      <p class="small">Cerchi & armonizzazioni</p>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="card card--testimonial">
+                  <p class="quote">
+                    “Il lavoro energetico è stato profondo ma sempre dolce. Ho
+                    iniziato a fidarmi di più delle mie sensazioni.”
+                  </p>
+                  <div class="author">
+                    <div class="author__avatar"></div>
+                    <div class="author__meta">
+                      <p class="small" style="margin-bottom: 0;"><strong>Chiara</strong></p>
+                      <p class="small">Percorsi energetici & Reiki</p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="mt-32 text-center">
+              <a
+                href="#"
+                class="btn btn-primary"
+                data-wa-key="home_testimonials"
+              >
+                Voglio iniziare anch’io
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. SEZIONE – MINI “SU DI ME” -->
+        <section class="section" id="mini-su-di-me">
+          <div class="container">
+            <div class="grid grid--2">
+              <!-- Foto -->
+              <div class="about-mini__photo">
+                <div class="card">
+                  <div class="hero__photo-placeholder">
+                    <!-- foto coach / ritratto morbido -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- Testo -->
+              <div class="about-mini__content">
+                <h2 class="section__title">Ciao, sono [Nome]</h2>
+                <p>
+                  Accompagno donne che stanno attraversando momenti di transizione
+                  a ritrovare centratura, radicamento e fiducia nelle proprie
+                  sensazioni interiori.
+                </p>
+                <p>
+                  Integro lavoro energetico, ascolto profondo e strumenti
+                  pratici, per sostenerti nel tuo percorso in modo concreto e
+                  rispettoso dei tuoi tempi.
+                </p>
+                <a href="chi-sono.html" class="btn btn-secondary mt-24">
+                  Scopri di più su di me
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. CTA FINALE – PRENOTA ORA -->
+        <section class="section section--cta-final" id="cta-finale">
+          <div class="container">
+            <div class="card cta-final__card">
+              <div class="cta-final__content text-center">
+                <h2 class="section__title">
+                  Il tuo percorso può iniziare da un semplice messaggio.
+                </h2>
+                <p class="section__subtitle">
+                  Scrivimi su WhatsApp, raccontami cosa stai vivendo e capiremo
+                  insieme qual è il passo più gentile per te in questo momento.
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-primary"
+                  data-wa-key="home_final"
+                >
+                  Prenota ora su WhatsApp
+                </a>
+                <p class="small" style="margin-top: var(--space-12); color: var(--color-gray-500);">
+                  Nessun impegno, primo contatto gratuito e risposta entro 24 ore.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
       </main>
 
+      <!-- FOOTER -->
       <footer class="site-footer">
         <div class="container">
           <p>© 2025 Coach Olistica – Tutti i diritti riservati.</p>
