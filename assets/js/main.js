@@ -1,7 +1,7 @@
 // assets/js/main.js
 
 // CONFIG: numero WhatsApp (placeholder per ora)
-const WHATSAPP_PHONE = "0000000000"; // da sostituire con numero reale
+const WHATSAPP_PHONE = "+393343421236"; // da sostituire con numero reale
 
 // Template messaggi WhatsApp
 const whatsappMessages = {
