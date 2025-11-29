@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>Home – Coach Olistica</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/tw.css" />
     <link rel="stylesheet" href="assets/css/base.css" />
   </head>
   <body>
@@ -43,51 +44,64 @@
         <!-- 1. HERO -->
         <section class="section section--hero hero" id="hero">
           <div class="container">
-            <div class="hero__layout hero__layout--2cols">
-              <!-- Colonna testo -->
-              <div class="hero__content">
-                <h1 class="hero__title">
-                  Ritrova il tuo equilibrio.<br />
-                  Connessione, presenza e trasformazione olistica.
-                </h1>
-                <p class="lead">
-                  Percorsi individuali e di gruppo per ritrovare chiarezza interiore,
-                  armonia emotiva e centratura energetica.
-                </p>
+            <!-- SUPERFICIE CALM AURA -->
+            <div class="tw-hero-surface">
+              <!-- AURE LILLA SFUMATE -->
+              <div class="tw-hero-aura-glow"></div>
+              <div class="tw-hero-aura-glow-2"></div>
 
-                <div class="hero__ctas">
-                  <a
-                    href="#"
-                    class="btn btn-primary"
-                    data-wa-key="home_general"
-                  >
-                    <span>Prenota la tua consulenza</span>
-                  </a>
-
-                  <a
-                    href="chi-sono.html"
-                    class="btn btn-secondary"
-                  >
-                    Scopri come lavoro
-                  </a>
-                </div>
-              </div>
-
-              <!-- Colonna immagine -->
-              <div class="hero__media">
-                <div class="card hero__image-card">
-                  <div class="hero__photo-placeholder" aria-hidden="true"></div>
-                  <p class="small hero__badge">
-                    +120 percorsi accompagnati negli ultimi anni
+              <div class="hero__layout hero__layout--2cols tw-hero-aura">
+                <!-- Colonna testo -->
+                <div class="hero__content">
+                  <h1 class="hero__title tw-hero-title">
+                    Ritrova il tuo equilibrio.<br />
+                    Connessione, presenza e trasformazione olistica.
+                  </h1>
+                  <p class="lead tw-hero-subtitle mt-4">
+                    Percorsi individuali e di gruppo per ritrovare chiarezza interiore,
+                    armonia emotiva e centratura energetica.
                   </p>
+
+                  <div class="hero__ctas tw-hero-ctas">
+                    <a
+                      href="#"
+                      class="btn btn-primary tw-hero-btn-primary"
+                      data-wa-key="home_general"
+                    >
+                      <span>Prenota la tua consulenza</span>
+                    </a>
+
+                    <a
+                      href="chi-sono.html"
+                      class="btn btn-secondary tw-hero-btn-secondary"
+                    >
+                      Scopri come lavoro
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Colonna immagine -->
+                <div class="hero__media tw-hero-photo-wrap">
+                    
+                    <img
+                      src="/assets/img/IMG_7119-benvenuto-scaled.jpg"
+                      alt="Giorgia Boccadifuoco – Coach Olistica"
+                      class="hero__photo tw-hero-photo-img"
+                    />
+
+                    <p class="small hero__badge">
+                      +120 percorsi accompagnati negli ultimi anni
+                    </p>
+
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- 2. SEZIONE – COSA POSSO FARE PER TE -->
-        <section class="section" id="cosa-posso-fare-per-te">
+
+       <!-- 2. SEZIONE – COSA POSSO FARE PER TE -->
+        <section class="section section--services-aura" id="cosa-posso-fare-per-te">
           <div class="container">
             <header class="section__header text-center">
               <h2 class="section__title">Cosa posso fare per te</h2>
@@ -149,34 +163,38 @@
           </div>
         </section>
 
+
         <!-- 3. SEZIONE – UNITY CONNECTION (SERVIZIO PRINCIPALE) -->
         <section class="section" id="unity-connection">
           <div class="container">
             <div class="grid grid--2">
               <!-- Immagine / visual -->
               <div class="unity-visual">
-                <div class="card">
-                  <div class="hero__photo-placeholder" aria-hidden="true"></div>
+                <div class="card" style="max-width: 85%;">
+                  <div class="hero__media tw-hero-photo-wrap">
+                    <img
+                      src="assets/img/IMG_7391-chi-sono-1536x1024.png"
+                      alt="Giorgia Boccadifuoco – Coach Olistica"
+                      class="hero__photo tw-hero-photo-img"
+                    />
+                  </div>
                   <p class="small" style="margin-top: var(--space-16);">
                     Sessioni online e in presenza, pensate per riportarti al tuo centro.
                   </p>
+                  <span class="badge badge--primary-soft small">
+                    Servizio principale
+                  </span>
+                  <span class="badge badge--warning-soft small">
+                    Posti limitati
+                  </span>
                 </div>
               </div>
 
               <!-- Contenuto -->
               <div class="unity-content">
-                <span class="badge badge--primary-soft small">
-                  Servizio principale
-                </span>
-
                 <h2 class="section__title" style="margin-top: var(--space-16);">
                   Unity Connection – Percorso individuale
                 </h2>
-
-                <p>
-                  Uno spazio dedicato in cui poter rallentare, ascoltarti e
-                  riconnetterti alla parte più autentica di te.
-                </p>
                 <p>
                   Attraverso ascolto, lavoro energetico e integrazione pratica,
                   ti accompagno a ritrovare presenza, chiarezza e radicamento.
@@ -216,7 +234,7 @@
         </section>
 
         <!-- 4. SEZIONE – EVENTI & ARMONIZZAZIONI DI GRUPPO -->
-        <section class="section" id="eventi">
+        <section class="section events" id="eventi">
           <div class="container">
             <header class="section__header">
               <h2 class="section__title">Eventi & armonizzazioni di gruppo</h2>
@@ -238,7 +256,7 @@
                     Posti limitati
                   </span>
                 </div>
-                <h3>Cerchio di Luna Nuova</h3>
+                <h3>Cerchio di Luna Nuova - Sinergie</h3>
                 <p>
                   Un cerchio di ascolto, intenzione e rilascio per aprirti al
                   nuovo ciclo con maggiore presenza.
@@ -441,7 +459,7 @@
         <!-- 6. SEZIONE – MINI “SU DI ME” -->
         <section class="section" id="mini-su-di-me">
           <div class="container">
-            <div class="grid grid--2">
+            <div class="grid">
               <!-- Foto -->
               <div class="about-mini__photo">
                 <div class="card">
@@ -453,9 +471,8 @@
               <div class="about-mini__content">
                 <h2 class="section__title">Ciao, sono Giorgia Boccadifuoco</h2>
                 <p>
-                  Accompagno donne che stanno attraversando momenti di transizione
-                  a ritrovare centratura, radicamento e fiducia nelle proprie
-                  sensazioni interiori.
+                  Creo spazi sicuri in cui puoi ascoltarti, lasciare andare ciò che
+                  non ti appartiene più e tornare a sentire il tuo centro.
                 </p>
                 <p>
                   Integro lavoro energetico, ascolto profondo e strumenti
@@ -472,26 +489,32 @@
 
         <!-- 7. CTA FINALE – PRENOTA ORA -->
         <section class="section section--cta-final" id="cta-finale">
-          <div class="container">
-            <div class="card cta-final__card">
-              <div class="cta-final__content text-center">
-                <h2 class="section__title">
+          <div class="container tw-section-aura">
+            <div class="card cta-final__card tw-card-aura-soft">
+              <div class="cta-final__content text-center tw-cta-stack">
+                <h2 class="section__title tw-cta-title">
                   Il tuo percorso può iniziare da un semplice messaggio.
                 </h2>
-                <p class="section__subtitle">
+                <p class="section__subtitle tw-cta-subtitle">
                   Scrivimi su WhatsApp, raccontami cosa stai vivendo e capiremo
                   insieme qual è il passo più gentile per te in questo momento.
                 </p>
                 <a
                   href="#"
-                  class="btn btn-primary"
+                  class="btn btn-primary tw-btn-wa"
                   data-wa-key="home_final"
                 >
-                  Prenota ora su WhatsApp
+                <span class="tw-btn-wa-icon">
+                  <!-- icona WhatsApp placeholder -->
+                  💬
+                </span>
+                <span>Prenota ora su WhatsApp!</span>
                 </a>
-                <p class="small" style="margin-top: var(--space-12); color: var(--color-gray-500);">
-                  Nessun impegno, primo contatto gratuito e risposta entro 24 ore.
-                </p>
+                 <div class="tw-cta-reassurance">
+                  <span class="tw-cta-pill">Nessun impegno, solo un primo contatto</span>
+                  <span class="tw-cta-pill">Risposta entro X ore</span>
+                  <span class="tw-cta-pill">Primo messaggio gratuito</span>
+                </div>
               </div>
             </div>
           </div>
@@ -501,7 +524,12 @@
       <!-- FOOTER -->
       <footer class="site-footer">
         <div class="container">
-          <p>© 2025 Coach Olistica – Tutti i diritti riservati.</p>
+          <p class="small text-center">
+            © 2025 Coach Olistica – Tutti i diritti riservati.
+            <span class="tw-pill ml-2">
+              Tailwind attivo
+            </span>
+          </p>
         </div>
       </footer>
     </div>

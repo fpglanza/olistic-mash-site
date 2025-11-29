@@ -393,7 +393,7 @@ p {
    ========================= */
 
 .hero {
-  background-color: var(--color-gray-100);
+  background-color: var(--color-primary-light);
 }
 
 .hero__layout {
@@ -672,15 +672,80 @@ p {
    SERVICE CARDS / SEZIONI
    ========================= */
 
-.service-card__icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 999px;
-  background-color: var(--color-primary-light);
-  margin-bottom: var(--space-16);
+/* =========================
+   SEZIONE "Cosa posso fare per te" – VERSIONE NEUTRA
+   ========================= */
+
+/* Sfondo neutro, leggerissimo, senza lilla */
+.section--services-aura {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    #f7f7f7 0%,
+    #ffffff 25%,
+    #f7f7f7 100%
+  );
+  padding-top: var(--space-64);
+  padding-bottom: var(--space-64);
 }
 
+/* Glow neutri molto soft (grigi chiari), niente viola */
+.section--services-aura::before,
+.section--services-aura::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+  opacity: 0.18; /* molto leggero */
+  filter: blur(40px);
+}
+
+/* Blob superiore */
+.section--services-aura::before {
+  width: 280px;
+  height: 180px;
+  top: -60px;
+  left: 0;
+  background: radial-gradient(circle, rgba(220, 220, 220, 0.4), transparent 70%);
+}
+
+/* Blob inferiore */
+.section--services-aura::after {
+  width: 280px;
+  height: 180px;
+  bottom: -60px;
+  right: 0;
+  background: radial-gradient(circle, rgba(210, 210, 210, 0.35), transparent 70%);
+}
+
+/* Manteniamo il contenuto sopra ai glow */
+.section--services-aura .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Card pulite e centrate */
+.service-card {
+  text-align: center;
+}
+
+/* Cerchietto sopra la card — ora neutro, NO lilla */
+.service-card__icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto var(--space-16);
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 20%, #ffffff, #eaeaea);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+}
+
+
+
 /* Unity Connection list */
+.unity-visual {
+  max-width: 567px;
+}
+
 .unity-list {
   list-style: none;
   padding: 0;
@@ -704,6 +769,10 @@ p {
 }
 
 /* Event cards */
+.events {
+  background-color: var(--color-primary-light);
+}
+
 .event-card__header {
   display: flex;
   align-items: center;
@@ -749,6 +818,25 @@ p {
   min-height: 200px;
   border-radius: 999px;
 }
+#mini-su-di-me .grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* center horizontally */
+  text-align: center;      /* center text */
+  gap: var(--space-32);
+}
+
+/* Make the card/image smaller */
+#mini-su-di-me .about-mini__photo .card {
+  width: 33%;              /* ≈ 1/3 of current width */
+  min-width: 240px;        /* avoid too small on mobile */
+  margin: 0 auto;
+}
+
+/* Make the text block more compact */
+#mini-su-di-me .about-mini__content {
+  max-width: 600px;
+}
 
 /* CTA finale */
 .cta-final__card {
@@ -770,8 +858,15 @@ p {
 
   /* Opzionale: limita larghezza contenuto per equilibrio */
   #unity-connection .unity-content {
-    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  /* distribute space evenly */
+    height: 100%;  
   }
+}
+
+.unity-content > * + * {
+  margin-top: var(--space-16);
 }
 
 .testimonial-carousel {
@@ -906,4 +1001,83 @@ p {
     opacity: 1;
     display: block; /* solo la slide attiva occupa spazio */
   }
+}
+
+#unity-connection .grid--2 {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: var(--space-32) !important;
+}
+
+@media (min-width: 768px) {
+  #unity-connection .grid--2 {
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+}
+
+/* =========================
+   HERO – CALM AURA CARD
+   ========================= */
+
+.tw-hero-surface {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  padding: var(--space-24);
+  background: radial-gradient(circle at 0% 0%, #f7f3ff 0, #f5f5f7 45%, #ffffff 100%);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Per dare un po' più respiro su desktop */
+@media (min-width: 768px) {
+  .tw-hero-surface {
+    padding: var(--space-32);
+    border-radius: 32px;
+  }
+}
+
+/* Aure lilla negli angoli */
+.tw-hero-aura-glow,
+.tw-hero-aura-glow-2 {
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+/* in alto a sinistra */
+.tw-hero-surface {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  padding: var(--space-24);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-soft);
+}
+
+.tw-hero-photo-img {
+  width: 100%;
+  height: auto;
+  display: block;
+
+  border-radius: var(--radius-lg);
+  object-fit: cover;           /* taglia in modo elegante */
+  object-position: center;     /* centra il soggetto */
+
+  /* mantiene l'effetto “placeholder style” originale */
+  min-height: 220px;
+}
+
+/* Desktop: un filo più ampio */
+@media (min-width: 768px) {
+  .tw-hero-surface {
+    border-radius: 28px;
+    padding: var(--space-32);
+  }
+}
+
+/* Per ora disattiviamo le aure viola “invadenti” */
+.tw-hero-aura-glow,
+.tw-hero-aura-glow-2 {
+  display: none;
 }
