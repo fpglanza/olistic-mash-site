@@ -139,45 +139,97 @@
           </div>
         </section>
 
-        <!-- TESTIMONIANZE SPECIFICHE -->
-        <section class="section section--testimonials" id="unity-testimonianze">
-          <div class="container">
-            <h2 class="section__title">Cosa dicono di Unity Connection</h2>
-            <div class="grid grid--2">
-              <article class="card card--video">
-                <div class="video-placeholder">
-                  <div class="video-placeholder__thumb"></div>
+       <!-- Carousel testimonianze testuali (destra) -->
+              <div
+                class="testimonial-carousel"
+                data-testimonial-carousel
+              >
+                <div class="testimonial-carousel__slides">
+                  <article
+                    class="card card--testimonial testimonial-slide testimonial-slide--active"
+                    data-testimonial-slide
+                  >
+                    <p class="quote">
+                      “Mi sono sentita vista, accolta e guidata. Dopo ogni sessione
+                      sentivo il corpo più leggero e la mente più chiara.”
+                    </p>
+                    <div class="author">
+                      <div class="author__avatar" aria-hidden="true"></div>
+                      <div class="author__meta">
+                        <p class="small" style="margin-bottom: 0;"><strong>Elena</strong></p>
+                        <p class="small">Percorso Unity Connection</p>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article
+                    class="card card--testimonial testimonial-slide"
+                    data-testimonial-slide
+                  >
+                    <p class="quote">
+                      “Le armonizzazioni di gruppo mi hanno aiutata a ritrovare
+                      presenza e a non sentirmi più sola nel mio processo.”
+                    </p>
+                    <div class="author">
+                      <div class="author__avatar" aria-hidden="true"></div>
+                      <div class="author__meta">
+                        <p class="small" style="margin-bottom: 0;"><strong>Sara</strong></p>
+                        <p class="small">Cerchi & armonizzazioni</p>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article
+                    class="card card--testimonial testimonial-slide"
+                    data-testimonial-slide
+                  >
+                    <p class="quote">
+                      “Il lavoro energetico è stato profondo ma sempre dolce. Ho
+                      iniziato a fidarmi di più delle mie sensazioni.”
+                    </p>
+                    <div class="author">
+                      <div class="author__avatar" aria-hidden="true"></div>
+                      <div class="author__meta">
+                        <p class="small" style="margin-bottom: 0;"><strong>Chiara</strong></p>
+                        <p class="small">Percorsi energetici & Reiki</p>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="testimonial-carousel__controls">
                   <button
                     type="button"
-                    class="video-placeholder__play"
-                    aria-label="Guarda la video testimonianza"
+                    class="carousel-btn"
+                    data-carousel-prev
+                    aria-label="Testimonianza precedente"
                   >
-                    ▶
+                    ‹
+                  </button>
+                  <button
+                    type="button"
+                    class="carousel-btn"
+                    data-carousel-next
+                    aria-label="Testimonianza successiva"
+                  >
+                    ›
                   </button>
                 </div>
-                <p class="small" style="margin-top: var(--space-12);">
-                  Video testimonianza – percorso di 4 sessioni.
-                </p>
-              </article>
-
-              <div class="testimonial-list">
-                <article class="card card--testimonial">
-                  <p class="quote">
-                    “Ogni sessione mi ha aiutata a sciogliere un pezzo e a
-                    sentirmi più presente nella mia vita di tutti i giorni.”
-                  </p>
-                  <div class="author">
-                    <div class="author__avatar"></div>
-                    <div class="author__meta">
-                      <p class="small" style="margin-bottom: 0;"><strong>Laura</strong></p>
-                      <p class="small">Percorso Unity Connection</p>
-                    </div>
-                  </div>
-                </article>
               </div>
+            </div>
+
+            <div class="mt-32 text-center">
+              <a
+                href="#"
+                class="btn btn-primary"
+                data-wa-key="home_testimonials"
+              >
+                Voglio iniziare anch’io
+              </a>
             </div>
           </div>
         </section>
+
 
         <!-- FAQ -->
         <section class="section" id="faq">
