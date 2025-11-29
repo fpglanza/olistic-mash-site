@@ -317,7 +317,7 @@
           </div>
         </section>
 
-        <!-- 5. SEZIONE – TESTIMONIANZE -->
+                <!-- 5. SEZIONE – TESTIMONIANZE -->
         <section class="section section--testimonials" id="testimonianze">
           <div class="container">
             <header class="section__header text-center">
@@ -329,7 +329,7 @@
             </header>
 
             <div class="grid grid--2">
-              <!-- Card video -->
+              <!-- Card video (sinistra) -->
               <article class="card card--video">
                 <div class="video-placeholder">
                   <div class="video-placeholder__thumb" aria-hidden="true"></div>
@@ -346,49 +346,82 @@
                 </p>
               </article>
 
-              <!-- Testimonial testuali -->
-              <div class="testimonial-list grid grid--1">
-                <article class="card card--testimonial">
-                  <p class="quote">
-                    “Mi sono sentita vista, accolta e guidata. Dopo ogni sessione
-                    sentivo il corpo più leggero e la mente più chiara.”
-                  </p>
-                  <div class="author">
-                    <div class="author__avatar" aria-hidden="true"></div>
-                    <div class="author__meta">
-                      <p class="small" style="margin-bottom: 0;"><strong>Elena</strong></p>
-                      <p class="small">Percorso Unity Connection</p>
+              <!-- Carousel testimonianze testuali (destra) -->
+              <div
+                class="testimonial-carousel"
+                data-testimonial-carousel
+              >
+                <div class="testimonial-carousel__slides">
+                  <article
+                    class="card card--testimonial testimonial-slide testimonial-slide--active"
+                    data-testimonial-slide
+                  >
+                    <p class="quote">
+                      “Mi sono sentita vista, accolta e guidata. Dopo ogni sessione
+                      sentivo il corpo più leggero e la mente più chiara.”
+                    </p>
+                    <div class="author">
+                      <div class="author__avatar" aria-hidden="true"></div>
+                      <div class="author__meta">
+                        <p class="small" style="margin-bottom: 0;"><strong>Elena</strong></p>
+                        <p class="small">Percorso Unity Connection</p>
+                      </div>
                     </div>
-                  </div>
-                </article>
+                  </article>
 
-                <article class="card card--testimonial">
-                  <p class="quote">
-                    “Le armonizzazioni di gruppo mi hanno aiutata a ritrovare
-                    presenza e a non sentirmi più sola nel mio processo.”
-                  </p>
-                  <div class="author">
-                    <div class="author__avatar" aria-hidden="true"></div>
-                    <div class="author__meta">
-                      <p class="small" style="margin-bottom: 0;"><strong>Sara</strong></p>
-                      <p class="small">Cerchi & armonizzazioni</p>
+                  <article
+                    class="card card--testimonial testimonial-slide"
+                    data-testimonial-slide
+                  >
+                    <p class="quote">
+                      “Le armonizzazioni di gruppo mi hanno aiutata a ritrovare
+                      presenza e a non sentirmi più sola nel mio processo.”
+                    </p>
+                    <div class="author">
+                      <div class="author__avatar" aria-hidden="true"></div>
+                      <div class="author__meta">
+                        <p class="small" style="margin-bottom: 0;"><strong>Sara</strong></p>
+                        <p class="small">Cerchi & armonizzazioni</p>
+                      </div>
                     </div>
-                  </div>
-                </article>
+                  </article>
 
-                <article class="card card--testimonial">
-                  <p class="quote">
-                    “Il lavoro energetico è stato profondo ma sempre dolce. Ho
-                    iniziato a fidarmi di più delle mie sensazioni.”
-                  </p>
-                  <div class="author">
-                    <div class="author__avatar" aria-hidden="true"></div>
-                    <div class="author__meta">
-                      <p class="small" style="margin-bottom: 0;"><strong>Chiara</strong></p>
-                      <p class="small">Percorsi energetici & Reiki</p>
+                  <article
+                    class="card card--testimonial testimonial-slide"
+                    data-testimonial-slide
+                  >
+                    <p class="quote">
+                      “Il lavoro energetico è stato profondo ma sempre dolce. Ho
+                      iniziato a fidarmi di più delle mie sensazioni.”
+                    </p>
+                    <div class="author">
+                      <div class="author__avatar" aria-hidden="true"></div>
+                      <div class="author__meta">
+                        <p class="small" style="margin-bottom: 0;"><strong>Chiara</strong></p>
+                        <p class="small">Percorsi energetici & Reiki</p>
+                      </div>
                     </div>
-                  </div>
-                </article>
+                  </article>
+                </div>
+
+                <div class="testimonial-carousel__controls">
+                  <button
+                    type="button"
+                    class="carousel-btn"
+                    data-carousel-prev
+                    aria-label="Testimonianza precedente"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    type="button"
+                    class="carousel-btn"
+                    data-carousel-next
+                    aria-label="Testimonianza successiva"
+                  >
+                    ›
+                  </button>
+                </div>
               </div>
             </div>
 
@@ -403,6 +436,7 @@
             </div>
           </div>
         </section>
+
 
         <!-- 6. SEZIONE – MINI “SU DI ME” -->
         <section class="section" id="mini-su-di-me">

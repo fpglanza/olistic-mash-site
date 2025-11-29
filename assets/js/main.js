@@ -134,9 +134,56 @@ function initMobileNav() {
   });
 }
 
+// TESTIMONIAL CAROUSEL
+function initTestimonialCarousels() {
+  const carousels = document.querySelectorAll("[data-testimonial-carousel]");
+
+  carousels.forEach((carousel) => {
+    const slides = Array.from(
+      carousel.querySelectorAll("[data-testimonial-slide]")
+    );
+    const prevBtn = carousel.querySelector("[data-carousel-prev]");
+    const nextBtn = carousel.querySelector("[data-carousel-next]");
+
+    if (!slides.length || !prevBtn || !nextBtn) return;
+
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("testimonial-slide--active", i === index);
+      });
+    }
+
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      showSlide(currentIndex);
+    });
+
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    });
+
+    // opzionale: cambio automatico ogni 10 secondi
+    const interval = setInterval(() => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    }, 10000);
+    //
+    // Se vuoi stoppare l’auto-rotazione al passaggio del mouse, puoi aggiungere:
+    // carousel.addEventListener("mouseenter", () => clearInterval(interval));
+
+    // mostra la prima slide all’inizio
+    showSlide(currentIndex);
+  });
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
   renderHomeEventsPreview();
   renderEventsPage();
   initWhatsAppCTAs();
-  initMobileNav(); // 👈 aggiungi questa riga
+  initMobileNav();
+  initTestimonialCarousels();
 });
