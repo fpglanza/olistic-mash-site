@@ -1064,89 +1064,44 @@ p {
     align-items: center !important;
   }
 }
-
 /* =========================
-   HERO – CALM AURA CARD
+   HERO – struttura base
    ========================= */
 
+/* wrapper interno neutro, NIENTE sfondo qui */
 .tw-hero-surface {
   position: relative;
   overflow: hidden;
-  border-radius: 24px;
-  padding: var(--space-24);
-  background: radial-gradient(circle at 0% 0%, #f7f3ff 0, #f5f5f7 45%, #ffffff 100%);
-  box-shadow: var(--shadow-soft);
-}
-
-/* Per dare un po' più respiro su desktop */
-@media (min-width: 768px) {
-  .tw-hero-surface {
-    padding: var(--space-32);
-    border-radius: 32px;
-  }
-}
-
-/* Aure lilla negli angoli */
-.tw-hero-aura-glow,
-.tw-hero-aura-glow-2 {
-  position: absolute;
-  border-radius: 999px;
-  pointer-events: none;
-}
-
-/* in alto a sinistra */
-.tw-hero-surface {
-  position: relative;
-  overflow: hidden;
-  border-radius: 20px;
+  border-radius: 0;
   padding: 0;
-  background-color: var(--color-white);
-  box-shadow: var(--shadow-soft);
+  background: transparent;
+  box-shadow: none;
 }
 
+/* layout due colonne (testo + colonna immagine) */
+.hero__layout.hero__layout--2cols {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: var(--space-32);
+  align-items: center;
+}
+
+/* immagine “normale” di base */
 .tw-hero-photo-img {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
   object-fit: cover;
-}
-
-
-.tw-hero-photo-wrap {
-  position: relative;
-  background: none;
-  padding: 0;
-  box-shadow: none;
   border-radius: var(--radius-lg);
-  overflow: hidden;
-
-  height: 100%;      /* 👈 match hero row height */
-  min-height: 260px; /* a base height on larger screens */
 }
 
-.tw-hero-photo-wrap::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  /* right = full image, left = hero card background */
-  pointer-events: none;
-}
-
-/* Desktop: un filo più ampio */
-@media (min-width: 768px) {
-  .tw-hero-surface {
-    border-radius: 28px;
-    padding: var(--space-32);
-  }
-}
-
-/* Per ora disattiviamo le aure viola “invadenti” */
+/* per ora lasciamo spenti i glow */
 .tw-hero-aura-glow,
 .tw-hero-aura-glow-2 {
   display: none;
 }
 
-/* Badge stays on top of the photo */
+/* badge sopra la colonna immagine */
 .hero__badge {
   position: absolute;
   left: var(--space-16);
@@ -1157,126 +1112,128 @@ p {
   background-color: rgba(255, 255, 255, 0.9);
   box-shadow: var(--shadow-subtle);
 }
-
-/* Responsive stacking: image and text */
-@media (max-width: 768px) {
-  .hero__layout.hero__layout--2cols {
-    grid-template-columns: 1fr;
-    align-items: stretch;
-
-      /* 🆕 add padding so visually nothing changes */
-    padding: var(--space-32);
-  }
-}
-
 /* ========================================= */
-/* HERO – image as card background + fade    */
+/* HERO – background sulla section #hero     */
 /* ========================================= */
 
-.section--hero .tw-hero-surface {
+#hero.section--hero {
   position: relative;
   overflow: hidden;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-soft);
-
-  /* padding stays here: it defines the card height, but
-     the background image will now fill the whole card */
-  padding: var(--space-32);
-
-  /* base surface color (under the gradient) */
+  padding: var(--space-48) 0; /* spazio verticale hero */
+  
+  /* colore base */
   background-color: var(--color-gray-100);
 
-  /* 1) gradient (left solid → right transparent)
-     2) image (full card) */
+  /* 1) gradient fade da sinistra
+     2) immagine a destra */
   background-image:
     linear-gradient(
       to right,
-      #FFF1E6 0%,      /* same as var(--color-gray-100) */
-      rgba(255, 241, 230, 0.97) 2%,
-      rgba(255, 241, 230, 0) 65%
+      var(--color-gray-100) 0%,
+      rgba(255, 241, 230, 0.96) 30%,
+      rgba(255, 241, 230, 0) 60%
     ),
     url("../img/IMG_7119-benvenuto-scaled.jpg");
-  background-size: 60%;
+  background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
 }
 
-/* Keep the 2-column layout as in the rest of the site */
-.section--hero .hero__layout.hero__layout--2cols {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  gap: var(--space-32);
-  align-items: center;
-}
+/* desktop / tablet larghi: griglia due colonne */
+@media (min-width: 1025px) {
+  #hero.section--hero .hero__layout.hero__layout--2cols {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: var(--space-32);
+    align-items: center;
+  }
 
-/* Right column now is just a spacer for the background */
-.section--hero .hero__media.tw-hero-photo-wrap {
-  position: relative;
-  background: none;
-  padding: 0;
-  box-shadow: none;
-  border-radius: 0;
-  min-height: 260px;
-}
+  /* su desktop l’<img> non serve, la foto è lo sfondo */
+  #hero.section--hero .tw-hero-photo-img {
+    display: none;
+  }
 
-/* We no longer need the img itself – the card background is the photo */
-.section--hero .tw-hero-photo-img {
-  display: none;
+  /* colonna destra fa solo da “ancora” per il badge */
+  #hero.section--hero .hero__media.tw-hero-photo-wrap {
+    position: relative;
+    min-height: 260px;
+  }
 }
-
-/* Badge stays visible on top of the card */
-.section--hero .hero__media.tw-hero-photo-wrap .hero__badge {
-  position: absolute;
-  left: var(--space-16);
-  bottom: var(--space-16);
-  margin: 0;
-  padding: 6px 12px;
-  border-radius: var(--radius-pill);
-  background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: var(--shadow-subtle);
-}
-
 /* =============================== */
-/* HERO – mobile fallback (simple) */
+/* HERO – fallback semplice <=1024 */
 /* =============================== */
 
 @media (max-width: 1024px) {
-  /* HERO – tablet + mobile fallback (simple) */
-
-  /* 1. Layout: stack text + image */
-  .section--hero .tw-hero-surface .hero__layout.hero__layout--2cols {
-    grid-template-columns: 1fr;
-    gap: var(--space-24);
-  }
-
-  /* 2. Remove background image + fade from the card on tablet/mobile */
-  .section--hero .tw-hero-surface {
+  /* niente immagine di background sulla section */
+  #hero.section--hero {
     background-image: none;
     background-color: var(--color-gray-100);
-    padding: var(--space-24);
+    padding: var(--space-32) 0;
   }
 
-  /* 3. Show the real <img> again */
-  .section--hero .tw-hero-photo-img {
+  /* layout: stack verticale */
+  #hero.section--hero .hero__layout.hero__layout--2cols {
+    display: block;
+  }
+
+  #hero.section--hero .hero__content {
+    max-width: 100%;
+  }
+
+  /* immagine vera visibile sotto il testo */
+  #hero.section--hero .hero__media.tw-hero-photo-wrap {
+    position: relative;
+    margin-top: var(--space-24);
+    min-height: auto;
+  }
+
+  #hero.section--hero .tw-hero-photo-img {
     display: block;
     width: 100%;
     height: auto;
-    margin-top: var(--space-16);
     border-radius: var(--radius-lg);
     object-fit: cover;
   }
 
-  /* 4. Image wrapper becomes a simple block */
-  .section--hero .hero__media.tw-hero-photo-wrap {
-    position: relative;
-    padding: 0;
-    min-height: auto;
-  }
-
-  /* 5. Badge: keep overlay */
-  .section--hero .hero__media.tw-hero-photo-wrap .hero__badge {
+  #hero.section--hero .hero__badge {
     position: absolute;
     left: var(--space-16);
     bottom: var(--space-16);
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .section {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  .hero__title,
+  h1 {
+    font-size: 1.8rem;
+    line-height: 1.25;
+  }
+
+  .section__title,
+  h2 {
+    font-size: 1.4rem;
+    line-height: 1.3;
+    margin-bottom: 16px;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    line-height: 1.35;
+  }
+
+  .lead,
+  .section__subtitle,
+  p {
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 }
