@@ -18,7 +18,10 @@ const whatsappMessages = {
   unity_booking: "Ciao! Vorrei prenotare una sessione Unity Connection.",
   percorsi_guide: "Ciao! Vorrei una guida per capire qual è il percorso più adatto a me.",
   reiki_info: "Ciao! Vorrei avere maggiori informazioni sui percorsi e trattamenti Reiki.",
-  contatti_generic: "Ciao! Vorrei maggiori informazioni sui tuoi servizi e disponibilità."
+  contatti_generic: "Ciao! Vorrei maggiori informazioni sui tuoi servizi e disponibilità.",
+  chi_sono_percorso: "Ciao, ti scrivo dalla pagina Chi sono, sezione Il mio percorso.",
+  chi_sono_approccio: "Ciao, ti scrivo dalla pagina Chi sono, sezione approccio olistico.",
+  chi_sono_missione: "Ciao, ti scrivo dalla pagina Chi sono, sezione La mia missione.",
 };
 
 // Inizializza CTA WhatsApp in base a data-wa-key

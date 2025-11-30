@@ -249,6 +249,38 @@ p {
   margin-bottom: var(--space-24);
 }
 
+/* --- Chi sono: ritmo visivo delle sezioni --- */
+
+.section--soft {
+  background-color: var(--color-bg-soft); /* crema caldo */
+}
+
+.section--banded {
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-gray-300);
+  border-bottom: 1px solid var(--color-gray-300);
+}
+
+.section--tint {
+  background-color: var(--color-primary-light); /* rosa molto soft */
+}
+
+.section--centered {
+  text-align: center;
+}
+
+/* CTA inline dentro le sezioni testo */
+.section__cta-inline {
+  margin-top: var(--space-24);
+  display: flex;
+  justify-content: center;
+}
+
+.section__cta-inline .btn {
+  min-width: 230px;
+}
+
+
 /* =========================
    NAVBAR / HEADER
    ========================= */
@@ -453,7 +485,7 @@ p {
 @media (min-width: 768px) {
   .hero__layout--2cols {
     grid-template-columns: 3fr 2fr;
-    align-items: center;
+    align-items: stretch;
   }
 }
 
@@ -1067,22 +1099,37 @@ p {
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-  padding: var(--space-24);
+  padding: 0;
   background-color: var(--color-white);
   box-shadow: var(--shadow-soft);
 }
 
 .tw-hero-photo-img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
+  object-fit: cover;
+}
 
+
+.tw-hero-photo-wrap {
+  position: relative;
+  background: none;
+  padding: 0;
+  box-shadow: none;
   border-radius: var(--radius-lg);
-  object-fit: cover;           /* taglia in modo elegante */
-  object-position: center;     /* centra il soggetto */
+  overflow: hidden;
 
-  /* mantiene l'effetto “placeholder style” originale */
-  min-height: 220px;
+  height: 100%;      /* 👈 match hero row height */
+  min-height: 260px; /* a base height on larger screens */
+}
+
+.tw-hero-photo-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* right = full image, left = hero card background */
+  pointer-events: none;
 }
 
 /* Desktop: un filo più ampio */
@@ -1097,4 +1144,139 @@ p {
 .tw-hero-aura-glow,
 .tw-hero-aura-glow-2 {
   display: none;
+}
+
+/* Badge stays on top of the photo */
+.hero__badge {
+  position: absolute;
+  left: var(--space-16);
+  bottom: var(--space-16);
+  margin: 0;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-subtle);
+}
+
+/* Responsive stacking: image and text */
+@media (max-width: 768px) {
+  .hero__layout.hero__layout--2cols {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+
+      /* 🆕 add padding so visually nothing changes */
+    padding: var(--space-32);
+  }
+}
+
+/* ========================================= */
+/* HERO – image as card background + fade    */
+/* ========================================= */
+
+.section--hero .tw-hero-surface {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+
+  /* padding stays here: it defines the card height, but
+     the background image will now fill the whole card */
+  padding: var(--space-32);
+
+  /* base surface color (under the gradient) */
+  background-color: var(--color-gray-100);
+
+  /* 1) gradient (left solid → right transparent)
+     2) image (full card) */
+  background-image:
+    linear-gradient(
+      to right,
+      #FFF1E6 0%,      /* same as var(--color-gray-100) */
+      rgba(255, 241, 230, 0.97) 2%,
+      rgba(255, 241, 230, 0) 65%
+    ),
+    url("../img/IMG_7119-benvenuto-scaled.jpg");
+  background-size: 60%;
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+
+/* Keep the 2-column layout as in the rest of the site */
+.section--hero .hero__layout.hero__layout--2cols {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: var(--space-32);
+  align-items: center;
+}
+
+/* Right column now is just a spacer for the background */
+.section--hero .hero__media.tw-hero-photo-wrap {
+  position: relative;
+  background: none;
+  padding: 0;
+  box-shadow: none;
+  border-radius: 0;
+  min-height: 260px;
+}
+
+/* We no longer need the img itself – the card background is the photo */
+.section--hero .tw-hero-photo-img {
+  display: none;
+}
+
+/* Badge stays visible on top of the card */
+.section--hero .hero__media.tw-hero-photo-wrap .hero__badge {
+  position: absolute;
+  left: var(--space-16);
+  bottom: var(--space-16);
+  margin: 0;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-subtle);
+}
+
+/* =============================== */
+/* HERO – mobile fallback (simple) */
+/* =============================== */
+
+@media (max-width: 1024px) {
+  /* HERO – tablet + mobile fallback (simple) */
+
+  /* 1. Layout: stack text + image */
+  .section--hero .tw-hero-surface .hero__layout.hero__layout--2cols {
+    grid-template-columns: 1fr;
+    gap: var(--space-24);
+  }
+
+  /* 2. Remove background image + fade from the card on tablet/mobile */
+  .section--hero .tw-hero-surface {
+    background-image: none;
+    background-color: var(--color-gray-100);
+    padding: var(--space-24);
+  }
+
+  /* 3. Show the real <img> again */
+  .section--hero .tw-hero-photo-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: var(--space-16);
+    border-radius: var(--radius-lg);
+    object-fit: cover;
+  }
+
+  /* 4. Image wrapper becomes a simple block */
+  .section--hero .hero__media.tw-hero-photo-wrap {
+    position: relative;
+    padding: 0;
+    min-height: auto;
+  }
+
+  /* 5. Badge: keep overlay */
+  .section--hero .hero__media.tw-hero-photo-wrap .hero__badge {
+    position: absolute;
+    left: var(--space-16);
+    bottom: var(--space-16);
+  }
 }
