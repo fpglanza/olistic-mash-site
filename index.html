@@ -12,7 +12,9 @@
       <!-- HEADER -->
       <header class="site-header">
         <div class="container nav">
-          <a href="index.html" class="nav__logo">Logo</a>
+          <a href="index.html" class="nav__logo">
+            <img src="assets/img/nero.png" alt="Logo" class="nav__logo-img" />
+          </a>
 
           <button
             class="nav__toggle"
@@ -165,32 +167,11 @@
 
 
         <!-- 3. SEZIONE – UNITY CONNECTION (SERVIZIO PRINCIPALE) -->
-        <section class="section" id="unity-connection">
+        <section class="section section--unity-hero" id="unity-connection">
           <div class="container">
-            <div class="grid grid--2">
-              <!-- Immagine / visual -->
-              <div class="unity-visual">
-                <div class="card" style="max-width: 85%;">
-                  <div class="hero__media tw-hero-photo-wrap">
-                    <img
-                      src="assets/img/IMG_7391-chi-sono-1536x1024.png"
-                      alt="Giorgia Boccadifuoco – Coach Olistica"
-                      class="hero__photo tw-hero-photo-img"
-                    />
-                  </div>
-                  <p class="small" style="margin-top: var(--space-16);">
-                    Sessioni online e in presenza, pensate per riportarti al tuo centro.
-                  </p>
-                  <span class="badge badge--primary-soft small">
-                    Servizio principale
-                  </span>
-                  <span class="badge badge--warning-soft small">
-                    Posti limitati
-                  </span>
-                </div>
-              </div>
-
-              <!-- Contenuto -->
+            <div class="unity-hero-layout">
+              
+              <!-- Colonna testo -->
               <div class="unity-content">
                 <h2 class="section__title" style="margin-top: var(--space-16);">
                   Unity Connection – Percorso individuale
@@ -201,37 +182,33 @@
                 </p>
 
                 <ul class="unity-list">
-                  <li>
-                    <span class="unity-list__icon"></span>
-                    Maggiore chiarezza rispetto a ciò che stai vivendo.
-                  </li>
-                  <li>
-                    <span class="unity-list__icon"></span>
-                    Più presenza nel corpo e nelle emozioni, meno confusione mentale.
-                  </li>
-                  <li>
-                    <span class="unity-list__icon"></span>
-                    Strumenti pratici per portare il lavoro energetico nella tua quotidianità.
-                  </li>
-                  <li>
-                    <span class="unity-list__icon"></span>
-                    Uno spazio sicuro in cui sentirti accolta, ascoltata e non giudicata.
-                  </li>
+                  <li><span class="unity-list__icon"></span> Maggiore chiarezza rispetto a ciò che stai vivendo.</li>
+                  <li><span class="unity-list__icon"></span> Più presenza nel corpo e nelle emozioni, meno confusione mentale.</li>
+                  <li><span class="unity-list__icon"></span> Strumenti pratici per portare il lavoro energetico nella tua quotidianità.</li>
+                  <li><span class="unity-list__icon"></span> Uno spazio sicuro in cui sentirti accolta, ascoltata e non giudicata.</li>
                 </ul>
 
                 <div class="mt-24">
-                  <a
-                    href="#"
-                    class="btn btn-primary"
-                    data-wa-key="unity_booking"
-                  >
+                  <a href="#" class="btn btn-primary" data-wa-key="unity_booking">
                     Prenota la tua sessione su WhatsApp
                   </a>
                 </div>
               </div>
+
+              <!-- Badge immagine — facoltativo -->
+              <div class="unity-photo-badge">
+                <span class="badge badge--primary-soft small">
+                  Servizio principale
+                </span>
+                <span class="badge badge--warning-soft small">
+                  Posti limitati
+                </span>
+              </div>
+
             </div>
           </div>
         </section>
+
 
         <!-- 4. SEZIONE – EVENTI & ARMONIZZAZIONI DI GRUPPO -->
         <section class="section events" id="eventi">
@@ -457,15 +434,17 @@
 
 
         <!-- 6. SEZIONE – MINI “SU DI ME” -->
-        <section class="section" id="mini-su-di-me">
+        <section class="section section--about-mini" id="mini-su-di-me">
           <div class="container">
-            <div class="grid">
+            <div class="about-mini about-mini--centered">
               <!-- Foto -->
-              <div class="about-mini__photo">
-                <div class="card">
-                  <div class="hero__photo-placeholder" aria-hidden="true"></div>
-                </div>
-              </div>
+              <figure class="about-mini__media">
+                <img
+                  src="assets/img/fo3iafbjmnp1qcju1n438otehk._SY600_.jpg"
+                  alt="Ritratto di Giorgia Boccadifuoco"
+                  class="about-mini__photo"
+                />
+              </figure>
 
               <!-- Testo -->
               <div class="about-mini__content">
@@ -475,17 +454,18 @@
                   non ti appartiene più e tornare a sentire il tuo centro.
                 </p>
                 <p>
-                  Integro lavoro energetico, ascolto profondo e strumenti
-                  pratici, per sostenerti nel tuo percorso in modo concreto e
-                  rispettoso dei tuoi tempi.
+                  Integro lavoro energetico, ascolto profondo e strumenti pratici,
+                  per sostenerti nel tuo percorso in modo concreto e rispettoso
+                  dei tuoi tempi.
                 </p>
-                <a href="chi-sono.html" class="btn btn-secondary mt-24">
+                <a href="chi-sono.html" class="btn btn-secondary about-mini__cta">
                   Scopri di più su di me
                 </a>
               </div>
             </div>
           </div>
         </section>
+
 
         <!-- 7. CTA FINALE – PRENOTA ORA -->
         <section class="section section--cta-final" id="cta-finale">

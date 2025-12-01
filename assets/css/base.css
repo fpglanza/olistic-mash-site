@@ -280,6 +280,82 @@ p {
   min-width: 230px;
 }
 
+/* ======================================= */
+/* HERO “CHI SONO” – Mobile Optimization   */
+/* ======================================= */
+
+@media (max-width: 768px) {
+  /* 1. Layout: stack vertical */
+  #chi-sono-hero .hero__layout.hero__layout--2cols {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-24);
+  }
+
+  /* 2. Move image above or below text (choose below here) */
+  #chi-sono-hero .hero__media {
+    order: 2; /* mette la foto sotto il testo */
+    width: 100%;
+  }
+
+  #chi-sono-hero .hero__content {
+    order: 1; /* testo sopra */
+  }
+
+  /* 3. Remove old card container for mobile */
+  #chi-sono-hero .hero__image-card {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  /* 4. Make image full width */
+  #chi-sono-hero .hero__photo-placeholder {
+    width: 100%;
+    height: 260px; /* regolabile */
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--radius-lg);
+
+    /* Se desideri assegnare un'immagine reale:
+    background-image: url('../img/CHI-SONO-YOUR-PHOTO.jpg');
+    */
+  }
+
+  /* 5. Title + paragraph adjustments */
+  #chi-sono-hero .hero__title {
+    font-size: 1.8rem;
+    line-height: 1.25;
+    margin-bottom: var(--space-12);
+  }
+
+  #chi-sono-hero .lead {
+    font-size: 1rem;
+    opacity: 0.9;
+    line-height: 1.55;
+  }
+
+  /* 6. CTA full-width and comfortable tap */
+  #chi-sono-hero .btn-primary {
+    width: 100%;
+    padding: 14px 20px;
+    margin-top: var(--space-16);
+  }
+
+  /* 7. Container spacing */
+  #chi-sono-hero .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  #chi-sono-hero.section {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+}
+
+
 
 /* =========================
    NAVBAR / HEADER
@@ -299,10 +375,27 @@ p {
   position: relative;
 }
 
+/* ===================
+   LOGO NAVBAR
+   =================== */
+
 .nav__logo {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+/* il logo prende lo spazio del testo precedente */
+.nav__logo-img {
+  height: 28px;              /* simile a un font-size ~24-28px */
+  width: auto;
+  display: block;
+}
+
+/* su schermi più grandi puoi aumentare leggermente */
+@media (min-width: 768px) {
+  .nav__logo-img {
+    height: 32px;
+  }
 }
 
 /* Toggle (hamburger) – mobile */
@@ -817,6 +910,142 @@ p {
   border: 2px solid var(--color-primary);
 }
 
+/* =======================================================
+   UNITY CONNECTION – mini hero con background + fade
+   ======================================================= */
+
+.section--unity-hero {
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-48) 0;
+
+  /* colore sottostante */
+  background-color: var(--color-gray-100);
+
+  /* fade + immagine */
+  background-image:
+    linear-gradient(
+      to right,
+      var(--color-gray-100) 0%,
+      rgba(255, 241, 230, 0.95) 30%,
+      rgba(255, 241, 230, 0) 60%
+    ),
+    url("/assets/img/IMG_7391-chi-sono-1536x1024.png");
+
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+
+/* Layout due colonne su desktop */
+.unity-hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: var(--space-32);
+  align-items: center;
+}
+
+/* Badge (se lo vuoi mantenere) */
+.unity-photo-badge {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-self: start;
+}
+
+@media (max-width: 1024px) {
+  .section--unity-hero {
+    background-image: none;
+    background-color: var(--color-gray-100); /* fallback */
+    padding: var(--space-32) 0;
+  }
+
+  .unity-hero-layout {
+    display: block;
+  }
+
+  .unity-photo-badge {
+    margin-top: var(--space-16);
+  }
+}
+
+/* ======================================= */
+/* HERO “UNITY CONNECTION” – Mobile Optimize */
+/* ======================================= */
+
+@media (max-width: 768px) {
+
+  /* 1. Layout: stack verticale */
+  #unity-hero .hero__layout.hero__layout--2cols {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-24);
+  }
+
+  /* 2. Ordine: testo sopra, immagine sotto */
+  #unity-hero .hero__content {
+    order: 1;
+  }
+
+  #unity-hero .hero__media {
+    order: 2;
+    width: 100%;
+  }
+
+  /* 3. Rimuovere la card attorno all'immagine */
+  #unity-hero .hero__image-card {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+  }
+
+  /* 4. Placeholder immagine → full width con radius */
+  #unity-hero .hero__photo-placeholder {
+    width: 100%;
+    height: 260px; /* regolabile */
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--radius-lg);
+
+    /* Se vuoi assegnare un'immagine reale:
+    background-image: url('../img/IMG_7391-chi-sono-1536x1024.png');
+    */
+  }
+
+  /* 5. Title & lead più compatti */
+  #unity-hero .hero__title {
+    font-size: 1.8rem;
+    line-height: 1.25;
+    margin-bottom: var(--space-16);
+  }
+
+  #unity-hero .lead {
+    font-size: 1rem;
+    line-height: 1.55;
+    margin-bottom: var(--space-16);
+  }
+
+  /* 6. CTA ben visibile, full width */
+  #unity-hero .btn-primary {
+    width: 100%;
+    padding: 14px 20px;
+  }
+
+  /* 7. Padding contenuto */
+  #unity-hero .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  #unity-hero.section {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+}
+
+
 /* Event cards */
 .events {
   background-color: var(--color-primary-light);
@@ -862,30 +1091,62 @@ p {
   gap: var(--space-20);
 }
 
-/* About mini */
-.about-mini__photo .hero__photo-placeholder {
-  min-height: 200px;
-  border-radius: 999px;
+/* Mini "su di me" – layout verticale, centrato */
+.section--about-mini {
+  /* se vuoi leggermente staccata dal resto, ok anche così; altrimenti lascia vuoto */
+  /* background: var(--color-warm-100); */
 }
-#mini-su-di-me .grid {
+
+.about-mini {
   display: flex;
   flex-direction: column;
-  align-items: center;     /* center horizontally */
-  text-align: center;      /* center text */
-  gap: var(--space-32);
+  align-items: center;
+  text-align: center;
 }
 
-/* Make the card/image smaller */
-#mini-su-di-me .about-mini__photo .card {
-  width: 33%;              /* ≈ 1/3 of current width */
-  min-width: 240px;        /* avoid too small on mobile */
+.about-mini--centered {
+  max-width: 42rem; /* ~672px */
   margin: 0 auto;
+  padding-block: 3rem; /* un po' di respiro extra dentro la sezione */
 }
 
-/* Make the text block more compact */
-#mini-su-di-me .about-mini__content {
-  max-width: 600px;
+/* Foto */
+.about-mini__media {
+  margin-bottom: 1.75rem;
 }
+
+.about-mini__photo {
+  display: block;
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 2rem;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+  margin-inline: auto;
+}
+
+/* Testo */
+.about-mini__content p + p {
+  margin-top: 0.75rem;
+}
+
+.about-mini__cta {
+  margin-top: 1.75rem;
+}
+
+/* su viewport ampi solo un po' più di respiro */
+@media (min-width: 768px) {
+  .about-mini--centered {
+    padding-block: 4rem;
+  }
+
+  .about-mini__photo {
+    width: 260px;
+    height: 260px;
+  }
+}
+
+
 
 /* CTA finale */
 .cta-final__card {
