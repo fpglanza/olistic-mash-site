@@ -182,6 +182,22 @@ function initTestimonialCarousels() {
   });
 }
 
+document.querySelectorAll(".video-lazy").forEach((container) => {
+  container.addEventListener("click", () => {
+    const id = container.dataset.videoId;
+
+    container.innerHTML = `
+      <iframe
+        src="https://www.youtube.com/embed/${id}?autoplay=1"
+        title="Video testimonianza – percorso Unity Connection"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    `;
+  });
+});
+
 
 document.addEventListener("DOMContentLoaded", () => {
   renderHomeEventsPreview();
