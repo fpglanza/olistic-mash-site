@@ -263,3 +263,21 @@
 .hero__badge {
   @apply mt-3 text-sm text-gray-700;
 }
+
+/* ------------------------------
+   SECTION TITLE — GENERIC BASE (NOT page-specific)
+------------------------------ */
+
+.section__title {
+  @apply text-3xl md:text-4xl font-semibold
+         text-warm-700 leading-tight tracking-tight;
+  margin-bottom: 0.4em;
+}
+
+.section__subtitle {
+  @apply text-base md:text-lg text-warm-600 leading-relaxed;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.95;
+}
