@@ -2,8 +2,8 @@
 export const siteHeader = `
 <header class="site-header">
   <div class="nav container">
-
-    <!-- TOP BAR (mobile only) -->
+    
+    <!-- MOBILE TOP BAR: centered logo + hamburger -->
     <div class="nav__mobile flex items-center justify-center gap-4 w-full md:hidden">
       <a href="index.html" class="nav__logo">
         <img src="assets/img/logo.png" alt="Logo" class="nav__logo-img" />
@@ -23,7 +23,7 @@ export const siteHeader = `
       </button>
     </div>
 
-    <!-- DESKTOP NAV (hidden on mobile) -->
+    <!-- DESKTOP NAV: centered with logo in the middle -->
     <nav class="nav__desktop hidden md:flex items-center justify-center w-full">
       <ul class="nav__desktop-left flex items-center gap-6">
         <li><a class="nav__link" href="index.html#hero">Home</a></li>
@@ -37,13 +37,13 @@ export const siteHeader = `
       </a>
 
       <ul class="nav__desktop-right flex items-center gap-6">
-        <li><a class="nav__link" href="eventi-gruppi.html">Eventi & Gruppi</a></li>
-        <li><a class="nav__link" href="percorsi-reiki.html">Percorsi & Reiki</a></li>
+        <li><a class="nav__link" href="eventi-gruppi.html">Eventi</a></li>
+        <li><a class="nav__link" href="percorsi-reiki.html">Percorsi</a></li>
         <li><a class="nav__link" href="contatti.html">Contatti</a></li>
       </ul>
     </nav>
 
-    <!-- MOBILE DROPDOWN MENU -->
+    <!-- MOBILE DROPDOWN MENU (reuses your existing .nav__links styles) -->
     <nav aria-label="Navigazione mobile" class="md:hidden">
       <ul class="nav__links">
         <li><a class="nav__link" href="index.html#hero">Home</a></li>

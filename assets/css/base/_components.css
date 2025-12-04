@@ -191,6 +191,12 @@
 
 
 /* NAV MENU */
+/* Mobile top bar: centered logo + hamburger */
+.nav__mobile {
+  @apply flex items-center justify-center gap-4 py-3 w-full md:hidden;
+}
+
+/* Desktop nav: centered global layout */
 .nav__desktop {
   @apply hidden md:flex items-center justify-center w-full;
 }
@@ -200,10 +206,7 @@
   @apply flex items-center gap-6;
 }
 
-.nav__mobile {
-  @apply flex items-center justify-center gap-4 py-3;
-}
-
+/* Logo size */
 .nav__logo-img {
   @apply h-10 w-auto;
 }
