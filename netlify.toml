@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# (opzionale) redirect base per sicurezza, se mai userai una SPA
+#[[redirects]]
+#  from = "/*"
+#  to = "/index.html"
+#  status = 200
