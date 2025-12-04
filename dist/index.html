@@ -9,9 +9,10 @@
       content="Percorsi olistici individuali e di gruppo per ritrovare equilibrio, presenza e centratura energetica."
     />
 
-    <!-- CSS specifico della pagina Home -->
-    <script type="module" crossorigin src="/assets/index-D5ZaQef1.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-0AxPc4Rh.css">
+    <!-- CSS specifico della pagina Home (background hero, layout, ecc.) -->
+    <!-- <link rel="stylesheet" href="/assets/css/pages/home.css" /> -->
+    <script type="module" crossorigin src="/assets/index-fuzm2Vep.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BnM-pU6g.css">
   </head>
   <body>
     <div class="site">
@@ -53,10 +54,8 @@
                 </div>
               </div>
 
-              <!-- Colonna immagine (ancora presente per mobile & badge) -->
+              <!-- Colonna immagine (mobile + badge) -->
               <div class="hero__media tw-hero-photo-wrap">
-                <!-- L’immagine vera viene usata su mobile / tablet;
-                    su desktop la foto è lo sfondo della section -->
                 <img
                   src="/assets/IMG_7119-benvenuto-scaled-BvXraJ-q.jpg"
                   alt="Giorgia Boccadifuoco – Coach Olistica"
@@ -134,11 +133,10 @@
           </div>
         </section>
 
-        <!-- 3. SEZIONE – UNITY CONNECTION (SERVIZIO PRINCIPALE) -->
+        <!-- 3. SEZIONE – UNITY CONNECTION -->
         <section class="section section--unity-hero" id="unity-connection">
           <div class="container">
             <div class="unity-hero-layout">
-              <!-- Colonna testo -->
               <div class="unity-content">
                 <h2 class="section__title" style="margin-top: var(--space-16);">
                   Unity Connection – Percorso individuale
@@ -162,13 +160,12 @@
                 </div>
               </div>
 
-              <!-- Badge immagine — facoltativo -->
               <div class="unity-photo-badge"></div>
             </div>
           </div>
         </section>
 
-        <!-- 4. SEZIONE – EVENTI & ARMONIZZAZIONI DI GRUPPO -->
+        <!-- 4. EVENTI -->
         <section class="section events" id="eventi">
           <div class="container">
             <header class="section__header">
@@ -270,7 +267,7 @@
           </div>
         </section>
 
-        <!-- 5. SEZIONE – TESTIMONIANZE -->
+        <!-- 5. TESTIMONIANZE -->
         <section class="section section--testimonials" id="testimonianze">
           <div class="container">
             <header class="section__header text-center">
@@ -282,7 +279,7 @@
             </header>
 
             <div class="grid grid--2">
-              <!-- Card video (sinistra) -->
+              <!-- Video -->
               <article class="card card--video">
                 <div class="video-lazy" data-video-id="QW8bcFUgRfI">
                   <img
@@ -305,7 +302,7 @@
                 </p>
               </article>
 
-              <!-- Carousel testimonianze testuali (destra) -->
+              <!-- Carousel -->
               <div class="testimonial-carousel" data-testimonial-carousel>
                 <div class="testimonial-carousel__slides">
                   <article
@@ -371,7 +368,7 @@
                   </button>
                   <button
                     type="button"
-                    class="carousel-btn"
+                  class="carousel-btn"
                     data-carousel-next
                     aria-label="Testimonianza successiva"
                   >
@@ -393,11 +390,10 @@
           </div>
         </section>
 
-        <!-- 6. SEZIONE – MINI “SU DI ME” -->
+        <!-- 6. MINI “SU DI ME” -->
         <section class="section section--about-mini" id="mini-su-di-me">
           <div class="container">
             <div class="about-mini about-mini--centered">
-              <!-- Foto -->
               <figure class="about-mini__media">
                 <img
                   src="/assets/fo3iafbjmnp1qcju1n438otehk._SY600_-6NQ9ptZO.jpg"
@@ -406,7 +402,6 @@
                 />
               </figure>
 
-              <!-- Testo -->
               <div class="about-mini__content">
                 <h2 class="section__title">Ciao, sono Giorgia Boccadifuoco</h2>
                 <p>
@@ -426,7 +421,7 @@
           </div>
         </section>
 
-        <!-- 7. CTA FINALE – PRENOTA ORA -->
+        <!-- 7. CTA FINALE -->
         <section class="section section--cta-final" id="cta-finale">
           <div class="container tw-section-aura">
             <div class="card cta-final__card tw-card-aura-soft">
@@ -443,10 +438,7 @@
                   class="btn btn-primary tw-btn-wa"
                   data-wa-key="home_final"
                 >
-                  <span class="tw-btn-wa-icon">
-                    <!-- icona WhatsApp placeholder -->
-                    💬
-                  </span>
+                  <span class="tw-btn-wa-icon">💬</span>
                   <span>Prenota ora su WhatsApp!</span>
                 </a>
                 <div class="tw-cta-reassurance">
@@ -464,6 +456,6 @@
       <footer data-site-footer></footer>
     </div>
 
-    <!-- Entry Vite: unico script da caricare in sviluppo -->
+    <!-- Entry Vite: unico script da caricare -->
   </body>
 </html>

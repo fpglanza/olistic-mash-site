@@ -1,3 +1,4 @@
+import logoUrl from "../../img/logo.png";
 export const siteHeader = `
 <header class="site-header">
   <div class="nav container">
@@ -5,7 +6,7 @@ export const siteHeader = `
     <!-- MOBILE TOP BAR -->
     <div class="nav__mobile flex items-center justify-center gap-4 w-full md:hidden">
       <a href="index.html" class="nav__logo">
-        <img src="assets/img/logo.png" alt="Logo" class="nav__logo-img" />
+        <img src="${logoUrl}" alt="Logo" class="nav__logo-img" />
       </a>
 
       <button
@@ -31,7 +32,7 @@ export const siteHeader = `
       </ul>
 
       <a href="index.html" class="nav__logo mx-10">
-        <img src="assets/img/logo.png" alt="Logo" class="nav__logo-img" />
+        <img src="${logoUrl}" alt="Logo" class="nav__logo-img" />
       </a>
 
       <ul class="nav__desktop-right flex items-center gap-6">

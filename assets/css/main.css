@@ -2,7 +2,7 @@
 /* ENTRYPOINT TAILWIND + CSS MODULARE            */
 /* --------------------------------------------- */
 
-/* 1. IMPORT DI TUTTI I CSS BASE (DEVONO STARE PRIMA DI TUTTO) */
+/* 1. IMPORT GLOBALI + PAGINA (DEVONO VENIRE PRIMA DI OGNI @tailwind) */
 @import "./base/_variables.css";
 @import "./base/_reset.css";
 @import "./base/_typography.css";
@@ -11,8 +11,15 @@
 @import "./base/_utilities.css";
 @import "./base/_tailwind-components.css";
 
-/* 2. DIRETTIVE TAILWIND (VENGONO PROCESSATE DA VITE/POSTCSS) */
+/* CSS specifico della Home (hero con background, testimonials layout, ecc.) */
+@import "./pages/home.css";
+
+/* 2. LAYER TAILWIND */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* 3. TWEAK GLOBALI */
+body {
+  background: #ffe9d6;
+}
