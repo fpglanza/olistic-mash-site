@@ -1,0 +1,54 @@
+/* ============================================
+   TYPOGRAPHY — BASELINE RULES
+   ============================================ */
+
+/* Headings */
+h1, h2, h3 {
+  margin: 0 0 var(--space-16);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* Hierarchy */
+h1 {
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+/* Paragraphs */
+p {
+  margin: 0 0 var(--space-12);
+  color: var(--color-text-soft);
+}
+
+/* Lead text (intro paragraphs) */
+.lead {
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--color-text-soft);
+}
+
+/* Small text */
+.small {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Responsive scale for large screens */
+@media (min-width: 768px) {
+  h1 { font-size: 40px; }
+  h2 { font-size: 32px; }
+  h3 { font-size: 22px; }
+}

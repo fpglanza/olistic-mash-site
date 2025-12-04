@@ -1,4 +1,8 @@
 // assets/js/main.js
+import "../css/main.css";
+
+import { siteHeader } from "./layout/header.js";
+import { siteFooter } from "./layout/footer.js";
 
 // CONFIG: numero WhatsApp (placeholder per ora)
 const WHATSAPP_PHONE = "+393343421236"; // da sostituire con numero reale
@@ -51,7 +55,7 @@ function initWhatsAppCTAs() {
 // Render eventi in una lista (per Home preview)
 function renderHomeEventsPreview() {
   const container = document.getElementById("home-events-list");
-  if (!container || !Array.isArray(eventsData)) return;
+  if (!container || typeof eventsData === "undefined" || !Array.isArray(eventsData)) return;
 
   const preview = eventsData.slice(0, 3);
   container.innerHTML = "";
@@ -82,7 +86,7 @@ function renderHomeEventsPreview() {
 // Render eventi per pagina Eventi & Gruppi
 function renderEventsPage() {
   const container = document.getElementById("events-list");
-  if (!container || !Array.isArray(eventsData)) return;
+  if (!container || typeof eventsData === "undefined" || !Array.isArray(eventsData)) return;
 
   container.innerHTML = "";
 
@@ -109,30 +113,26 @@ function renderEventsPage() {
   });
 }
 
-// NAVBAR MOBILE – hamburger menu
+// NAVBAR MOBILE – hamburger menu (usa .nav.nav--open come da CSS)
 function initMobileNav() {
-  const navs = document.querySelectorAll(".nav");
+  const nav = document.querySelector(".nav");
+  if (!nav) return;
 
-  navs.forEach((nav) => {
-    const toggle = nav.querySelector(".nav__toggle");
-    const links = nav.querySelectorAll(".nav__link");
+  const toggle = nav.querySelector(".nav__toggle");
+  const links = nav.querySelectorAll(".nav__link");
 
-    if (!toggle) return;
+  if (!toggle) return;
 
-    // Apertura/chiusura menu
-    toggle.addEventListener("click", () => {
-      const isOpen = nav.classList.toggle("nav--open");
-      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
+  toggle.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("nav--open");
+    toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
 
-    // Chiudi il menu quando clicco un link (solo mobile)
-    links.forEach((link) => {
-      link.addEventListener("click", () => {
-        if (nav.classList.contains("nav--open")) {
-          nav.classList.remove("nav--open");
-          toggle.setAttribute("aria-expanded", "false");
-        }
-      });
+  // Chiudi il menu quando clicchi una voce (mobile UX)
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("nav--open");
+      toggle.setAttribute("aria-expanded", "false");
     });
   });
 }
@@ -168,41 +168,56 @@ function initTestimonialCarousels() {
       showSlide(currentIndex);
     });
 
-    // opzionale: cambio automatico ogni 10 secondi
+    // cambio automatico ogni 10 secondi
     const interval = setInterval(() => {
       currentIndex = (currentIndex + 1) % slides.length;
       showSlide(currentIndex);
     }, 10000);
-    //
-    // Se vuoi stoppare l’auto-rotazione al passaggio del mouse, puoi aggiungere:
-    // carousel.addEventListener("mouseenter", () => clearInterval(interval));
 
     // mostra la prima slide all’inizio
     showSlide(currentIndex);
   });
 }
 
-document.querySelectorAll(".video-lazy").forEach((container) => {
-  container.addEventListener("click", () => {
-    const id = container.dataset.videoId;
+// VIDEO LAZY
+function initLazyVideos() {
+  const containers = document.querySelectorAll(".video-lazy");
+  containers.forEach((container) => {
+    container.addEventListener("click", () => {
+      const id = container.dataset.videoId;
 
-    container.innerHTML = `
-      <iframe
-        src="https://www.youtube.com/embed/${id}?autoplay=1"
-        title="Video testimonianza – percorso Unity Connection"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-      ></iframe>
-    `;
+      container.innerHTML = `
+        <iframe
+          src="https://www.youtube.com/embed/${id}?autoplay=1"
+          title="Video testimonianza – percorso Unity Connection"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      `;
+    });
   });
-});
-
+}
 
 document.addEventListener("DOMContentLoaded", () => {
+  // 1. Inietta header e footer
+  const headerSlot = document.querySelector("[data-site-header]");
+  if (headerSlot) {
+    headerSlot.outerHTML = siteHeader;
+  }
+
+  const footerSlot = document.querySelector("[data-site-footer]");
+  if (footerSlot) {
+    footerSlot.outerHTML = siteFooter;
+  }
+
+  // 2. Ora che l'header è stato iniettato, possiamo agganciare il toggle mobile
+  initMobileNav();
+
+  // 3. Inizializza funzionalità di pagina
   renderHomeEventsPreview();
   renderEventsPage();
   initWhatsAppCTAs();
-  initMobileNav();
   initTestimonialCarousels();
+  initLazyVideos();
 });

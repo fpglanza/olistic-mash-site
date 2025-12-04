@@ -1,0 +1,63 @@
+/* ============================================
+   PAGINA "EVENTI & GRUPPI"
+   Event cards + testimonial list
+   ============================================ */
+
+/* --------------------------------------------
+   SEZIONE EVENTI
+-------------------------------------------- */
+
+/* Sfondo morbido per la sezione eventi */
+.events {
+  background-color: var(--color-primary-light);
+}
+
+/* Header della card evento:
+   data a sinistra, titolo/info a destra */
+.event-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-12);
+}
+
+/* Box data (giorno/mese) */
+.event-card__date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  padding: 6px 0;
+  border-radius: var(--radius-md);
+  background-color: var(--color-gray-100);
+  font-family: var(--font-heading);
+}
+
+/* Giorno in grande */
+.event-card__day {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Mese in piccolo, uppercase */
+.event-card__month {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--color-gray-500);
+}
+
+/* Meta info (luogo, orario, tipo) */
+.event-card__meta {
+  color: var(--color-gray-500);
+}
+
+
+/* --------------------------------------------
+   LISTA TESTIMONIANZE (semplice, non carousel)
+-------------------------------------------- */
+
+.testimonial-list {
+  display: grid;
+  gap: var(--space-20);
+}

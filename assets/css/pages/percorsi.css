@@ -1,0 +1,25 @@
+/* ============================================
+   PAGINA "PERCORSI & REIKI"
+   CSS specifico (placeholder)
+   ============================================ */
+
+/*
+  Al momento la pagina Percorsi & Reiki utilizza:
+
+    - layout globale (.section, .container, .grid, .card, .btn, ...)
+    - design system condiviso (tipografia, colori, spaziature)
+
+  Non ci sono regole dedicate in precedenza nel vecchio base.css,
+  quindi questo file parte volutamente vuoto.
+
+  Qui potrai aggiungere in futuro, ad esempio:
+
+    - layout particolari per liste di percorsi
+    - sfondi diversi per sezioni di Reiki
+    - micro-animazioni o highlight solo per questa pagina
+
+  Esempi possibili (da usare solo quando ti serviranno):
+
+  #percorsi-hero { ... }
+  #reiki-percorsi-list { ... }
+*/

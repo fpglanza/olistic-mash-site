@@ -1,0 +1,18 @@
+/* --------------------------------------------- */
+/* ENTRYPOINT TAILWIND + CSS MODULARE            */
+/* --------------------------------------------- */
+
+/* 1. IMPORT DI TUTTI I CSS BASE (DEVONO STARE PRIMA DI TUTTO) */
+@import "./base/_variables.css";
+@import "./base/_reset.css";
+@import "./base/_typography.css";
+@import "./base/_layout.css";
+@import "./base/_components.css";
+@import "./base/_utilities.css";
+@import "./base/_tailwind-components.css";
+
+/* 2. DIRETTIVE TAILWIND (VENGONO PROCESSATE DA VITE/POSTCSS) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+

@@ -8,8 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
 
-    "tw:watch": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/tw.css --watch",
-    "tw:build": "tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/tw.css --minify"
+    "tw:watch": "tailwindcss -i ./assets/css/main.css -o ./assets/css/main.build.css --watch",
+    "tw:build": "tailwindcss -i ./assets/css/main.css -o ./assets/css/main.build.css --minify"
   },
   "repository": {
     "type": "git",

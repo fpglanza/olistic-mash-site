@@ -1,0 +1,82 @@
+/* ============================================
+   PAGINA "CHI SONO" — HERO MOBILE
+   ============================================ */
+
+/*
+  Ottimizza il layout della hero "Chi sono" su mobile:
+  - testo sopra
+  - immagine sotto
+  - CTA full-width
+*/
+
+@media (max-width: 768px) {
+  /* 1. Layout: stack verticale */
+  #chi-sono-hero .hero__layout.hero__layout--2cols {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-24);
+  }
+
+  /* 2. Ordine: testo sopra, immagine sotto */
+  #chi-sono-hero .hero__content {
+    order: 1;
+  }
+
+  #chi-sono-hero .hero__media {
+    order: 2; /* foto sotto il testo */
+    width: 100%;
+  }
+
+  /* 3. Card immagine alleggerita su mobile */
+  #chi-sono-hero .hero__image-card {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  /* 4. Placeholder immagine → full width con radius
+     (se in futuro userai un background-image, puoi farlo qui) */
+  #chi-sono-hero .hero__photo-placeholder {
+    width: 100%;
+    height: 260px; /* regolabile */
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--radius-lg);
+
+    /* Esempio:
+       background-image: url('../img/CHI-SONO-YOUR-PHOTO.jpg');
+    */
+  }
+
+  /* 5. Titolo e testo più compatti su schermi piccoli */
+  #chi-sono-hero .hero__title {
+    font-size: 1.8rem;
+    line-height: 1.25;
+    margin-bottom: var(--space-12);
+  }
+
+  #chi-sono-hero .lead {
+    font-size: 1rem;
+    line-height: 1.55;
+    opacity: 0.9;
+  }
+
+  /* 6. CTA full width e comoda per il tap */
+  #chi-sono-hero .btn-primary {
+    width: 100%;
+    padding: 14px 20px;
+    margin-top: var(--space-16);
+  }
+
+  /* 7. Padding del container nella hero */
+  #chi-sono-hero .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  #chi-sono-hero.section {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+}

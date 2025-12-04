@@ -1,0 +1,339 @@
+/* ============================================
+   HERO – Cinematic Fullscreen + Parallax + Centered
+   ============================================ */
+
+/* Base structure */
+#hero.section--hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;             /* FULL CENTERING */
+  padding: var(--space-32) var(--space-16);
+
+  overflow: hidden;
+
+  /* Background base color */
+  background-color: var(--color-gray-100);
+}
+
+/* Parallax background image */
+#hero.section--hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.45) 0%,
+      rgba(0,0,0,0.35) 40%,
+      rgba(0,0,0,0.30) 60%,
+      rgba(0,0,0,0.15) 80%,
+      rgba(0,0,0,0.05) 100%
+    ),
+    url("../../img/IMG_7119-benvenuto-scaled.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Parallax effect */
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Smooth parallax scroll */
+@media (min-width: 768px) {
+  #hero.section--hero::before {
+    background-attachment: fixed;
+  }
+}
+
+/* CONTENT LAYER */
+#hero .container {
+  position: relative;
+  z-index: 5;
+  max-width: 820px;
+}
+
+/* Remove column layout – everything centered */
+.hero__layout {
+  display: block !important;
+}
+
+.hero__content {
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+/* Hide photo completely (we use background only) */
+.tw-hero-photo-wrap,
+.tw-hero-photo-img {
+  display: none !important;
+}
+
+/* HERO TITLE */
+#hero.section--hero .tw-hero-title {
+  color: #ffffff !important;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.75);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  line-height: 1.15;
+  font-weight: 600;
+}
+
+#hero.section--hero .tw-hero-subtitle {
+  color: rgba(255,255,255,0.88) !important;
+  text-shadow: 0 3px 16px rgba(0,0,0,0.6);
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  font-weight: 300;
+  max-width: 720px;
+}
+
+/* CTAs centered */
+.tw-hero-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .tw-hero-ctas {
+    flex-direction: row;
+  }
+}
+
+#hero.section--hero .hero__layout {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+  width: 100%;
+  max-width: 820px;
+}
+
+#hero.section--hero .tw-hero-subtitle {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
+  width: 100%;
+}
+
+/* ============================================
+   HOME — UNITY CONNECTION PREVIEW SECTION
+   (The “Unity Connection – Percorso individuale”
+    block inside home page)
+   ============================================ */
+
+#unity-connection .grid--2 {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: var(--space-32) !important;
+}
+
+/* Desktop improvement */
+@media (min-width: 768px) {
+  #unity-connection .grid--2 {
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+
+  /* Keep the content vertically centered */
+  #unity-connection .unity-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+}
+
+.unity-content > * + * {
+  margin-top: var(--space-16);
+}
+
+/* Tiny decorative icons list */
+.unity-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-20) 0 0;
+}
+
+.unity-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-8);
+  margin-bottom: var(--space-8);
+}
+
+.unity-list__icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 4px;
+  border-radius: 999px;
+  border: 2px solid var(--color-primary);
+}
+
+
+/* ============================================
+   HOME — TESTIMONIALS (carousel & video)
+   ============================================ */
+
+/* Two-column section (desktop) */
+@media (min-width: 768px) {
+  .section--testimonials .grid--2 {
+    display: flex;
+    align-items: center;
+    gap: var(--space-32);
+  }
+
+  .section--testimonials .card--video,
+  .section--testimonials .testimonial-carousel {
+    flex: 1;
+  }
+}
+
+/* Mobile layout */
+@media (max-width: 767px) {
+  .section--testimonials .grid--2 {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-24);
+  }
+}
+
+/* Carousel core */
+.testimonial-carousel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.testimonial-carousel__slides {
+  position: relative;
+  min-height: 220px;
+}
+
+/* Slide transitions */
+.testimonial-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+
+  transform: scale(0.98);
+  filter: blur(6px);
+
+  transition:
+    opacity 1.2s ease-out,
+    filter 1.2s ease-out,
+    transform 1.2s ease-out;
+}
+
+.testimonial-slide--active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+  filter: blur(0);
+
+  transition:
+    opacity 0.8s ease-out,
+    filter 0.8s ease-out,
+    transform 0.8s ease-out;
+}
+
+/* Controls */
+.testimonial-carousel__controls {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-8);
+  margin-top: var(--space-12);
+}
+
+.carousel-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-gray-300);
+  background-color: var(--color-white);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.125rem; /* ~ text-lg */
+  line-height: 1;
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.carousel-btn:hover {
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary);
+}
+
+.carousel-btn:active {
+  transform: scale(0.96);
+}
+
+
+/* ============================================
+   HOME — ABOUT MINI (the “Su di me” block)
+   ============================================ */
+
+.section--about-mini {
+  /* optional background override if needed */
+}
+
+.about-mini {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-mini--centered {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.about-mini__media {
+  margin-bottom: 1.75rem;
+}
+
+.about-mini__photo {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 2rem;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+  margin-inline: auto;
+}
+
+.about-mini__content p + p {
+  margin-top: 0.75rem;
+}
+
+.about-mini__cta {
+  margin-top: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .about-mini__photo {
+    width: 260px;
+    height: 260px;
+  }
+}
+

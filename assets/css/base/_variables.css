@@ -1,0 +1,73 @@
+/* ============================================
+   DESIGN TOKENS – OLISTIC MASH GOLD SYSTEM
+   ============================================ */
+
+:root {
+  /* BRAND GOLD */
+  --color-primary: #C9A15C;
+  --color-primary-dark: #A27C35;
+  --color-primary-light: #F4E2BF;
+
+  /* ACCENT */
+  --color-accent: #D8B36E;
+  --color-accent-light: #E7C890;
+
+  /* BACKGROUND / SURFACES */
+  --color-bg: #F7F3EB;          /* page background */
+  --color-bg-soft: #FFF8F1;     /* soft alt sections */
+  --color-surface: #FFFFFF;     /* cards / header */
+  --color-surface-soft: #F2E8DA;
+  --color-border-soft: #E3D7C3;
+
+  /* TEXT */
+  --color-text: #2F2417;
+  --color-text-soft: #6B5A45;
+  --color-muted: #9B8A77;
+
+  /* NEUTRAL ALIASES (for legacy selectors) */
+  --color-black: var(--color-text);
+  --color-gray-700: var(--color-text-soft);
+  --color-gray-500: var(--color-muted);
+  --color-gray-300: var(--color-border-soft);
+  --color-gray-100: var(--color-bg);
+  --color-white: var(--color-surface);
+
+  /* FEEDBACK */
+  --color-success: #4BA27C;
+  --color-warning: #D59B2C;
+  --color-error:   #C8615C;
+
+  /* TYPOGRAPHY */
+  --font-heading: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* SPACING SCALE */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-80: 80px;
+
+  /* RADII & SHADOWS */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --radius-card: 1.5rem;
+
+  --shadow-soft: 0 8px 24px rgba(38, 20, 21, 0.08);
+  --shadow-subtle: 0 4px 12px rgba(38, 20, 21, 0.04);
+
+  /* LAYOUT */
+  --container-max-width: 1120px;
+
+  /* ACCESSIBILITY */
+  --color-focus-ring: rgba(236, 178, 62, 0.8);
+}

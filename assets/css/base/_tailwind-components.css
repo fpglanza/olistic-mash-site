@@ -1,60 +1,57 @@
-/* assets/css/tailwind.css */
+/* ============================================
+   TAILWIND COMPONENTS LAYER
+   Reusable design-system components using @apply
+   ============================================ */
 
-/* Niente @tailwind base per ora, così non tocca tipografia & reset esistenti */
-@tailwind components;
-@tailwind utilities;
-
-/* Esempio di piccolo componente opzionale (per test) */
 @layer components {
-   .tw-pill {
-    @apply inline-flex items-center justify-center px-2.5 py-1 rounded-full text-xs font-medium bg-primary-light text-primary;
-  }
-  /* Container interno "Calm Aura" */
   .tw-section-aura {
     @apply max-w-content mx-auto px-4 sm:px-6;
   }
 
-  /* Card morbida, leggermente lilla */
   .tw-card-aura-soft {
     @apply rounded-2xl bg-primary-light/20 border border-primary-light/60 shadow-soft
-          px-5 py-6 md:px-8 md:py-8;
+           px-5 py-6 md:px-8 md:py-8;
   }
+}
 
-  /* Testo centrato nella CTA finale */
+
+/* --------------------------------------------
+   CTA COMPONENTS
+-------------------------------------------- */
+@layer components {
   .tw-cta-stack {
     @apply flex flex-col items-center text-center gap-3 md:gap-4;
   }
 
-  /* Titolo CTA finale */
   .tw-cta-title {
     @apply font-heading font-semibold tracking-tight text-warm-700 text-xl md:text-2xl;
   }
 
-  /* Sottotesto CTA finale */
   .tw-cta-subtitle {
     @apply text-sm md:text-base text-warm-500 max-w-lg leading-snug;
   }
 
-  /* Lista reassurance sotto il bottone */
   .tw-cta-reassurance {
     @apply flex flex-col md:flex-row gap-2 md:gap-4 text-xs md:text-sm text-warm-500;
   }
 
-  /* Pillole reassurance */
   .tw-cta-pill {
     @apply inline-flex items-center justify-center px-2.5 py-1 rounded-full
-          bg-white/80 text-warm-700 border border-primary-light/50 text-[11px];
+           bg-white/80 text-warm-700 border border-primary-light/50 text-[11px];
   }
+}
 
-  /* Bottone WhatsApp "Calm Aura" */
+
+/* --------------------------------------------
+   WHATSAPP CTA BUTTON
+-------------------------------------------- */
+@layer components {
   .tw-btn-wa {
     @apply inline-flex items-center justify-center gap-2
-          rounded-xl px-4 py-2.5
-          text-sm font-medium
-          bg-primary text-white shadow-soft
-          hover:bg-primary-dark hover:shadow-md
-          active:scale-95
-          transition;
+           rounded-xl px-4 py-2.5
+           text-sm font-medium bg-primary text-white shadow-soft
+           hover:bg-primary-dark hover:shadow-md
+           active:scale-95 transition;
   }
 
   .tw-btn-wa-icon {
@@ -62,52 +59,45 @@
   }
 }
 
+
+/* --------------------------------------------
+   HERO COMPONENTS (Reusable, not page-specific)
+-------------------------------------------- */
+
 @layer components {
-  /* Wrapper hero più elegante */
   .tw-hero-aura {
     @apply flex flex-col-reverse md:flex-row items-center md:items-center
            gap-10 md:gap-16;
   }
 
-  /* Titolo hero */
   .tw-hero-title {
     @apply font-heading font-semibold tracking-tight
-           text-warm-700
-           text-[32px] leading-tight
+           text-warm-700 text-[32px] leading-tight
            md:text-[42px] md:leading-[1.15];
   }
 
-  /* Sottotitolo hero */
   .tw-hero-subtitle {
     @apply text-base md:text-lg text-warm-600 leading-relaxed max-w-xl;
   }
 
-  /* Stack verticale per CTAs */
   .tw-hero-ctas {
     @apply flex flex-wrap items-center gap-4 mt-6;
   }
 
-  /* Bottone primario del hero */
   .tw-hero-btn-primary {
     @apply inline-flex items-center justify-center gap-2
            bg-primary text-white font-medium text-sm
-           rounded-xl px-5 py-3
-           shadow-soft transition
-           hover:bg-primary-dark
-           active:scale-95;
+           rounded-xl px-5 py-3 shadow-soft transition
+           hover:bg-primary-dark active:scale-95;
   }
 
-  /* Bottone secondario */
   .tw-hero-btn-secondary {
     @apply inline-flex items-center justify-center gap-2
            bg-white text-primary font-medium text-sm
-           rounded-xl px-5 py-3
-           border border-primary/40 shadow-subtle
-           hover:bg-primary-light/40
-           active:scale-95 transition;
+           rounded-xl px-5 py-3 border border-primary/40 shadow-subtle
+           hover:bg-primary-light/40 active:scale-95 transition;
   }
 
-  /* Foto hero morbida */
   .tw-hero-photo-wrap {
     @apply w-full md:w-[60%] max-w-[420px] mx-auto;
   }
@@ -115,11 +105,9 @@
   .tw-hero-photo {
     @apply w-full aspect-[4/5]
            rounded-2xl shadow-soft
-           bg-primary-light/40
-           bg-gradient-to-br from-primary-light/50 to-white/50;
+           bg-primary-light/40 bg-gradient-to-br from-primary-light/50 to-white/50;
   }
-  
-  /* Calm vibe */
+
   .tw-hero-surface {
     @apply relative overflow-hidden
            rounded-3xl md:rounded-[32px]
@@ -130,22 +118,25 @@
 
   .tw-hero-aura-glow {
     @apply pointer-events-none absolute
-           -top-16 -left-10
-           w-40 h-40
-           rounded-full
-           bg-primary-light/70
-           blur-3xl
-           opacity-70;
+           -top-16 -left-10 w-40 h-40 rounded-full
+           bg-primary-light/70 blur-3xl opacity-70;
   }
 
   .tw-hero-aura-glow-2 {
     @apply pointer-events-none absolute
-           -bottom-20 -right-6
-           w-48 h-48
-           rounded-full
-           bg-primary-light/60
-           blur-3xl
-           opacity-70;
+           -bottom-20 -right-6 w-48 h-48 rounded-full
+           bg-primary-light/60 blur-3xl opacity-70;
   }
 }
 
+
+/* --------------------------------------------
+   DECORATIVE & MINIMAL UTILITY COMPONENTS
+-------------------------------------------- */
+
+@layer components {
+  .tw-pill {
+    @apply inline-flex items-center justify-center px-2.5 py-1 rounded-full
+           bg-primary-light text-primary text-xs font-medium;
+  }
+}

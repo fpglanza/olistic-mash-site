@@ -1,0 +1,48 @@
+/* ============================================
+   PAGINA "CONTATTI"
+   CSS specifico (placeholder pronto per espansione)
+   ============================================ */
+
+/*
+  Al momento la pagina Contatti utilizza esclusivamente:
+
+    - stile globale (section, container, grid)
+    - tipografia e colori del design system
+    - bottoni e utilities globali
+
+  Non c’erano regole specifiche nel vecchio base.css, quindi
+  questa pagina parte volutamente senza override.
+
+  Questo file ti servirà per:
+
+    • personalizzare il form di contatto
+    • aggiungere layout mobile particolare
+    • migliorare la sezione link / CTA finali
+    • aggiungere un box “info di contatto”
+    • gestire mappe, orari, micro-componenti
+*/
+
+/* Esempi pronti da sbloccare quando necessari:
+
+#contatti-hero {
+  background-color: var(--color-primary-light);
+  padding: var(--space-48) 0;
+}
+
+#contatti-info {
+  display: flex;
+  gap: var(--space-24);
+  align-items: flex-start;
+}
+
+#contatti-form .form-field {
+  margin-bottom: var(--space-16);
+}
+
+@media (max-width: 768px) {
+  #contatti-info {
+    flex-direction: column;
+  }
+}
+
+*/
