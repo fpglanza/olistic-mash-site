@@ -1,9 +1,8 @@
-// assets/js/layout/header.js
 export const siteHeader = `
 <header class="site-header">
   <div class="nav container">
     
-    <!-- MOBILE TOP BAR: centered logo + hamburger -->
+    <!-- MOBILE TOP BAR -->
     <div class="nav__mobile flex items-center justify-center gap-4 w-full md:hidden">
       <a href="index.html" class="nav__logo">
         <img src="assets/img/logo.png" alt="Logo" class="nav__logo-img" />
@@ -12,7 +11,7 @@ export const siteHeader = `
       <button
         class="nav__toggle"
         type="button"
-        aria-label="Apri il menu di navigazione"
+        aria-label="Apri il menu"
         aria-expanded="false"
       >
         <span class="nav__toggle-lines">
@@ -23,7 +22,7 @@ export const siteHeader = `
       </button>
     </div>
 
-    <!-- DESKTOP NAV: centered with logo in the middle -->
+    <!-- DESKTOP NAVBAR (logo al centro) -->
     <nav class="nav__desktop hidden md:flex items-center justify-center w-full">
       <ul class="nav__desktop-left flex items-center gap-6">
         <li><a class="nav__link" href="index.html#hero">Home</a></li>
@@ -31,7 +30,6 @@ export const siteHeader = `
         <li><a class="nav__link" href="consulenze-unity.html">Consulenze</a></li>
       </ul>
 
-      <!-- Center logo -->
       <a href="index.html" class="nav__logo mx-10">
         <img src="assets/img/logo.png" alt="Logo" class="nav__logo-img" />
       </a>
@@ -43,17 +41,15 @@ export const siteHeader = `
       </ul>
     </nav>
 
-    <!-- MOBILE DROPDOWN MENU (reuses your existing .nav__links styles) -->
-    <nav aria-label="Navigazione mobile" class="md:hidden">
-      <ul class="nav__links">
-        <li><a class="nav__link" href="index.html#hero">Home</a></li>
-        <li><a class="nav__link" href="chi-sono.html">Chi sono</a></li>
-        <li><a class="nav__link" href="consulenze-unity.html">Consulenze</a></li>
-        <li><a class="nav__link" href="eventi-gruppi.html">Eventi & Gruppi</a></li>
-        <li><a class="nav__link" href="percorsi-reiki.html">Percorsi & Reiki</a></li>
-        <li><a class="nav__link" href="contatti.html">Contatti</a></li>
-      </ul>
-    </nav>
+    <!-- MOBILE DROPDOWN MENU (must be direct child of .nav) -->
+    <ul class="nav__links md:hidden">
+      <li><a class="nav__link" href="index.html#hero">Home</a></li>
+      <li><a class="nav__link" href="chi-sono.html">Chi sono</a></li>
+      <li><a class="nav__link" href="consulenze-unity.html">Consulenze</a></li>
+      <li><a class="nav__link" href="eventi-gruppi.html">Eventi & Gruppi</a></li>
+      <li><a class="nav__link" href="percorsi-reiki.html">Percorsi & Reiki</a></li>
+      <li><a class="nav__link" href="contatti.html">Contatti</a></li>
+    </ul>
 
   </div>
 </header>

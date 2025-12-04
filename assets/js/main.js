@@ -1,13 +1,17 @@
-// assets/js/main.js
+// ----------------------------
+// IMPORTS VITE
+// ----------------------------
 import "../css/main.css";
 
 import { siteHeader } from "./layout/header.js";
 import { siteFooter } from "./layout/footer.js";
 
-// CONFIG: numero WhatsApp (placeholder per ora)
-const WHATSAPP_PHONE = "+393343421236"; // da sostituire con numero reale
 
-// Template messaggi WhatsApp
+// ----------------------------
+// WHATSAPP CONFIG
+// ----------------------------
+const WHATSAPP_PHONE = "+393343421236";
+
 const whatsappMessages = {
   home_general: "Ciao! Vorrei avere più informazioni sui tuoi percorsi e consulenze.",
   home_services: "Ciao! Vorrei scoprire meglio i tuoi servizi.",
@@ -28,36 +32,46 @@ const whatsappMessages = {
   chi_sono_missione: "Ciao, ti scrivo dalla pagina Chi sono, sezione La mia missione.",
 };
 
-// Inizializza CTA WhatsApp in base a data-wa-key
+
+// ----------------------------
+// WHATSAPP CTA HANDLER
+// ----------------------------
 function initWhatsAppCTAs() {
   const buttons = document.querySelectorAll("[data-wa-key]");
+
   buttons.forEach((btn) => {
     const key = btn.getAttribute("data-wa-key");
     const customText = btn.getAttribute("data-wa-text");
     const baseMessage = whatsappMessages[key] || "";
-    const message = customText ? `${baseMessage} ${customText}`.trim() : baseMessage;
-    const encodedMessage = encodeURIComponent(message || "Ciao!");
+    const message = customText
+      ? `${baseMessage} ${customText}`.trim()
+      : baseMessage;
 
-    const href = `https://wa.me/${WHATSAPP_PHONE}?text=${encodedMessage}`;
+    const encoded = encodeURIComponent(message || "Ciao!");
+
+    const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encoded}`;
 
     if (btn.tagName.toLowerCase() === "a") {
-      btn.setAttribute("href", href);
-      btn.setAttribute("target", "_blank");
-      btn.setAttribute("rel", "noopener noreferrer");
+      btn.href = url;
+      btn.target = "_blank";
+      btn.rel = "noopener noreferrer";
     } else {
-      btn.addEventListener("click", () => {
-        window.open(href, "_blank", "noopener,noreferrer");
-      });
+      btn.addEventListener("click", () =>
+        window.open(url, "_blank", "noopener,noreferrer")
+      );
     }
   });
 }
 
-// Render eventi in una lista (per Home preview)
+
+// ----------------------------
+// EVENTI — HOME PREVIEW
+// ----------------------------
 function renderHomeEventsPreview() {
   const container = document.getElementById("home-events-list");
-  if (!container || typeof eventsData === "undefined" || !Array.isArray(eventsData)) return;
+  if (!container || !Array.isArray(window.eventsData)) return;
 
-  const preview = eventsData.slice(0, 3);
+  const preview = window.eventsData.slice(0, 3);
   container.innerHTML = "";
 
   preview.forEach((event) => {
@@ -74,7 +88,9 @@ function renderHomeEventsPreview() {
       <h3>${event.title}</h3>
       <p>${event.shortDescription}</p>
       <p class="small event-card__meta">${event.city} · ${event.location}</p>
-      <a class="btn btn-secondary mt-24" data-wa-key="${event.whatsappKey}" data-wa-text="Mi interessa l'evento: ${event.title} del ${event.date}.">
+      <a class="btn btn-secondary mt-24"
+         data-wa-key="${event.whatsappKey}"
+         data-wa-text="Mi interessa l'evento: ${event.title} del ${event.date}.">
         Prenota su WhatsApp
       </a>
     `;
@@ -83,14 +99,17 @@ function renderHomeEventsPreview() {
   });
 }
 
-// Render eventi per pagina Eventi & Gruppi
+
+// ----------------------------
+// EVENTI — PAGINA EVENTI
+// ----------------------------
 function renderEventsPage() {
   const container = document.getElementById("events-list");
-  if (!container || typeof eventsData === "undefined" || !Array.isArray(eventsData)) return;
+  if (!container || !Array.isArray(window.eventsData)) return;
 
   container.innerHTML = "";
 
-  eventsData.forEach((event) => {
+  window.eventsData.forEach((event) => {
     const card = document.createElement("article");
     card.className = "card event-card";
 
@@ -104,7 +123,9 @@ function renderEventsPage() {
       <h3>${event.title}</h3>
       <p>${event.shortDescription}</p>
       <p class="small event-card__meta">${event.city} · ${event.location}</p>
-      <a class="btn btn-secondary mt-24" data-wa-key="${event.whatsappKey}" data-wa-text="Mi interessa l'evento: ${event.title} del ${event.date}.">
+      <a class="btn btn-secondary mt-24"
+         data-wa-key="${event.whatsappKey}"
+         data-wa-text="Mi interessa l'evento: ${event.title} del ${event.date}.">
         Prenota su WhatsApp
       </a>
     `;
@@ -113,85 +134,87 @@ function renderEventsPage() {
   });
 }
 
-// NAVBAR MOBILE – hamburger menu (usa .nav.nav--open come da CSS)
+
+// ----------------------------
+// NAVBAR MOBILE (usa .nav.nav--open)
+// ----------------------------
 function initMobileNav() {
   const nav = document.querySelector(".nav");
   if (!nav) return;
 
   const toggle = nav.querySelector(".nav__toggle");
-  const links = nav.querySelectorAll(".nav__link");
-
   if (!toggle) return;
+
+  const links = nav.querySelectorAll(".nav__link");
 
   toggle.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("nav--open");
-    toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    toggle.setAttribute("aria-expanded", isOpen);
   });
 
-  // Chiudi il menu quando clicchi una voce (mobile UX)
-  links.forEach((link) => {
+  links.forEach((link) =>
     link.addEventListener("click", () => {
       nav.classList.remove("nav--open");
       toggle.setAttribute("aria-expanded", "false");
-    });
-  });
+    })
+  );
 }
 
+
+// ----------------------------
 // TESTIMONIAL CAROUSEL
+// ----------------------------
 function initTestimonialCarousels() {
   const carousels = document.querySelectorAll("[data-testimonial-carousel]");
 
   carousels.forEach((carousel) => {
-    const slides = Array.from(
-      carousel.querySelectorAll("[data-testimonial-slide]")
-    );
+    const slides = Array.from(carousel.querySelectorAll("[data-testimonial-slide]"));
     const prevBtn = carousel.querySelector("[data-carousel-prev]");
     const nextBtn = carousel.querySelector("[data-carousel-next]");
 
-    if (!slides.length || !prevBtn || !nextBtn) return;
+    if (!slides.length) return;
 
-    let currentIndex = 0;
+    let index = 0;
 
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle("testimonial-slide--active", i === index);
+    function showSlide(i) {
+      slides.forEach((slide, n) => {
+        slide.classList.toggle("testimonial-slide--active", n === i);
       });
     }
 
-    prevBtn.addEventListener("click", () => {
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-      showSlide(currentIndex);
+    prevBtn?.addEventListener("click", () => {
+      index = (index - 1 + slides.length) % slides.length;
+      showSlide(index);
     });
 
-    nextBtn.addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % slides.length;
-      showSlide(currentIndex);
+    nextBtn?.addEventListener("click", () => {
+      index = (index + 1) % slides.length;
+      showSlide(index);
     });
 
-    // cambio automatico ogni 10 secondi
-    const interval = setInterval(() => {
-      currentIndex = (currentIndex + 1) % slides.length;
-      showSlide(currentIndex);
+    setInterval(() => {
+      index = (index + 1) % slides.length;
+      showSlide(index);
     }, 10000);
 
-    // mostra la prima slide all’inizio
-    showSlide(currentIndex);
+    showSlide(index);
   });
 }
 
+
+// ----------------------------
 // VIDEO LAZY
+// ----------------------------
 function initLazyVideos() {
-  const containers = document.querySelectorAll(".video-lazy");
-  containers.forEach((container) => {
+  document.querySelectorAll(".video-lazy").forEach((container) => {
     container.addEventListener("click", () => {
       const id = container.dataset.videoId;
-
       container.innerHTML = `
         <iframe
           src="https://www.youtube.com/embed/${id}?autoplay=1"
-          title="Video testimonianza – percorso Unity Connection"
+          title="Video"
           frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
       `;
@@ -199,22 +222,22 @@ function initLazyVideos() {
   });
 }
 
+
+// ----------------------------
+// ON LOAD — BOOTSTRAP EVERYTHING
+// ----------------------------
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Inietta header e footer
+  // Inject header and footer
   const headerSlot = document.querySelector("[data-site-header]");
-  if (headerSlot) {
-    headerSlot.outerHTML = siteHeader;
-  }
+  if (headerSlot) headerSlot.outerHTML = siteHeader;
 
   const footerSlot = document.querySelector("[data-site-footer]");
-  if (footerSlot) {
-    footerSlot.outerHTML = siteFooter;
-  }
+  if (footerSlot) footerSlot.outerHTML = siteFooter;
 
-  // 2. Ora che l'header è stato iniettato, possiamo agganciare il toggle mobile
+  // Re-init navbar AFTER injection
   initMobileNav();
 
-  // 3. Inizializza funzionalità di pagina
+  // Page features
   renderHomeEventsPreview();
   renderEventsPage();
   initWhatsAppCTAs();

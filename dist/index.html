@@ -10,11 +10,12 @@
     />
 
     <!-- CSS specifico della pagina Home -->
-    <link rel="stylesheet" crossorigin href="/assets/index-CNfIIS66.css">
+    <script type="module" crossorigin src="/assets/index-C_3LSxcI.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CMJo_qqB.css">
   </head>
   <body>
     <div class="site">
-      <!-- HEADER -->
+      <!-- HEADER (iniettato da JS) -->
       <header data-site-header></header>
 
       <main class="site-main">
@@ -70,9 +71,7 @@
           </div>
         </section>
 
-
-
-       <!-- 2. SEZIONE – COSA POSSO FARE PER TE -->
+        <!-- 2. SEZIONE – COSA POSSO FARE PER TE -->
         <section class="section section--services-aura" id="cosa-posso-fare-per-te">
           <div class="container">
             <header class="section__header text-center">
@@ -135,12 +134,10 @@
           </div>
         </section>
 
-
         <!-- 3. SEZIONE – UNITY CONNECTION (SERVIZIO PRINCIPALE) -->
         <section class="section section--unity-hero" id="unity-connection">
           <div class="container">
             <div class="unity-hero-layout">
-              
               <!-- Colonna testo -->
               <div class="unity-content">
                 <h2 class="section__title" style="margin-top: var(--space-16);">
@@ -166,13 +163,10 @@
               </div>
 
               <!-- Badge immagine — facoltativo -->
-              <div class="unity-photo-badge">
-              </div>
-
+              <div class="unity-photo-badge"></div>
             </div>
           </div>
         </section>
-
 
         <!-- 4. SEZIONE – EVENTI & ARMONIZZAZIONI DI GRUPPO -->
         <section class="section events" id="eventi">
@@ -276,7 +270,7 @@
           </div>
         </section>
 
-                <!-- 5. SEZIONE – TESTIMONIANZE -->
+        <!-- 5. SEZIONE – TESTIMONIANZE -->
         <section class="section section--testimonials" id="testimonianze">
           <div class="container">
             <header class="section__header text-center">
@@ -312,10 +306,7 @@
               </article>
 
               <!-- Carousel testimonianze testuali (destra) -->
-              <div
-                class="testimonial-carousel"
-                data-testimonial-carousel
-              >
+              <div class="testimonial-carousel" data-testimonial-carousel>
                 <div class="testimonial-carousel__slides">
                   <article
                     class="card card--testimonial testimonial-slide testimonial-slide--active"
@@ -402,7 +393,6 @@
           </div>
         </section>
 
-
         <!-- 6. SEZIONE – MINI “SU DI ME” -->
         <section class="section section--about-mini" id="mini-su-di-me">
           <div class="container">
@@ -436,7 +426,6 @@
           </div>
         </section>
 
-
         <!-- 7. CTA FINALE – PRENOTA ORA -->
         <section class="section section--cta-final" id="cta-finale">
           <div class="container tw-section-aura">
@@ -454,13 +443,13 @@
                   class="btn btn-primary tw-btn-wa"
                   data-wa-key="home_final"
                 >
-                <span class="tw-btn-wa-icon">
-                  <!-- icona WhatsApp placeholder -->
-                  💬
-                </span>
-                <span>Prenota ora su WhatsApp!</span>
+                  <span class="tw-btn-wa-icon">
+                    <!-- icona WhatsApp placeholder -->
+                    💬
+                  </span>
+                  <span>Prenota ora su WhatsApp!</span>
                 </a>
-                 <div class="tw-cta-reassurance">
+                <div class="tw-cta-reassurance">
                   <span class="tw-cta-pill">Nessun impegno, solo un primo contatto</span>
                   <span class="tw-cta-pill">Risposta entro X ore</span>
                   <span class="tw-cta-pill">Primo messaggio gratuito</span>
@@ -471,8 +460,10 @@
         </section>
       </main>
 
-      <!-- FOOTER -->
+      <!-- FOOTER (iniettato da JS) -->
       <footer data-site-footer></footer>
     </div>
+
+    <!-- Entry Vite: unico script da caricare in sviluppo -->
   </body>
 </html>
