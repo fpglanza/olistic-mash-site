@@ -558,66 +558,93 @@
           </div>
         </section>
 
-        <!-- 6. MINI “SU DI ME” -->
+       <!-- 6. MINI “SU DI ME” -->
         <section class="section section--about-mini" id="mini-su-di-me">
           <div class="container">
-            <div class="about-mini about-mini--centered">
+
+            <div class="about-mini flex flex-col items-center text-center gap-6 md:gap-8">
+
+              <!-- Foto -->
               <figure class="about-mini__media">
                 <img
                   src="assets/img/fo3iafbjmnp1qcju1n438otehk._SY600_.jpg"
                   alt="Ritratto di Giorgia Boccadifuoco"
-                  class="about-mini__photo"
+                  class="about-mini__photo w-44 h-44 md:w-52 md:h-52 object-cover rounded-full shadow-soft border border-primary-light/40"
                 />
               </figure>
 
-              <div class="about-mini__content">
-                <h2 class="section__title">Ciao, sono Giorgia Boccadifuoco</h2>
-                <p>
+              <!-- Testo -->
+              <div class="about-mini__content max-w-2xl">
+                <h2 class="section__title mb-3">
+                  Ciao, sono Giorgia Boccadifuoco
+                </h2>
+
+                <p class="text-warm-700 leading-relaxed mb-3">
                   Creo spazi sicuri in cui puoi ascoltarti, lasciare andare ciò che
                   non ti appartiene più e tornare a sentire il tuo centro.
                 </p>
-                <p>
+
+                <p class="text-warm-700 leading-relaxed">
                   Integro lavoro energetico, ascolto profondo e strumenti pratici,
                   per sostenerti nel tuo percorso in modo concreto e rispettoso
                   dei tuoi tempi.
                 </p>
-                <a href="chi-sono.html" class="btn btn-secondary about-mini__cta">
+
+                <a href="chi-sono.html"
+                  class="btn btn-secondary about-mini__cta mt-6 inline-flex">
                   Scopri di più su di me
                 </a>
               </div>
+
             </div>
+
           </div>
         </section>
 
+
         <!-- 7. CTA FINALE -->
-        <section class="section section--cta-final" id="cta-finale">
-          <div class="container tw-section-aura">
-            <div class="card cta-final__card tw-card-aura-soft">
-              <div class="cta-final__content text-center tw-cta-stack">
-                <h2 class="section__title tw-cta-title">
-                  Il tuo percorso può iniziare da un semplice messaggio.
-                </h2>
-                <p class="section__subtitle tw-cta-subtitle">
-                  Scrivimi su WhatsApp, raccontami cosa stai vivendo e capiremo
-                  insieme qual è il passo più gentile per te in questo momento.
-                </p>
-                <a
-                  href="#"
-                  class="btn btn-primary tw-btn-wa"
-                  data-wa-key="home_final"
-                >
-                  <span class="tw-btn-wa-icon">💬</span>
-                  <span>Prenota ora su WhatsApp!</span>
-                </a>
-                <div class="tw-cta-reassurance">
-                  <span class="tw-cta-pill">Nessun impegno, solo un primo contatto</span>
-                  <span class="tw-cta-pill">Risposta entro X ore</span>
-                  <span class="tw-cta-pill">Primo messaggio gratuito</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+       <section class="section section--cta-final" id="cta-finale">
+  <div class="container">
+    <div class="mx-auto max-w-3xl text-center bg-warm-100/60 backdrop-blur-sm rounded-2xl shadow-soft p-10 md:p-14 border border-warm-300/30">
+
+      <!-- Titolo -->
+      <h2 class="section__title text-warm-700 mb-4">
+        Il tuo percorso può iniziare da un semplice messaggio.
+      </h2>
+
+      <!-- Sottotitolo -->
+      <p class="text-warm-700 text-lg leading-relaxed mb-8">
+        Scrivimi su WhatsApp, raccontami cosa stai vivendo e capiremo insieme
+        qual è il passo più gentile per te in questo momento.
+      </p>
+
+      <!-- Pulsante WhatsApp -->
+      <a
+        href="#"
+        class="btn btn-primary tw-btn-wa inline-flex items-center gap-2 text-lg px-8 py-4 rounded-full shadow-soft"
+        data-wa-key="home_final"
+      >
+        <span class="tw-btn-wa-icon text-2xl">💬</span>
+        <span>Prenota ora su WhatsApp</span>
+      </a>
+
+      <!-- Reassurance pills -->
+      <div class="flex flex-wrap justify-center gap-3 mt-8">
+        <span class="tw-cta-pill px-4 py-2 bg-primary-light/50 rounded-full text-sm text-warm-700">
+          Nessun impegno, solo un primo contatto
+        </span>
+        <span class="tw-cta-pill px-4 py-2 bg-primary-light/50 rounded-full text-sm text-warm-700">
+          Risposta entro poche ore
+        </span>
+        <span class="tw-cta-pill px-4 py-2 bg-primary-light/50 rounded-full text-sm text-warm-700">
+          Primo messaggio gratuito
+        </span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
       </main>
 
       <!-- FOOTER (iniettato da JS) -->
