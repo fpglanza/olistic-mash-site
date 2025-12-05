@@ -4,86 +4,64 @@
     <meta charset="utf-8" />
     <title>Chi sono – Coach Olistica</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/pages/chi-sono.css" />
   </head>
   <body>
     <div class="site">
       <!-- HEADER -->
-      <header class="site-header">
-        <div class="container nav">
-          <a href="index.html" class="nav__logo">
-            <img src="assets/img/logo.png" alt="Logo" class="nav__logo-img" />
-          </a>
-
-          <button
-            class="nav__toggle"
-            type="button"
-            aria-label="Apri il menu di navigazione"
-            aria-expanded="false"
-          >
-            <span class="nav__toggle-lines">
-              <span class="nav__toggle-line"></span>
-              <span class="nav__toggle-line"></span>
-              <span class="nav__toggle-line"></span>
-            </span>
-          </button>
-
-          <nav aria-label="Navigazione principale">
-            <ul class="nav__links">
-              <li><a class="nav__link" href="index.html#hero">Home</a></li>
-              <li><a class="nav__link" href="chi-sono.html">Chi sono</a></li>
-              <li><a class="nav__link" href="consulenze-unity.html">Consulenze</a></li>
-              <li><a class="nav__link" href="eventi-gruppi.html">Eventi & Gruppi</a></li>
-              <li><a class="nav__link" href="percorsi-reiki.html">Percorsi & Reiki</a></li>
-              <li><a class="nav__link" href="contatti.html">Contatti</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+      <header data-site-header></header>
 
       <main class="site-main">
         <!-- HERO -->
-        <section class="section section--hero hero" id="chi-sono-hero">
+        <section class="section section--hero hero hero--inner" id="chi-sono-hero">
           <div class="container">
-            <div class="hero__layout hero__layout--2cols">
-              <!-- Foto -->
-              <div class="hero__media">
-                <div class="card hero__image-card">
-                  <div
-                    class="hero__photo-placeholder"
-                    aria-hidden="true"
-                  ></div>
-                </div>
-                
+            <div class="hero__layout hero__layout--2cols items-center">
+              
+              <!-- FOTO -->
+              <div class="hero__media hero__media--portrait">
+                <img
+                  src="assets/img/IMG_7391-chi-sono-1536x1024.png"
+                  alt="Ritratto di Giorgia Boccadifuoco"
+                  class="hero__photo tw-hero-photo-img"
+                />
               </div>
 
-              <!-- Testo -->
+              <!-- TESTO -->
               <div class="hero__content">
-                <h1 class="hero__title">
+                <h1 class="hero__title tw-hero-title text-center md:text-left">
                   Ciao, sono Giorgia Boccadifuoco.
                 </h1>
-                <p class="lead">
-                  Creo spazi sicuri in cui puoi ascoltarti, lasciare andare ciò che
-                  non ti appartiene più e tornare a sentire il tuo centro.
+
+                <p class="lead tw-hero-subtitle mt-4 text-center md:text-left">
+                  Creo spazi sicuri in cui puoi ascoltarti, lasciare andare ciò che non ti appartiene più
+                  e tornare a sentire il tuo centro, con radicamento e presenza.
                 </p>
-                <a
-                  href="#"
-                  class="btn btn-primary"
-                  data-wa-key="chi_sono_generic"
-                >
-                  Scrivimi su WhatsApp
-                </a>
+
+                <div class="mt-6 flex justify-center md:justify-start">
+                  <a
+                    href="#"
+                    class="btn btn-primary tw-hero-btn-primary"
+                    data-wa-key="chi_sono_generic"
+                  >
+                    Scrivimi su WhatsApp
+                  </a>
+                </div>
               </div>
+
             </div>
           </div>
         </section>
 
+
         <!-- 1. INTRO COMPATTA -->
         <section class="section section--soft" id="chi-sono-intro">
           <div class="container">
-            <h2 class="section__title">Chi sono</h2>
-            <div class="card">
+            <header class="text-center mb-8">
+              <h2 class="section__title text-2xl md:text-3xl text-warm-700">
+                Chi sono
+              </h2>
+            </header>
+
+            <div class="card max-w-3xl mx-auto space-y-4 text-warm-700 leading-relaxed">
               <p>
                 Mi chiamo <strong>Giorgia Boccadifuoco</strong>, romantica sognatrice e curiosa ribelle.
               </p>
@@ -110,16 +88,22 @@
         <!-- 2. TIMELINE – IL MIO PERCORSO -->
         <section class="section section--banded" id="percorso">
           <div class="container">
-            <h2 class="section__title">Il mio percorso</h2>
-            <p class="section__subtitle">
-              Un cammino fatto di ricerca, ascolto, prove, cadute e rinascite che oggi metto a servizio delle persone che accompagno.
-            </p>
+            <header class="text-center mb-8">
+              <h2 class="section__title text-2xl md:text-3xl text-warm-700">
+                Il mio percorso
+              </h2>
+              <p class="section__subtitle text-base md:text-lg text-warm-700/90 max-w-2xl mx-auto mt-3">
+                Un cammino fatto di ricerca, ascolto, prove, cadute e rinascite che oggi metto a servizio delle persone che accompagno.
+              </p>
+            </header>
 
-            <ol class="timeline">
+            <ol class="timeline space-y-6 md:space-y-8">
               <!-- Radici e ricerca -->
-              <li class="timeline__item" style="margin: 10px 10px 10px 10px">
-                <div class="card">
-                  <h3>Radici, educazione e spiritualità</h3>
+              <li class="timeline__item">
+                <div class="card space-y-3 text-warm-700 leading-relaxed">
+                  <h3 class="text-lg md:text-xl font-semibold text-warm-700">
+                    Radici, educazione e spiritualità
+                  </h3>
                   <p>
                     Da piccola volevo fare la maestra, oltre che la mamma. Ho dedicato buona parte
                     della vita a studiare e curiosare nel mondo dei bambini, dell’antroposofia e
@@ -135,9 +119,11 @@
               </li>
 
               <!-- Corpo ed energia -->
-              <li class="timeline__item" style="margin: 10px 10px 10px 10px">
-                <div class="card">
-                  <h3>Il lavoro sul corpo e sull’energia</h3>
+              <li class="timeline__item">
+                <div class="card space-y-3 text-warm-700 leading-relaxed">
+                  <h3 class="text-lg md:text-xl font-semibold text-warm-700">
+                    Il lavoro sul corpo e sull’energia
+                  </h3>
                   <p>
                     Circa vent’anni fa, in seguito a un percorso di crescita interiore, ho cominciato
                     a dedicarmi agli altri con i massaggi.
@@ -158,9 +144,11 @@
               </li>
 
               <!-- Malattia e rinascita -->
-              <li class="timeline__item" style="margin: 10px 10px 10px 10px">
-                <div class="card">
-                  <h3>La malattia come soglia</h3>
+              <li class="timeline__item">
+                <div class="card space-y-3 text-warm-700 leading-relaxed">
+                  <h3 class="text-lg md:text-xl font-semibold text-warm-700">
+                    La malattia come soglia
+                  </h3>
                   <p>
                     Poco più di dieci anni fa mi sono trovata a fare i conti con la leucemia.
                     L’anima mi parlava, attraverso il corpo, di un forte disagio interiore.
@@ -180,9 +168,11 @@
               </li>
 
               <!-- Studio e alchimia -->
-              <li class="timeline__item" style="margin: 10px 10px 10px 10px">
-                <div class="card">
-                  <h3>Studio, ricerca e alchimia</h3>
+              <li class="timeline__item">
+                <div class="card space-y-3 text-warm-700 leading-relaxed">
+                  <h3 class="text-lg md:text-xl font-semibold text-warm-700">
+                    Studio, ricerca e alchimia
+                  </h3>
                   <p>
                     Mi risuona profondamente il “come in alto così in basso, come dentro così fuori”
                     di Ermete Trismegisto: ho costruito studi e vita indagando costantemente queste
@@ -196,9 +186,11 @@
               </li>
 
               <!-- Nasce Unity Connection -->
-              <li class="timeline__item" style="margin: 10px 10px 10px 10px">
-                <div class="card">
-                  <h3>Nasce Unity Connection</h3>
+              <li class="timeline__item">
+                <div class="card space-y-3 text-warm-700 leading-relaxed">
+                  <h3 class="text-lg md:text-xl font-semibold text-warm-700">
+                    Nasce Unity Connection
+                  </h3>
                   <p>
                     Nel 2015 ho intuito <strong>Unity Connection</strong> e fondato il metodo UC,
                     trasformando profondamente il mio lavoro.
@@ -213,9 +205,9 @@
             </ol>
 
             <!-- CTA inline dopo la timeline -->
-            <div class="section__cta-inline">
+            <div class="section__cta-inline mt-10 text-center">
               <a
-                href="#" 
+                href="#"
                 class="btn btn-primary"
                 data-wa-key="chi_sono_percorso"
               >
@@ -228,10 +220,17 @@
         <!-- 3. LA MIA FILOSOFIA -->
         <section class="section section--soft" id="filosofia">
           <div class="container">
-            <h2 class="section__title">La mia filosofia</h2>
-            <div class="grid grid--2">
-              <article class="card">
-                <h3>Il mio modo di esserci</h3>
+            <header class="text-center mb-8">
+              <h2 class="section__title text-2xl md:text-3xl text-warm-700">
+                La mia filosofia
+              </h2>
+            </header>
+
+            <div class="grid grid--2 gap-6 md:gap-8 items-stretch">
+              <article class="card space-y-3 text-warm-700 leading-relaxed">
+                <h3 class="text-lg md:text-xl font-semibold text-warm-700">
+                  Il mio modo di esserci
+                </h3>
                 <p>
                   Ho cominciato a fare la mamma molto giovane e… ci ho preso gusto. Mi chiamano
                   “la mamma” perché, in fondo, è così che accolgo le persone.
@@ -250,11 +249,15 @@
                 </p>
               </article>
 
-              <article class="card">
-                <h3>Una frase che mi guida</h3>
-                <p class="quote">
-                  “La felicità è amare spudoratamente oltre.”
-                </p>
+              <article class="card space-y-3 text-warm-700 leading-relaxed flex flex-col justify-between">
+                <div>
+                  <h3 class="text-lg md:text-xl font-semibold text-warm-700">
+                    Una frase che mi guida
+                  </h3>
+                  <p class="quote mt-3">
+                    “La felicità è amare spudoratamente oltre.”
+                  </p>
+                </div>
                 <p>
                   Ho sperimentato che puoi farlo quando impari a scorgere la perfezione e la
                   meraviglia nel momento presente.
@@ -263,6 +266,7 @@
             </div>
           </div>
         </section>
+
 
         <!-- 4. APPROCCIO OLISTICO -->
         <section class="section section--tint" id="approccio-olistico">
@@ -448,14 +452,9 @@
 
 
       <!-- FOOTER -->
-      <footer class="site-footer">
-        <div class="container">
-          <p>© 2025 Coach Olistica – Tutti i diritti riservati.</p>
-        </div>
-      </footer>
+      <footer data-site-footer></footer>
     </div>
-
-    <script src="assets/js/data-events.js"></script>
+    
     <script type="module" src="/assets/js/main.js"></script>
   </body>
 </html>
