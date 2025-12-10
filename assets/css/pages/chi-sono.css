@@ -198,3 +198,296 @@
     border-radius: 1.25rem;
   }
 }
+
+/* ===========================================================
+   APPROCCIO OLISTICO — SEZIONE CENTRATA
+   =========================================================== */
+
+#approccio-olistico .container {
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Titolo + sottotitolo centrati */
+#approccio-olistico .section__title,
+#approccio-olistico .section__subtitle {
+  text-align: center !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===========================================================
+   GRID — 4 CARD CENTRATE SU UNA RIGA
+   =========================================================== */
+
+.olistico-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-20);
+  justify-items: center;
+  margin-top: var(--space-16);
+}
+
+@media (min-width: 640px) {
+  .olistico-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .olistico-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-24);
+  }
+}
+
+/* ===========================================================
+   CARD — versione pulita senza icone
+   =========================================================== */
+
+.olistico-card {
+  padding: var(--space-20);
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  max-width: 260px;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+
+/* Hover aura soft minimal */
+.olistico-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+/* Titoli card */
+.olistico-card h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-warm-700);
+  margin-bottom: var(--space-8);
+}
+
+/* Testi card */
+.olistico-card p {
+  color: var(--color-warm-700);
+  line-height: 1.55;
+  font-size: 0.95rem;
+}
+
+/* CTA centrato */
+#approccio-olistico .section__cta-inline {
+  text-align: center;
+  margin-top: var(--space-32);
+}
+
+/* ===========================================================
+   FORMAZIONE & CERTIFICAZIONI – stile coerente con APPROCCIO OLISTICO
+   =========================================================== */
+
+#certificazioni {
+  text-align: center;
+  margin-top: var(--space-40);
+}
+
+#certificazioni .section__title {
+  margin-bottom: var(--space-8);
+}
+
+#certificazioni .section__subtitle {
+  max-width: 44rem;
+  margin: 0 auto var(--space-24);
+  color: var(--color-warm-700);
+}
+
+/* Grid: 3 colonne uguali */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-20);
+  justify-items: center;
+}
+
+@media (max-width: 900px) {
+  .cert-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-16);
+  }
+}
+
+/* Card coerente con la sezione APPROCCIO OLISTICO */
+.cert-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: var(--space-24);
+  box-shadow: var(--shadow-soft);
+  width: 100%;
+  max-width: 320px;
+  text-align: left;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.cert-card .btn {
+  display: inline-block;
+  margin-top: var(--space-20);
+}
+
+.cert-card:hover {
+  box-shadow: var(--shadow-aura);
+  transform: translateY(-4px);
+}
+
+/* Titolo card */
+.cert-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-warm-800);
+  margin-bottom: var(--space-12);
+}
+
+/* Liste */
+.cert-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cert-list li {
+  color: var(--color-warm-700);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  margin-bottom: 0.4rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+/* Pallino elegante */
+.cert-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 6px;
+  height: 6px;
+  background: var(--color-primary);
+  border-radius: 50%;
+}
+
+/* SIGNIFICATO DEL NOME — card compatta */
+.name-meaning-card {
+  max-width: 600px;
+  padding: var(--space-24) var(--space-32);
+  text-align: center;
+  line-height: 1.6;
+  color: var(--color-warm-700);
+}
+
+/* Evidenzia le due etimologie */
+.name-highlight {
+  font-size: 1.05rem;
+  margin: var(--space-12) 0;
+  color: var(--color-primary-dark);
+}
+
+/* MISSION CARD – blocco compatto e centrato */
+.mission-card {
+  max-width: 700px;
+  padding: var(--space-32) var(--space-40);
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.65;
+  color: var(--color-warm-700);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Aura soft */
+.mission-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at center,
+    rgba(236, 178, 62, 0.12),
+    transparent 70%
+  );
+  z-index: -1;
+}
+
+/* Testo ispirazionale */
+.mission-text {
+  margin-top: var(--space-12);
+  font-size: 1.05rem;
+  color: var(--color-warm-700);
+}
+
+/* COME POSSO AIUTARTI OGGI */
+#come-posso-aiutarti .section__title {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+#come-posso-aiutarti .section__subtitle {
+  text-align: center;
+  max-width: 38rem;
+  margin: 0 auto var(--space-24);
+  color: var(--color-warm-700);
+}
+
+/* Griglia 3 colonne ben spaziate */
+.help-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-16);
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+@media (min-width: 900px) {
+  .help-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Card finale – coerente con approccio olistico */
+.help-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 210px;
+  padding: var(--space-20) var(--space-20);
+  text-align: left;
+  color: var(--color-warm-700);
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.2s ease-out,
+    box-shadow 0.2s ease-out,
+    background 0.2s ease-out;
+}
+
+.help-card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: var(--space-8);
+  color: var(--color-warm-700);
+}
+
+.help-card p {
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+/* Hover aura soft */
+.help-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+  background: radial-gradient(
+    circle at top,
+    rgba(201, 161, 92, 0.12),
+    rgba(255, 255, 255, 0.95)
+  );
+}
