@@ -1,4 +1,4 @@
-import logoUrl from "../../img/logo.png";
+import logoUrl from "../../img/gold.png";
 export const siteHeader = `
 <header class="site-header">
   <div class="nav container">

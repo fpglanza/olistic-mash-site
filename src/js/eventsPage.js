@@ -100,9 +100,11 @@ function renderEventsList(events) {
 document.addEventListener("DOMContentLoaded", () => {
   let currentTypeFilter = "tutti";   // tutti | armonizzazione | cerchio | speciale
   let onlineOnly = false;
+  let showAll = false;
 
   const filterButtons = document.querySelectorAll(".js-events-filter");
   const onlineCheckbox = document.querySelector(".js-events-online-only");
+  const showMoreBtn = document.getElementById("events-show-more"); 
 
   function updateFiltersUI() {
     filterButtons.forEach((btn) => {
@@ -121,7 +123,21 @@ document.addEventListener("DOMContentLoaded", () => {
       typeFilter: currentTypeFilter,
       onlineOnly
     });
-    renderEventsList(filtered);
+
+    // Gestione visibilità bottone + testo
+    if (showMoreBtn) {
+      if (filtered.length <= 3) {
+        showMoreBtn.classList.add("hidden");
+      } else {
+        showMoreBtn.classList.remove("hidden");
+        showMoreBtn.textContent = showAll
+          ? "Mostra meno eventi"
+          : "Mostra tutti gli eventi";
+      }
+    }
+
+    const eventsToRender = showAll ? filtered : filtered.slice(0, 3);
+    renderEventsList(eventsToRender);
   }
 
   // click su pulsanti filtro
@@ -129,6 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => {
       const value = btn.getAttribute("data-filter");
       currentTypeFilter = value || "tutti";
+      showAll = false;  
       updateFiltersUI();
       applyFiltersAndRender();
     });
@@ -138,6 +155,14 @@ document.addEventListener("DOMContentLoaded", () => {
   if (onlineCheckbox) {
     onlineCheckbox.addEventListener("change", (e) => {
       onlineOnly = e.target.checked;
+      showAll = false; 
+      applyFiltersAndRender();
+    });
+  }
+
+    if (showMoreBtn) {
+    showMoreBtn.addEventListener("click", () => {
+      showAll = !showAll;
       applyFiltersAndRender();
     });
   }

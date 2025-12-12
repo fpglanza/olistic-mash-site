@@ -64,7 +64,7 @@
 
 
         <!-- 1. INTRO COMPATTA -->
-      <section class="section section--soft" id="chi-sono-intro">
+      <section class="section" id="chi-sono-intro">
         <div class="container">
           <header class="text-center mb-8">
             <h2 class="section__title text-2xl md:text-3xl text-warm-700">
@@ -240,7 +240,7 @@
 
 
       <!-- 3. LA MIA FILOSOFIA -->
-      <section class="section section--soft" id="filosofia">
+      <section class="section" id="filosofia">
         <div class="container">
 
           <!-- Header -->
@@ -426,7 +426,7 @@
 
 
         <!-- 6. SIGNIFICATO DEL NOME -->
-        <section class="section section--soft" id="significato-nome">
+        <section class="section" id="significato-nome">
           <div class="container text-center">
             <h2 class="section__title">Il significato del mio nome</h2>
 
@@ -487,47 +487,63 @@
         <!-- 8. COME POSSO AIUTARTI OGGI -->
         <section class="section section--banded" id="come-posso-aiutarti">
           <div class="container">
-            <header class="text-center mb-8">
-              <h2 class="section__title">
+            <!-- Header -->
+            <header class="text-center mb-10">
+              <p class="text-[0.8rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-muted)]">
+                Da dove possiamo iniziare
+              </p>
+              <h2 class="section__title mt-2">
                 Come posso aiutarti oggi
               </h2>
-              <p class="section__subtitle">
-                Se senti che qualcosa si è mosso leggendo queste parole, possiamo iniziare da qui.
+              <p class="section__subtitle max-w-2xl mx-auto">
+                Se senti che qualcosa si è mosso leggendo queste parole, possiamo partire da uno di questi spazi
+                o semplicemente scriverci per capire insieme da dove cominciare.
               </p>
             </header>
 
-            <div class="help-grid">
-              <article class="card help-card">
-                <h3>Unity Connection</h3>
-                <p>
-                  Percorso individuale per ritrovare presenza, centratura e allineamento profondo.
+            <!-- 3 opzioni principali -->
+            <div class="help-grid grid gap-6 md:grid-cols-3">
+              <article class="card help-card flex flex-col rounded-3xl bg-[var(--color-surface)] p-6 shadow-sm">
+                <h3 class="text-base font-semibold">
+                  Unity Connection
+                </h3>
+                <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">
+                  Percorso individuale per ritrovare presenza, centratura e allineamento profondo
+                  nella tua vita di tutti i giorni.
                 </p>
-                <a href="consulenze-unity.html" class="btn btn-ghost mt-24">
+                <a href="consulenze-unity.html" class="btn btn-ghost mt-6 self-start">
                   Scopri il percorso
                 </a>
               </article>
 
-              <article class="card help-card">
-                <h3>Eventi & cerchi</h3>
-                <p>
-                  Spazi di gruppo per lavorare insieme su energia, connessione e condivisione autentica.
+              <article class="card help-card flex flex-col rounded-3xl bg-[var(--color-surface)] p-6 shadow-sm">
+                <h3 class="text-base font-semibold">
+                  Eventi &amp; cerchi
+                </h3>
+                <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">
+                  Spazi di gruppo per lavorare insieme su energia, connessione e condivisione autentica,
+                  senza sentirti sola nel processo.
                 </p>
-                <a href="eventi-gruppi.html" class="btn btn-ghost mt-24">
+                <a href="eventi-gruppi.html" class="btn btn-ghost mt-6 self-start">
                   Vedi gli eventi
                 </a>
               </article>
 
-              <article class="card help-card">
-                <h3>Percorsi energetici & Reiki</h3>
-                <p>
-                  Trattamenti e percorsi per armonizzare i tuoi livelli energetici e sostenerti nei momenti di transizione.
+              <article class="card help-card flex flex-col rounded-3xl bg-[var(--color-surface)] p-6 shadow-sm">
+                <h3 class="text-base font-semibold">
+                  Percorsi energetici &amp; Reiki
+                </h3>
+                <p class="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">
+                  Trattamenti e percorsi per armonizzare i tuoi livelli energetici
+                  e sostenerti nei momenti di transizione.
                 </p>
-                <a href="percorsi-reiki.html" class="btn btn-ghost mt-24">
+                <a href="percorsi-reiki.html" class="btn btn-ghost mt-6 self-start">
                   Scopri di più
                 </a>
               </article>
             </div>
 
+            <!-- CTA WhatsApp morbida -->
             <div class="section__cta-inline mt-10 text-center">
               <a
                 href="#"
@@ -536,9 +552,14 @@
               >
                 Scrivimi su WhatsApp
               </a>
+              <p class="mt-3 text-xs md:text-sm text-[var(--color-text-muted)]">
+                Se non sai da dove iniziare, raccontami in poche parole cosa stai vivendo
+                e vediamo insieme qual è il passo più gentile per te.
+              </p>
             </div>
           </div>
         </section>
+
 
       </main>
 

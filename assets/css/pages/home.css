@@ -330,6 +330,14 @@
   margin-top: 1.75rem;
 }
 
+.section--cta-final {
+  background: linear-gradient(
+    180deg,
+    var(--color-bg) 0%,
+    var(--color-primary-light) 100%
+  );
+}
+
 @media (min-width: 768px) {
   .about-mini__photo {
     width: 260px;

@@ -10,7 +10,7 @@ import { siteFooter } from "./layout/footer.js";
 // ----------------------------
 // WHATSAPP CONFIG
 // ----------------------------
-const WHATSAPP_PHONE = "+393343421236";
+const WHATSAPP_PHONE = "+393494157836";
 
 const whatsappMessages = {
   home_general: "Ciao! Vorrei avere più informazioni sui tuoi percorsi e consulenze.",
