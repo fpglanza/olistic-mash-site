@@ -5,6 +5,7 @@ import "../css/main.css";
 
 import { siteHeader } from "./layout/header.js";
 import { siteFooter } from "./layout/footer.js";
+import { eventsData } from "../../src/data/eventsData.js";
 
 
 // ----------------------------
@@ -69,12 +70,17 @@ function initWhatsAppCTAs() {
 // ----------------------------
 function renderHomeEventsPreview() {
   const container = document.getElementById("home-events-list");
-  if (!container || !Array.isArray(window.eventsData)) return;
+  if (!container || !Array.isArray(eventsData)) return;
 
-  const preview = window.eventsData.slice(0, 3);
+  const preview = eventsData.slice(0, 3);
   container.innerHTML = "";
 
   preview.forEach((event) => {
+    const description = event.shortDescription || event.description || "";
+    const location =
+      event.locationLabel ||
+      [event.city, event.location].filter(Boolean).join(" · ");
+
     const card = document.createElement("article");
     card.className = "card event-card";
 
@@ -86,43 +92,8 @@ function renderHomeEventsPreview() {
         </div>
       </div>
       <h3>${event.title}</h3>
-      <p>${event.shortDescription}</p>
-      <p class="small event-card__meta">${event.city} · ${event.location}</p>
-      <a class="btn btn-secondary mt-24"
-         data-wa-key="${event.whatsappKey}"
-         data-wa-text="Mi interessa l'evento: ${event.title} del ${event.date}.">
-        Prenota su WhatsApp
-      </a>
-    `;
-
-    container.appendChild(card);
-  });
-}
-
-
-// ----------------------------
-// EVENTI — PAGINA EVENTI
-// ----------------------------
-function renderEventsPage() {
-  const container = document.getElementById("events-list");
-  if (!container || !Array.isArray(window.eventsData)) return;
-
-  container.innerHTML = "";
-
-  window.eventsData.forEach((event) => {
-    const card = document.createElement("article");
-    card.className = "card event-card";
-
-    card.innerHTML = `
-      <div class="event-card__header">
-        <div class="event-card__date">
-          <span class="event-card__day">${event.date.slice(8, 10)}</span>
-          <span class="event-card__month">${event.date.slice(5, 7)}</span>
-        </div>
-      </div>
-      <h3>${event.title}</h3>
-      <p>${event.shortDescription}</p>
-      <p class="small event-card__meta">${event.city} · ${event.location}</p>
+      <p>${description}</p>
+      <p class="small event-card__meta">${location}</p>
       <a class="btn btn-secondary mt-24"
          data-wa-key="${event.whatsappKey}"
          data-wa-text="Mi interessa l'evento: ${event.title} del ${event.date}.">
@@ -239,7 +210,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Page features
   renderHomeEventsPreview();
-  renderEventsPage();
   initWhatsAppCTAs();
   initTestimonialCarousels();
   initLazyVideos();

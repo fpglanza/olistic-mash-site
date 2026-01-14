@@ -5,122 +5,572 @@
     <title>Eventi & gruppi – Coach Olistica</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <script type="module" crossorigin src="/assets/main-B7jm9JYu.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-C_1jnL0A.css">
-    <link rel="stylesheet" crossorigin href="/assets/eventiGruppi-C4ZBII38.css">
+    <script type="module" crossorigin src="/assets/eventiGruppi-DMvcl-ld.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/main-Cf2e7mH6.js">
+    <link rel="stylesheet" crossorigin href="/assets/main-Dn1YzGew.css">
   </head>
   <body>
     <div class="site">
-      <header class="site-header">
-        <div class="container nav">
-          <a href="index.html" class="nav__logo">
-            <img src="data:image/png;base64,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" alt="Logo" class="nav__logo-img" />
-          </a>
-
-          <button
-            class="nav__toggle"
-            type="button"
-            aria-label="Apri il menu di navigazione"
-            aria-expanded="false"
-          >
-            <span class="nav__toggle-lines">
-              <span class="nav__toggle-line"></span>
-              <span class="nav__toggle-line"></span>
-              <span class="nav__toggle-line"></span>
-            </span>
-          </button>
-
-          <nav aria-label="Navigazione principale">
-            <ul class="nav__links">
-              <li><a class="nav__link" href="index.html#hero">Home</a></li>
-              <li><a class="nav__link" href="chi-sono.html">Chi sono</a></li>
-              <li><a class="nav__link" href="consulenze-unity.html">Consulenze</a></li>
-              <li><a class="nav__link" href="eventi-gruppi.html">Eventi & Gruppi</a></li>
-              <li><a class="nav__link" href="percorsi-reiki.html">Percorsi & Reiki</a></li>
-              <li><a class="nav__link" href="contatti.html">Contatti</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+      <header data-site-header></header>
 
       <main class="site-main">
         <!-- HERO -->
-        <section class="section section--hero hero" id="eventi-hero">
+        <!-- SEZIONE 1 – HERO EVENTI & GRUPPI -->
+        <section class="section bg-[var(--color-bg)] py-14 md:py-18 lg:py-20">
           <div class="container">
-            <h1 class="hero__title">Eventi, cerchi e armonizzazioni di gruppo</h1>
-            <p class="lead">
-              Spazi condivisi per lavorare su energia, presenza e connessione in
-              un contesto di gruppo.
-            </p>
+            <div class="mx-auto max-w-3xl text-center">
+              <!-- Iconcina / illustrazione piccola -->
+              <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-accent-soft)]">
+                <span class="text-lg">🕯️</span>
+              </div>
+
+              <!-- Eyebrow -->
+              <p class="text-[0.8rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-muted)]">
+                Eventi &amp; armonizzazioni di gruppo
+              </p>
+
+              <!-- Titolo -->
+              <h1 class="mt-3 text-2xl font-semibold leading-tight md:text-3xl lg:text-4xl">
+                Spazi condivisi per radicarti, respirare
+                e sentirti meno sola nel tuo processo.
+              </h1>
+
+              <!-- Paragrafo descrittivo -->
+              <div class="mx-auto mt-5 max-w-2xl text-sm md:text-base leading-relaxed text-[var(--color-text-muted)]">
+                <p>
+                  In questa pagina trovi i cerchi di condivisione, le armonizzazioni energetiche di gruppo
+                  e gli eventi speciali che organizzo durante l’anno: alcuni online, altri in presenza.
+                  Sono momenti pensati per rallentare, respirare insieme, ricevere sostegno energetico
+                  e sentirti parte di uno spazio sicuro in cui non devi “fare”, ma semplicemente essere.
+                </p>
+              </div>
+
+              <!-- Micro CTA testuale -->
+              <p class="mt-6 text-sm text-[var(--color-text-muted)]">
+                Scorri per vedere gli eventi in arrivo
+                o
+                <a
+                  href="#"
+                  class="underline underline-offset-4 decoration-[var(--color-accent-strong)]"
+                  data-wa-key="events_generic"
+                >
+                  scrivimi su WhatsApp se cerchi qualcosa di specifico
+                </a>.
+              </p>
+            </div>
           </div>
         </section>
 
-        <!-- ARMONIZZAZIONI DI GRUPPO -->
-        <section class="section" id="armonizzazioni-gruppo">
+
+        <!-- SEZIONE 2 – EVENTO IN EVIDENZA -->
+        <section class="section bg-[var(--color-surface)] py-10 md:py-14">
           <div class="container">
-            <h2 class="section__title">Armonizzazioni di gruppo</h2>
-            <p>
-              Testo breve su cos’è e come funziona: come si svolgono, cosa si fa,
-              cosa si porta a casa da ogni incontro.
-            </p>
+            <div
+              class="mx-auto flex max-w-5xl flex-col overflow-hidden rounded-[24px] border border-[var(--color-border-soft)] bg-[var(--color-bg)] shadow-sm md:flex-row"
+              data-event-id="event_aurora_cerchio_maggio"
+            >
+              <!-- Colonna immagine (mobile sopra) -->
+              <div class="order-1 w-full md:order-2 md:w-5/12">
+                <div class="h-full w-full">
+                  <img
+                    src="/assets/premium_photo-1683133518677-6125a05cda5b-BXVyqSa-.avif"
+                    alt="Partecipanti durante un cerchio di condivisione e armonizzazione di gruppo"
+                    class="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+
+              <!-- Colonna contenuti -->
+              <div class="order-2 flex w-full flex-col justify-between p-6 md:order-1 md:w-7/12 md:p-8">
+                <div class="space-y-4">
+                  <!-- Badges -->
+                  <div class="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em]">
+                    <span class="inline-flex items-center rounded-full bg-[var(--color-accent-soft)] px-3 py-1 text-[var(--color-accent-strong)]">
+                      Prossimo evento
+                    </span>
+                    <span class="inline-flex items-center rounded-full border border-[var(--color-accent-soft)] px-3 py-1 text-[color:var(--color-accent-strong)]">
+                      Posti limitati
+                    </span>
+                  </div>
+
+                  <!-- Titolo evento -->
+                  <h2 class="text-xl font-semibold leading-snug md:text-2xl">
+                    Cerchio “Aurora” · Armonizzazione di gruppo per chi sta attraversando un cambiamento
+                  </h2>
+
+                  <!-- Riga info sintetiche -->
+                  <div class="mt-2 flex flex-wrap items-center gap-4 text-xs md:text-sm text-[var(--color-text-muted)]">
+                    <div class="flex items-center gap-2">
+                      <span class="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--color-surface)] text-[0.8rem]">📅</span>
+                      <span>Giovedì 23 maggio 2025</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--color-surface)] text-[0.8rem]">⏰</span>
+                      <span>20:30 – 22:00</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--color-surface)] text-[0.8rem]">🌀</span>
+                      <span>Online su Zoom</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--color-surface)] text-[0.8rem]">📍</span>
+                      <span>Da casa tua, con cuffie e coperta</span>
+                    </div>
+                  </div>
+
+                  <!-- Descrizione -->
+                  <div class="mt-3 space-y-3 text-sm leading-relaxed text-[var(--color-text-muted)]">
+                    <p>
+                      Un cerchio di armonizzazione energetica pensato per chi sta attraversando un cambiamento
+                      importante e sente il bisogno di radicarsi, lasciare andare il rumore mentale e ricevere
+                      sostegno all’interno di uno spazio condiviso ma protetto.
+                    </p>
+                    <p>
+                      Durante l’incontro alterneremo momenti di condivisione guidata, pratiche di respirazione
+                      consapevole e un lavoro energetico di gruppo per alleggerire il peso emotivo che stai
+                      portando sulle spalle.
+                    </p>
+                  </div>
+
+                  <!-- Lista cosa succede -->
+                  <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-[var(--color-text-muted)]">
+                    <li>Breve centratura iniziale e condivisione delle intenzioni del cerchio.</li>
+                    <li>Armonizzazione energetica guidata per tutto il gruppo.</li>
+                    <li>Spazio finale per integrare ciò che è emerso e fare domande.</li>
+                  </ul>
+                </div>
+
+                <!-- CTA -->
+                <div class="mt-6 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+                  <a
+                    href="#"
+                    class="btn btn-primary w-full md:w-auto"
+                    data-wa-key="event_event_aurora_cerchio_maggio"
+                  >
+                    Chiedi info e prenota su WhatsApp
+                  </a>
+                  <p class="text-xs text-[var(--color-text-muted)] md:text-right">
+                    Ti risponderò con tutti i dettagli pratici (costo, link, disponibilità posti).
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
-        <!-- CALENDARIO EVENTI -->
-        <section class="section" id="calendario-eventi">
-          <div class="container">
-            <h2 class="section__title">Calendario eventi</h2>
 
-            <div class="card" style="margin-bottom: var(--space-24);">
-              <p class="small">
-                Filtri (tipo evento, città, data) – placeholder per fase 2
-                (verranno gestiti via JS/JSON).
+        <!-- SEZIONE 3 – EVENTI IN ARRIVO -->
+        <section class="section bg-[var(--color-surface-soft)] py-14 md:py-18">
+          <div class="container">
+            <!-- Titolo -->
+            <div class="mx-auto max-w-3xl text-center">
+              <h2 class="text-2xl font-semibold leading-tight md:text-3xl">
+                Tutti gli eventi in arrivo
+              </h2>
+            </div>
+
+            <!-- Barra filtri (UI) -->
+            <div class="mx-auto mt-6 flex max-w-3xl flex-col items-center gap-4 md:flex-row md:justify-between">
+              <!-- Toggle categorie -->
+              <div class="flex flex-wrap justify-center gap-2 text-sm js-events-filters">
+                <button
+                  type="button"
+                  class="js-events-filter rounded-full bg-[var(--color-accent-soft)] px-4 py-1.5 font-medium text-[var(--color-accent-strong)]"
+                  data-filter="tutti"
+                >
+                  Tutti
+                </button>
+                <button
+                  type="button"
+                  class="js-events-filter rounded-full border border-[var(--color-border-soft)] bg-[var(--color-surface)] px-4 py-1.5 text-[var(--color-text-muted)]"
+                  data-filter="armonizzazione"
+                >
+                  Armonizzazioni
+                </button>
+                <button
+                  type="button"
+                  class="js-events-filter rounded-full border border-[var(--color-border-soft)] bg-[var(--color-surface)] px-4 py-1.5 text-[var(--color-text-muted)]"
+                  data-filter="cerchio"
+                >
+                  Cerchi
+                </button>
+                <button
+                  type="button"
+                  class="js-events-filter rounded-full border border-[var(--color-border-soft)] bg-[var(--color-surface)] px-4 py-1.5 text-[var(--color-text-muted)]"
+                  data-filter="speciale"
+                >
+                  Speciali
+                </button>
+              </div>
+
+              <!-- Mini switch solo online -->
+              <label class="inline-flex cursor-pointer items-center gap-2 text-xs font-medium text-[var(--color-text-muted)]">
+                <span>Solo online</span>
+                <span class="relative inline-flex h-5 w-9 items-center rounded-full bg-[var(--color-border-soft)]">
+                  <input
+                    type="checkbox"
+                    class="js-events-online-only peer absolute inset-0 h-full w-full cursor-pointer opacity-0"
+                  />
+                  <span
+                    class="absolute left-0.5 h-4 w-4 rounded-full bg-[var(--color-surface)] shadow-sm transition-transform peer-checked:translate-x-4"
+                  ></span>
+                </span>
+              </label>
+            </div>
+
+            <!-- Griglia eventi, popolata via JS -->
+            <div id="events-list" class="mx-auto mt-8 grid max-w-5xl gap-5 md:grid-cols-2"></div>
+            
+            <div class="mx-auto mt-6 max-w-5xl text-center">
+              <button
+                id="events-show-more"
+                type="button"
+                class="inline-flex items-center justify-center rounded-full border border-[var(--color-border-soft)] bg-[var(--color-surface)] px-5 py-2 text-sm text-[var(--color-text-muted)] hover:bg-[var(--color-bg)]"
+              >
+                Mostra tutti gli eventi
+              </button>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- SEZIONE 4 – ARMONIZZAZIONI & CERCHI RICORRENTI -->
+        <section class="section bg-[var(--color-surface)] py-14 md:py-18">
+          <div class="container">
+            <!-- Titolo + intro -->
+            <div class="mx-auto max-w-3xl text-center">
+              <h2 class="text-2xl font-semibold leading-tight md:text-3xl">
+                Armonizzazioni &amp; cerchi ricorrenti
+              </h2>
+              <p class="mx-auto mt-4 max-w-2xl text-sm md:text-base leading-relaxed text-[var(--color-text-muted)]">
+                Oltre agli eventi singoli, ci sono alcuni spazi che tornano con regolarità: cerchi di luna,
+                armonizzazioni mensili e incontri in presenza. Formati pensati per accompagnarti nel tempo,
+                con un ritmo che ti aiuta a rimanere connessa a te stessa e al tuo percorso.
               </p>
             </div>
 
-            <div id="events-list" class="grid grid--3">
-              <!-- Popolato via JS da eventsData -->
+            <!-- Card format -->
+            <div class="mx-auto mt-8 grid max-w-5xl gap-5 md:grid-cols-3">
+              <!-- FORMAT 1 -->
+              <article
+                class="flex flex-col justify-between rounded-[24px] border border-[var(--color-border-soft)] bg-[var(--color-bg)] p-6 shadow-sm"
+                data-format-id="format_cerchio_luna_nuova"
+              >
+                <div class="space-y-3">
+                  <h3 class="text-base font-semibold leading-snug">
+                    Cerchio di luna nuova
+                  </h3>
+                  <p class="text-sm leading-relaxed text-[var(--color-text-muted)]">
+                    Uno spazio ciclico per fermarti, ascoltare cosa si sta muovendo dentro e piantare nuove
+                    intenzioni in linea con ciò che senti davvero, non solo con ciò che “dovresti” fare.
+                  </p>
+                  <p class="text-xs font-medium uppercase tracking-[0.16em] text-[var(--color-text-muted)]">
+                    Frequenza: 1 volta al mese · Online
+                  </p>
+                  <p class="text-xs text-[var(--color-text-muted)]">
+                    Per chi sente il bisogno di un punto di riferimento regolare in cui tornare a sé, rilasciare
+                    il rumore accumulato e riallinearsi al proprio sentire.
+                  </p>
+                </div>
+
+                <div class="mt-5">
+                  <a
+                    href="#"
+                    class="btn w-full justify-center border border-[var(--color-accent-soft)] bg-[var(--color-surface)] text-[var(--color-accent-strong)] hover:bg-[var(--color-accent-soft)]"
+                    data-wa-key="events_group_format_cerchio_luna_nuova"
+                  >
+                    Scrivimi per le prossime date
+                  </a>
+                </div>
+              </article>
+
+              <!-- FORMAT 2 -->
+              <article
+                class="flex flex-col justify-between rounded-[24px] border border-[var(--color-border-soft)] bg-[var(--color-bg)] p-6 shadow-sm"
+                data-format-id="format_armonizzazione_mensile_online"
+              >
+                <div class="space-y-3">
+                  <h3 class="text-base font-semibold leading-snug">
+                    Armonizzazione mensile online
+                  </h3>
+                  <p class="text-sm leading-relaxed text-[var(--color-text-muted)]">
+                    Un appuntamento energetico di gruppo per scaricare il peso del mese, ritrovare centratura
+                    e lasciare andare ciò che non ti serve più, senza dover fare “tutto da sola”.
+                  </p>
+                  <p class="text-xs font-medium uppercase tracking-[0.16em] text-[var(--color-text-muted)]">
+                    Frequenza: mensile · Online su Zoom
+                  </p>
+                  <p class="text-xs text-[var(--color-text-muted)]">
+                    Per chi è molto sensibile, tende a caricarsi delle emozioni altrui e ha bisogno di momenti
+                    regolari di pulizia e ricarica a livello energetico.
+                  </p>
+                </div>
+
+                <div class="mt-5">
+                  <a
+                    href="#"
+                    class="btn w-full justify-center border border-[var(--color-accent-soft)] bg-[var(--color-surface)] text-[var(--color-accent-strong)] hover:bg-[var(--color-accent-soft)]"
+                    data-wa-key="events_group_format_armonizzazione_mensile"
+                  >
+                    Scrivimi per le prossime date
+                  </a>
+                </div>
+              </article>
+
+              <!-- FORMAT 3 -->
+              <article
+                class="flex flex-col justify-between rounded-[24px] border border-[var(--color-border-soft)] bg-[var(--color-bg)] p-6 shadow-sm"
+                data-format-id="format_cerchio_presenza_venezia"
+              >
+                <div class="space-y-3">
+                  <h3 class="text-base font-semibold leading-snug">
+                    Cerchio in presenza a Venezia
+                  </h3>
+                  <p class="text-sm leading-relaxed text-[var(--color-text-muted)]">
+                    Incontri in piccolo gruppo, dal vivo, per lavorare con il corpo, il respiro e la presenza,
+                    in uno spazio intimo dove puoi sentirti vista e accolta così come sei.
+                  </p>
+                  <p class="text-xs font-medium uppercase tracking-[0.16em] text-[var(--color-text-muted)]">
+                    Frequenza: cicli di incontri · Venezia
+                  </p>
+                  <p class="text-xs text-[var(--color-text-muted)]">
+                    Per chi desidera sperimentare l’energia del gruppo dal vivo, creare connessioni reali
+                    e portare il lavoro interiore anche nel corpo e nello spazio fisico.
+                  </p>
+                </div>
+
+                <div class="mt-5">
+                  <a
+                    href="#"
+                    class="btn w-full justify-center border border-[var(--color-accent-soft)] bg-[var(--color-surface)] text-[var(--color-accent-strong)] hover:bg-[var(--color-accent-soft)]"
+                    data-wa-key="events_group_format_cerchio_venezia"
+                  >
+                    Scrivimi per le prossime date
+                  </a>
+                </div>
+              </article>
             </div>
           </div>
         </section>
 
-        <!-- METODOLOGIA EVENTI -->
-        <section class="section" id="metodologia-eventi">
+        <!-- SEZIONE – MINI SOCIAL PROOF EVENTI -->
+        <section class="section bg-[var(--color-bg)] py-12 md:py-16">
           <div class="container">
-            <h2 class="section__title">Cosa facciamo durante gli eventi</h2>
-            <p>
-              Testo placeholder sulla metodologia: come si apre il cerchio, come
-              si lavora sull’energia, cosa succede a livello pratico ed emotivo.
-            </p>
+            <div class="mx-auto max-w-3xl text-center">
+              <!-- Titolo -->
+              <h2 class="text-2xl font-semibold leading-tight md:text-3xl">
+                Cosa dicono le persone dopo cerchi ed armonizzazioni
+              </h2>
+
+              <!-- Micro testimonianze -->
+              <div class="mt-8 grid gap-4 md:grid-cols-3">
+                <!-- Card 1 -->
+                <article class="flex h-full flex-col rounded-2xl bg-[var(--color-surface)] p-4 text-left shadow-sm">
+                  <p class="text-sm leading-relaxed text-[var(--color-text-muted)]">
+                    «Non pensavo di riuscire a rilassarmi in gruppo… e invece mi sono sentita al sicuro e meno sola.»
+                  </p>
+                  <div class="mt-3 text-xs text-[var(--color-text-muted)]">
+                    <p class="font-semibold text-[var(--color-text)]">Marta, 31 anni</p>
+                    <p class="uppercase tracking-[0.16em]">
+                      Cerchi di gruppo
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="flex h-full flex-col rounded-2xl bg-[var(--color-surface)] p-4 text-left shadow-sm">
+                  <p class="text-sm leading-relaxed text-[var(--color-text-muted)]">
+                    «Alla fine dell’armonizzazione mi sentivo più leggera, come se il corpo avesse finalmente mollato la presa.»
+                  </p>
+                  <div class="mt-3 text-xs text-[var(--color-text-muted)]">
+                    <p class="font-semibold text-[var(--color-text)]">Elisa, 37 anni</p>
+                    <p class="uppercase tracking-[0.16em]">
+                      Armonizzazioni online
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="flex h-full flex-col rounded-2xl bg-[var(--color-surface)] p-4 text-left shadow-sm">
+                  <p class="text-sm leading-relaxed text-[var(--color-text-muted)]">
+                    «Mi ha stupito quanto mi sia sentita vista, pur non conoscendo nessuno. Ho portato a casa più fiducia in me.»
+                  </p>
+                  <div class="mt-3 text-xs text-[var(--color-text-muted)]">
+                    <p class="font-semibold text-[var(--color-text)]">Francesca, 29 anni</p>
+                    <p class="uppercase tracking-[0.16em]">
+                      Cerchi di gruppo
+                    </p>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Micro testo finale -->
+              <p class="mt-8 text-xs md:text-sm text-[var(--color-text-muted)]">
+                Per leggere altre testimonianze, visita la pagina
+                <a href="/unity-connection.html" class="underline underline-offset-4">
+                  Unity Connection
+                </a>.
+              </p>
+            </div>
           </div>
         </section>
 
-        <!-- CTA FINALE -->
-        <section class="section section--cta-final" id="eventi-cta-finale">
+        <!-- SEZIONE 6 – FAQ / COME FUNZIONA PARTECIPARE -->
+        <section class="section bg-[var(--color-surface)] py-14 md:py-18">
           <div class="container">
-            <div class="card cta-final__card">
-              <div class="cta-final__content text-center">
-                <h2 class="section__title">Unisciti al prossimo cerchio</h2>
-                <p class="section__subtitle">
-                  Scrivimi su WhatsApp per sapere quali sono i prossimi eventi in
-                  programma e quale può fare al caso tuo.
+            <div class="mx-auto flex max-w-5xl flex-col gap-10 md:flex-row">
+              <!-- COLONNA SINISTRA – COME FUNZIONA -->
+              <div class="md:w-1/2">
+                <h2 class="text-2xl font-semibold leading-tight md:text-3xl">
+                  Come funziona partecipare a un evento
+                </h2>
+
+                <p class="mt-4 text-sm md:text-base leading-relaxed text-[var(--color-text-muted)]">
+                  Voglio che l’esperienza sia il più possibile semplice e accogliente: nessuna
+                  performance da fare, nessun “livello” da raggiungere. Hai solo bisogno di
+                  ascoltare se ti chiama un evento, e darti il permesso di esserci.
                 </p>
+
+                <!-- 3 STEP -->
+                <ol class="mt-6 space-y-4">
+                  <li class="flex gap-3">
+                    <div class="mt-1 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[var(--color-accent-soft)] text-xs font-semibold text-[var(--color-accent-strong)]">
+                      1
+                    </div>
+                    <div>
+                      <h3 class="text-sm font-semibold">
+                        Scegli l’evento o il cerchio che ti chiama.
+                      </h3>
+                      <p class="mt-1 text-sm leading-relaxed text-[var(--color-text-muted)]">
+                        Ascolta cosa risuona di più per te in questo momento: un cerchio di condivisione,
+                        un’armonizzazione energetica, un evento speciale legato a un passaggio della tua vita.
+                      </p>
+                    </div>
+                  </li>
+
+                  <li class="flex gap-3">
+                    <div class="mt-1 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[var(--color-accent-soft)] text-xs font-semibold text-[var(--color-accent-strong)]">
+                      2
+                    </div>
+                    <div>
+                      <h3 class="text-sm font-semibold">
+                        Scrivimi su WhatsApp per confermare il tuo posto.
+                      </h3>
+                      <p class="mt-1 text-sm leading-relaxed text-[var(--color-text-muted)]">
+                        Clicca sul pulsante collegato all’evento: mi arriverà un messaggio precompilato
+                        e potremo chiarire insieme dubbi, disponibilità e dettagli prima di confermare.
+                      </p>
+                    </div>
+                  </li>
+
+                  <li class="flex gap-3">
+                    <div class="mt-1 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[var(--color-accent-soft)] text-xs font-semibold text-[var(--color-accent-strong)]">
+                      3
+                    </div>
+                    <div>
+                      <h3 class="text-sm font-semibold">
+                        Ricevi tutte le indicazioni pratiche e preparati al meglio.
+                      </h3>
+                      <p class="mt-1 text-sm leading-relaxed text-[var(--color-text-muted)]">
+                        Ti invierò orario, link o indirizzo, cosa avere con te (acqua, coperta, quaderno…)
+                        e qualche indicazione per arrivare più centrata possibile all’incontro.
+                      </p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+
+              <!-- COLONNA DESTRA – MINI FAQ -->
+              <div class="md:w-1/2">
+                <div class="space-y-4">
+                  <!-- FAQ 1 -->
+                  <article class="rounded-2xl border border-[var(--color-border-soft)] bg-[var(--color-bg)] p-5">
+                    <h3 class="text-sm font-semibold">
+                      Devo avere esperienza di lavoro energetico?
+                    </h3>
+                    <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">
+                      No, non è necessario. Ogni evento è guidato passo passo, con un linguaggio semplice
+                      e accessibile. Ti chiederò solo di ascoltarti, rispettare i tuoi tempi e, se vuoi,
+                      condividere ciò che ti va senza forzarti mai.
+                    </p>
+                  </article>
+
+                  <!-- FAQ 2 -->
+                  <article class="rounded-2xl border border-[var(--color-border-soft)] bg-[var(--color-bg)] p-5">
+                    <h3 class="text-sm font-semibold">
+                      Cosa succede se non posso più partecipare?
+                    </h3>
+                    <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">
+                      Può capitare che qualcosa cambi all’ultimo momento. Ti chiedo solo di avvisarmi
+                      su WhatsApp appena puoi: in base al tipo di evento ti dirò se è possibile spostare
+                      la partecipazione a una data successiva o come gestire la disdetta.
+                    </p>
+                  </article>
+
+                  <!-- FAQ 3 -->
+                  <article class="rounded-2xl border border-[var(--color-border-soft)] bg-[var(--color-bg)] p-5">
+                    <h3 class="text-sm font-semibold">
+                      Gli eventi sono adatti a chi è molto sensibile?
+                    </h3>
+                    <p class="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">
+                      Sì, molti degli spazi che creo sono pensati proprio per persone sensibili, empatiche
+                      o facilmente sovraccariche. Lavoriamo con gruppi piccoli, tempi morbidi e la possibilità
+                      di prenderti pause se ne senti il bisogno, senza giudizio.
+                    </p>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SEZIONE 7 – CTA FINALE: NON SAI QUALE EVENTO SCEGLIERE -->
+        <section
+          class="section py-16 md:py-20"
+          style="
+            background: linear-gradient(
+              180deg,
+              var(--color-bg) 0%,
+              var(--color-accent-soft) 100%
+            );
+          "
+        >
+          <div class="container">
+            <div
+              class="mx-auto max-w-2xl rounded-[28px] bg-[var(--color-surface)] p-8 text-center shadow-sm md:p-10"
+            >
+              <!-- Titolo -->
+              <h2 class="text-2xl font-semibold leading-tight md:text-3xl">
+                Non sai quale evento fa per te?
+              </h2>
+
+              <!-- Paragrafo -->
+              <p class="mt-4 text-sm md:text-base leading-relaxed text-[var(--color-text-muted)]">
+                Scrivimi su WhatsApp, raccontami in poche parole cosa stai vivendo
+                e ti aiuto a capire da dove iniziare — senza impegno e con tutta la cura possibile.
+              </p>
+
+              <!-- CTA -->
+              <div class="mt-8">
                 <a
                   href="#"
-                  class="btn btn-primary"
-                  data-wa-key="eventi_generic"
+                  class="btn btn-primary w-full md:w-auto"
+                  data-wa-key="events_help_me_choose"
                 >
-                  Unisciti al prossimo cerchio → WhatsApp
+                  Chiedi un consiglio su WhatsApp
                 </a>
               </div>
             </div>
           </div>
         </section>
+
       </main>
 
       <footer data-site-footer></footer>
     </div>
 
-    <script src="assets/js/data-events.js"></script>
+    <!-- in eventi.html, prima della chiusura di </body>, versione buildata -->
+
   </body>
 </html>
